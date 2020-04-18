@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5447759897513123956}
   - component: {fileID: 3809430598761060432}
   - component: {fileID: 1694973966016744676}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f2d418d681f6552419451785f4733b07, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -96,9 +96,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de07c366b83733f4daa88cdb320f0b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interestType: 1
+  interestType: 9
   hp: 1
-  aggroRange: 1
+  aggroRange: 2
+  pack:
+  - {fileID: 5447759897513123956}
+  - {fileID: 0}
 --- !u!61 &3809430598761060432
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -109,7 +112,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

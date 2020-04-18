@@ -18,7 +18,7 @@ public class Enemy : WarriorInteractable
         body = GetComponent<Rigidbody2D>();
     }
 
-    void OnDrawGizmosSelected ()
+    void OnDrawGizmosSelected()
 	{
 		Gizmos.color = Color.yellow;
 		Gizmos.DrawWireSphere(transform.position, aggroRange);
@@ -43,7 +43,7 @@ public class Enemy : WarriorInteractable
         while (Vector2.Distance(transform.position, warrior.transform.position) > 0.1f) // range must be smaller than warrior
         {
             Vector2 dir = (warrior.transform.position - transform.position).normalized;
-            body.MovePosition((Vector2)transform.position + dir * Warrior.instance.speedOnSight * Time.deltaTime);
+            body.MovePosition((Vector2)transform.position + dir * Warrior.instance.speed * 3 * Time.deltaTime);// Warrior run at double speed when see something, so ennemy at triple so it can catch up
             yield return null;
         }
         Attack();
@@ -67,7 +67,7 @@ public class Enemy : WarriorInteractable
     IEnumerator AttackDelay()
     {
         yield return new WaitForSeconds(2f);
-        StartCoroutine(WalkToTarget(Warrior.instance.transform));
+        StartCoroutine(WalkToTarget(Warrior.instance.transform)); // If Warrior is going for loot and ignore mob, they have to walk again to catch him
     }
 
     void Death()

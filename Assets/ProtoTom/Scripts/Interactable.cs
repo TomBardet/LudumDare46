@@ -9,6 +9,12 @@ public abstract class Interactable : MonoBehaviour
 
     public abstract void Interact();
 
+    Vector3 startsize;
+    private void Awake()
+    {
+        startsize = transform.localScale;
+    }
+
     private void Update()
     {
         InteractibleFdbck();
@@ -17,9 +23,9 @@ public abstract class Interactable : MonoBehaviour
     void InteractibleFdbck()
     {
         if (isInRange)
-            transform.localScale = new Vector3(1.02f, 1.02f, 1.02f);
+            transform.localScale = new Vector3(startsize.x + .02f, startsize.x + .02f, startsize.x + .02f);
         else
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            transform.localScale = startsize;
     }
 
    

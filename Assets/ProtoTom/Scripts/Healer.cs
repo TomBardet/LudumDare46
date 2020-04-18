@@ -35,6 +35,7 @@ public class Healer : MonoBehaviour
             if (grab == null) Debug.Log("Error récupération target de grab");
 
             joints.connectedBody = grab.rb;
+            joints.connectedAnchor = grab.FindClosestPoint(transform.position);
             joints.distance = grab.GrabDistance;
             joints.enabled = true;
 

@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 678927374}
   - component: {fileID: 678927376}
   - component: {fileID: 678927375}
-  m_Layer: 0
+  - component: {fileID: 678927377}
+  m_Layer: 10
   m_Name: Sight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678927373}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.076, y: 0.091, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalPosition: {x: -0.008, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2559921103916931790}
   m_RootOrder: 0
@@ -98,7 +99,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0, y: 0.5}
     oldSize: {x: 5.12, y: 5.12}
     newSize: {x: 5.12, y: 5.12}
     adaptiveTilingThreshold: 0.5
@@ -107,11 +108,23 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -2.9308126, y: -0.2762703}
-      - {x: -2.8759024, y: -0.28039643}
-      - {x: -2.9228642, y: -0.30629316}
-      - {x: 2.5131824, y: -2.559552}
-      - {x: 2.560762, y: 2.5401173}
+    - - {x: 5.1475596, y: 2.5058672}
+      - {x: -0.015451015, y: 0.00074094534}
+      - {x: 0.005089267, y: -0.014028311}
+      - {x: 5.0824323, y: -2.5582805}
+      - {x: 5.0488367, y: -2.554338}
+--- !u!114 &678927377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678927373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e37dd9a82940346b0d96fe833d6284, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7518855575280840352
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,8 +139,7 @@ GameObject:
   - component: {fileID: 5453082423266406396}
   - component: {fileID: -6524886198949724690}
   - component: {fileID: 5322335629337396300}
-  - component: {fileID: 8834537725200730660}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Warrior
   m_TagString: Warrior
   m_Icon: {fileID: 0}
@@ -161,8 +173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40df1ba431b8dea4c847f318a7ac0218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedOnSight: 2
+  speed: 5
   maxHp: 50
+  viewCone: {fileID: 678927374}
 --- !u!61 &-6454614216464080759
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -279,25 +292,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!195 &8834537725200730660
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7518855575280840352}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.1
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.2
-  m_BaseOffset: 0.1
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4

@@ -4,9 +4,11 @@ using UnityEngine;
 
 public enum E_WarriorInterests
 {
+    //By priority
     None = 0,
-    Enemy = 1,
-    Chest = 2,
+    Sandwitch = 1,
+    Enemy = 9,
+    Chest = 10,
 }
 
 public abstract class WarriorInteractable : MonoBehaviour
