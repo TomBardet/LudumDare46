@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7520422596248499750}
   - component: {fileID: 5938131226096560445}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: H_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7520422596248499750
 Transform:
   m_ObjectHideFlags: 0
@@ -91,13 +91,13 @@ GameObject:
   m_Component:
   - component: {fileID: 289406077142859297}
   - component: {fileID: 493118175434262336}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: H_arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &289406077142859297
 Transform:
   m_ObjectHideFlags: 0
@@ -172,13 +172,13 @@ GameObject:
   m_Component:
   - component: {fileID: 3750366375115826002}
   - component: {fileID: 3750366375115826003}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Circle (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3750366375115826002
 Transform:
   m_ObjectHideFlags: 0
@@ -252,7 +252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3750366375342192287}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Graph
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,13 +293,13 @@ GameObject:
   m_Component:
   - component: {fileID: 3750366375708088283}
   - component: {fileID: 3750366375708088284}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3750366375708088283
 Transform:
   m_ObjectHideFlags: 0
@@ -374,13 +374,13 @@ GameObject:
   m_Component:
   - component: {fileID: 3750366375879919464}
   - component: {fileID: 3750366375879919465}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3750366375879919464
 Transform:
   m_ObjectHideFlags: 0
@@ -455,13 +455,13 @@ GameObject:
   m_Component:
   - component: {fileID: 3750366376372693955}
   - component: {fileID: 3750366376372693956}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3750366376372693955
 Transform:
   m_ObjectHideFlags: 0
@@ -540,7 +540,8 @@ GameObject:
   - component: {fileID: 1945165032}
   - component: {fileID: 3750366376441081849}
   - component: {fileID: 3750366376441081851}
-  m_Layer: 0
+  - component: {fileID: 1121590030}
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -645,6 +646,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!231 &1121590030
+SpringJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3750366376441081847}
+  m_Enabled: 0
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 2
+  m_DampingRatio: 0.14
+  m_Frequency: 50
 --- !u!1 &3750366376520848211
 GameObject:
   m_ObjectHideFlags: 0
@@ -655,13 +676,13 @@ GameObject:
   m_Component:
   - component: {fileID: 3750366376520848212}
   - component: {fileID: 3750366376520848213}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Circle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3750366376520848212
 Transform:
   m_ObjectHideFlags: 0
@@ -736,13 +757,13 @@ GameObject:
   m_Component:
   - component: {fileID: 3750366376565803232}
   - component: {fileID: 3750366376565803233}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3750366376565803232
 Transform:
   m_ObjectHideFlags: 0
@@ -817,7 +838,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3750366376600378494}
   - component: {fileID: 3750366376600378495}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -851,8 +872,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.014180541, y: 0.21461618}
-  m_Size: {x: 0.51655555, y: 0.91923237}
+  m_Offset: {x: -0.014180541, y: 0.19585302}
+  m_Size: {x: 0.5165556, y: 0.8681782}
   m_Direction: 0
 --- !u!1 &4731915861102768429
 GameObject:
@@ -864,13 +885,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8117917889872666149}
   - component: {fileID: 8482116390848780328}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: H_shoulerPad
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8117917889872666149
 Transform:
   m_ObjectHideFlags: 0
@@ -945,13 +966,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8956422056222056861}
   - component: {fileID: 6110644379104547515}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: H_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8956422056222056861
 Transform:
   m_ObjectHideFlags: 0

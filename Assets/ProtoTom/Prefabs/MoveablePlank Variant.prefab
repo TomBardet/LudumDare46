@@ -338,6 +338,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1343441107418801123, guid: feed279273386164b8126261ae0b269c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1343441108327663308, guid: feed279273386164b8126261ae0b269c,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -362,6 +367,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.09549662
+      objectReference: {fileID: 0}
+    - target: {fileID: 1343441108327663309, guid: feed279273386164b8126261ae0b269c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1343441108327663311, guid: feed279273386164b8126261ae0b269c,
         type: 3}

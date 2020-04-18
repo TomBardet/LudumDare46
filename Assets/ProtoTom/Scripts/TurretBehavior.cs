@@ -57,7 +57,7 @@ public class TurretBehavior : MonoBehaviour
 
     void Shot()
     {
-        Debug.Log(timer);
+        //Debug.Log(timer);
 
         if (timer < 0f)
         {
@@ -69,8 +69,25 @@ public class TurretBehavior : MonoBehaviour
         }
         else
         {
-            Debug.Log("t");
             timer -= Time.deltaTime;
         }
     }
+
+   public void SetPacific()
+    {
+        Behavior = TurretBehav.pacific;
+    }
+    public void SetSlowRate()
+    {
+        Behavior = TurretBehav.slowShot;
+    }
+    public void SetFastRate()
+    {
+        Behavior = TurretBehav.fastShot;
+    }
+    public void SetAutoDestroy()
+    {
+        Behavior = TurretBehav.autoDestroy;
+    }
+
 }
