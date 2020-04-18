@@ -18,7 +18,7 @@ public class Enemy : WarriorInteractable
         body = GetComponent<Rigidbody2D>();
     }
 
-    void OnDrawGizmosSelected ()
+    void OnDrawGizmosSelected()
 	{
 		Gizmos.color = Color.yellow;
 		Gizmos.DrawWireSphere(transform.position, aggroRange);
@@ -67,7 +67,7 @@ public class Enemy : WarriorInteractable
     IEnumerator AttackDelay()
     {
         yield return new WaitForSeconds(2f);
-        StartCoroutine(WalkToTarget(Warrior.instance.transform));
+        StartCoroutine(WalkToTarget(Warrior.instance.transform)); // If Warrior is going for loot and ignore mob, they have to walk again to catch him
     }
 
     void Death()

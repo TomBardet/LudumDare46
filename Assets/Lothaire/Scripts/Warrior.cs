@@ -80,7 +80,7 @@ public class Warrior : MonoBehaviour
 
     public void GoAfk()
     {
-        animator.SetBool("Afk", true);
+        animator.SetBool("Eating", true);
     }
 
     public void TakeDamage(int damage, Enemy enemy)
@@ -91,7 +91,7 @@ public class Warrior : MonoBehaviour
             hp = 0;
             GameManager.Defeat();
         }
-        if (currentInterests == E_WarriorInterests.None)
+        if (currentInterests == E_WarriorInterests.None && enemy != null)
         {
             See(enemy);
         }
