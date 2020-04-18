@@ -20,6 +20,9 @@ TagManager:
   - NoColWithPlayer
   - Player
   - 
+  - Warrior
+  - NoHit
+  - Obstacle
   - 
   - 
   - 

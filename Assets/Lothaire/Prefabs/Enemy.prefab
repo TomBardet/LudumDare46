@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5447759897513123956}
   - component: {fileID: 3809430598761060432}
   - component: {fileID: 1694973966016744676}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interestType: 1
   hp: 1
-  aggroRange: 1
+  aggroRange: 2
+  pack: []
 --- !u!61 &3809430598761060432
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -109,7 +110,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
