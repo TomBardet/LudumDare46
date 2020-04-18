@@ -17,6 +17,9 @@ TagManager:
   - 
   - 
   - WarriorInteractable
+  - NoColWithPlayer
+  - Player
+  - 
   - Warrior
   - NoHit
   - Obstacle
