@@ -325,6 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eca2ca991b843e4a89086585423e136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interestType: 0
 --- !u!1001 &8834537725200730658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -332,71 +333,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -6524886198949724690, guid: 8295761b1bb2a194997f7dc7e71bcd68,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-    - target: {fileID: -6524886198949724690, guid: 8295761b1bb2a194997f7dc7e71bcd68,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6524886198949724690, guid: 8295761b1bb2a194997f7dc7e71bcd68,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6524886198949724690, guid: 8295761b1bb2a194997f7dc7e71bcd68,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -6454614216464080759, guid: 8295761b1bb2a194997f7dc7e71bcd68,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6454614216464080759, guid: 8295761b1bb2a194997f7dc7e71bcd68,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6454614216464080759, guid: 8295761b1bb2a194997f7dc7e71bcd68,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: -6454614216464080759, guid: 8295761b1bb2a194997f7dc7e71bcd68,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: -6454614216464080759, guid: 8295761b1bb2a194997f7dc7e71bcd68,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6454614216464080759, guid: 8295761b1bb2a194997f7dc7e71bcd68,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6454614216464080759, guid: 8295761b1bb2a194997f7dc7e71bcd68,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6454614216464080759, guid: 8295761b1bb2a194997f7dc7e71bcd68,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: -6454614216464080759, guid: 8295761b1bb2a194997f7dc7e71bcd68,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 2559921103916931790, guid: 8295761b1bb2a194997f7dc7e71bcd68,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -452,16 +388,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5453082423266406396, guid: 8295761b1bb2a194997f7dc7e71bcd68,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5453082423266406396, guid: 8295761b1bb2a194997f7dc7e71bcd68,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 7518855575280840352, guid: 8295761b1bb2a194997f7dc7e71bcd68,
         type: 3}
       propertyPath: m_Name
@@ -469,13 +395,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8734271683736001849, guid: 8295761b1bb2a194997f7dc7e71bcd68,
         type: 3}
-      propertyPath: sightRange
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8734271683736001849, guid: 8295761b1bb2a194997f7dc7e71bcd68,
-        type: 3}
-      propertyPath: speed
-      value: 2
+      propertyPath: maxHp
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8295761b1bb2a194997f7dc7e71bcd68, type: 3}
+--- !u!1 &8834537725200730659 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7518855575280840352, guid: 8295761b1bb2a194997f7dc7e71bcd68,
+    type: 3}
+  m_PrefabInstance: {fileID: 8834537725200730658}
+  m_PrefabAsset: {fileID: 0}
+--- !u!195 &8834537725200730660
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8834537725200730659}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.1
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.2
+  m_BaseOffset: 0.1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
