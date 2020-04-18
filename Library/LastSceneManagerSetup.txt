@@ -1,9 +1,0 @@
-sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Lothaire/LothaireScene.unity
-=======
-- path: Assets/BastienFolder/Scenes/BastienScene.unity
->>>>>>> master
-  isLoaded: 1
-  isActive: 1
-  isSubScene: 0

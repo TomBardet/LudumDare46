@@ -1,18 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Warrior : MonoBehaviour
 {
     public static Warrior instance;
 
-    public float speed;
+    public float speedOnSight;//Not basic speed, its the speed when he see enemy/chest (Interactable)
     public int maxHp;
-    public float sightRange;
 
     float hp;
     Rigidbody2D body;
     Animator animator;
+    NavMeshAgent agent;
+
+    E_WarriorInterests currentInterests;
 
     void Awake()
     {
@@ -24,42 +27,43 @@ public class Warrior : MonoBehaviour
         hp = maxHp;
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
+        currentInterests = E_WarriorInterests.None;
     }
 
     void Start()
     {
-        DetectTargets();
+        StartRoom();
     }
 
-    public void DetectTargets()
+    void StartRoom()
     {
-        Collider2D[] inRange = Physics2D.OverlapCircleAll(transform.position, sightRange, LayerMask.GetMask("WarriorInteractable"));    
+        agent.isStopped = false;
+        agent.SetDestination((Vector2)transform.position + Vector2.up * 10);  //TMP destination
+    }
 
-        if (inRange.Length > 0)
+    public void See(WarriorInteractable interest)
+    {
+        if (interest.interestType > currentInterests)
         {
-            //Priorite = Le plus pres, ou un type priorise ?
-            if (inRange[0].GetComponent<WarriorInteractable>() == null)
-                Debug.Log("Problem no component attached");
-            WarriorInteractable target = inRange[0].GetComponent<WarriorInteractable>();
-            StartCoroutine(WalkToTarget(target));
-        }
-        else //Nothing found;
-        {
-            Debug.Log("Nothing to interact with");
+            currentInterests = interest.interestType;
+            agent.isStopped = true;
+            StopAllCoroutines();
+            StartCoroutine(WalkToTarget(interest));
         }
     }
 
     IEnumerator WalkToTarget(WarriorInteractable target)
     {
-        while (Vector2.Distance(transform.position, target.transform.position) > 0.1f)
+        while (Vector2.Distance(transform.position, target.transform.position) > 0.2f)
         {
             Vector2 dir = (target.transform.position - transform.position).normalized;
-            body.MovePosition((Vector2)transform.position + dir * speed * Time.deltaTime);
+            body.MovePosition((Vector2)transform.position + dir * speedOnSight * Time.deltaTime);
             yield return null;
         }
-
-
         target.Interact();
+        yield return new WaitForSeconds(3); //3 sec after(Animation etc), the warrior start to walk to the door again
+        agent.isStopped = false;
     }
 
     public void GoAfk()
@@ -67,7 +71,7 @@ public class Warrior : MonoBehaviour
         animator.SetBool("Afk", true);
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, Enemy enemy)
     {
         hp -= damage;
         if (hp <= 0)
@@ -82,5 +86,18 @@ public class Warrior : MonoBehaviour
         hp += heal;
         if (hp > maxHp)
             hp = maxHp;
+    }
+
+    public IEnumerator StartBattle(Enemy[] pack)
+    {
+        while (pack.Length > 0)
+        {
+            Enemy target = pack[0];
+            while (target)
+            {
+                target.TakeDamage();
+                yield return new WaitForSeconds(2f);
+            }
+        }
     }
 }
