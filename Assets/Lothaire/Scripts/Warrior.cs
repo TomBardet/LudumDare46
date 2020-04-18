@@ -7,15 +7,17 @@ public class Warrior : MonoBehaviour
 {
     public static Warrior instance;
 
-    public float speedOnSight;//Not basic speed, its the speed when he see enemy/chest (Interactable)
+    public float speed;
     public int maxHp;
+    public Transform viewCone;
 
     float hp;
     Rigidbody2D body;
     Animator animator;
-    NavMeshAgent agent;
-
+    
     E_WarriorInterests currentInterests;
+    bool busy = false;
+    Vector2 exit;
 
     void Awake()
     {
@@ -27,7 +29,6 @@ public class Warrior : MonoBehaviour
         hp = maxHp;
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        agent = GetComponent<NavMeshAgent>();
         currentInterests = E_WarriorInterests.None;
     }
 
@@ -38,8 +39,18 @@ public class Warrior : MonoBehaviour
 
     void StartRoom()
     {
-        agent.isStopped = false;
-        agent.SetDestination((Vector2)transform.position + Vector2.up * 10);  //TMP destination
+        exit = GameManager.exit;
+    }
+
+    void Update()
+    {
+        Debug.Log(currentInterests);
+        if (!busy && Vector2.Distance(transform.position, exit) > 0.2f)
+        {
+            Vector2 dir = (exit - (Vector2)transform.position).normalized;
+            body.MovePosition((Vector2)transform.position + dir * speed * Time.deltaTime);
+            AngleSight(exit);
+        }
     }
 
     public void See(WarriorInteractable interest)
@@ -47,7 +58,6 @@ public class Warrior : MonoBehaviour
         if (interest.interestType > currentInterests)
         {
             currentInterests = interest.interestType;
-            agent.isStopped = true;
             StopAllCoroutines();
             StartCoroutine(WalkToTarget(interest));
         }
@@ -55,15 +65,17 @@ public class Warrior : MonoBehaviour
 
     IEnumerator WalkToTarget(WarriorInteractable target)
     {
+        AngleSight(target.transform.position);
+        busy = true;
         while (Vector2.Distance(transform.position, target.transform.position) > 0.2f)
         {
             Vector2 dir = (target.transform.position - transform.position).normalized;
-            body.MovePosition((Vector2)transform.position + dir * speedOnSight * Time.deltaTime);
+            body.MovePosition((Vector2)transform.position + dir * speed * 2 * Time.deltaTime); // *2 because when he see something he run
             yield return null;
         }
         target.Interact();
         yield return new WaitForSeconds(3); //3 sec after(Animation etc), the warrior start to walk to the door again
-        agent.isStopped = false;
+        busy = false;
     }
 
     public void GoAfk()
@@ -79,6 +91,10 @@ public class Warrior : MonoBehaviour
             hp = 0;
             GameManager.Defeat();
         }
+        if (currentInterests == E_WarriorInterests.None)
+        {
+            See(enemy);
+        }
     }
 
     public void ReceiveHeal(int heal)
@@ -90,6 +106,7 @@ public class Warrior : MonoBehaviour
 
     public IEnumerator StartBattle(Enemy[] pack)
     {
+        busy = true;
         while (pack.Length > 0)
         {
             Enemy target = pack[0];
@@ -99,5 +116,13 @@ public class Warrior : MonoBehaviour
                 yield return new WaitForSeconds(2f);
             }
         }
+        busy = false;
+    }
+
+    void AngleSight(Vector2 target)
+    {
+        float AngleRad = Mathf.Atan2(target.y - viewCone.position.y, target.x - viewCone.position.x);
+        float AngleDeg = (180 / Mathf.PI) * AngleRad;
+        viewCone.rotation = Quaternion.Euler(0, 0, AngleDeg);
     }
 }

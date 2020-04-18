@@ -17,9 +17,9 @@ TagManager:
   - 
   - 
   - WarriorInteractable
-  - 
-  - 
-  - 
+  - Warrior
+  - NoHit
+  - Obstacle
   - 
   - 
   - 

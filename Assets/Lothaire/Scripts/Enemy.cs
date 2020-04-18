@@ -43,7 +43,7 @@ public class Enemy : WarriorInteractable
         while (Vector2.Distance(transform.position, warrior.transform.position) > 0.1f) // range must be smaller than warrior
         {
             Vector2 dir = (warrior.transform.position - transform.position).normalized;
-            body.MovePosition((Vector2)transform.position + dir * Warrior.instance.speedOnSight * Time.deltaTime);
+            body.MovePosition((Vector2)transform.position + dir * Warrior.instance.speed * 3 * Time.deltaTime);// Warrior run at double speed when see something, so ennemy at triple so it can catch up
             yield return null;
         }
         Attack();
