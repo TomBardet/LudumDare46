@@ -4,5 +4,14 @@ using UnityEngine;
 
 public class Healer
 {
-
+    void Interact(string tag)
+    {
+        switch(tag)
+        {
+            case "test":
+                break;
+            default:
+                break;
+        }
+    }
 }
