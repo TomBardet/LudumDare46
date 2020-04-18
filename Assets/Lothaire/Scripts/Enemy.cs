@@ -17,7 +17,7 @@ public class Enemy : WarriorInteractable
 
     public override void Interact()
     {
-        
+
     }
 
     // void Update()
