@@ -5,6 +5,12 @@ using UnityEngine;
 public class PlayerPerception : MonoBehaviour
 {
     Interactable _interactable;
+    Healer healer;
+
+    private void Awake()
+    {
+        healer = GetComponent<Healer>();
+    }
     private void Update()
     {
         Interacting();
@@ -12,6 +18,8 @@ public class PlayerPerception : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (healer.isGrabbing) return;
+
         _interactable = collision.GetComponent<Interactable>();
         if (_interactable != null)
         {
@@ -21,6 +29,8 @@ public class PlayerPerception : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (healer.isGrabbing) return;
+
         _interactable = collision.GetComponent<Interactable>();
 
         if (_interactable != null)
@@ -41,6 +51,7 @@ public class PlayerPerception : MonoBehaviour
             if (_interactable.isInRange && InteractInput())
             {
                 _interactable.Interact();
+                healer.Interact(_interactable.tag, _interactable);
             }
         }
     }
