@@ -55,7 +55,7 @@ public class Warrior : MonoBehaviour
 
     IEnumerator WalkToTarget(WarriorInteractable target)
     {
-        while (Vector2.Distance(transform.position, target.transform.position) > 0.1f)
+        while (Vector2.Distance(transform.position, target.transform.position) > 0.2f)
         {
             Vector2 dir = (target.transform.position - transform.position).normalized;
             body.MovePosition((Vector2)transform.position + dir * speedOnSight * Time.deltaTime);
@@ -71,7 +71,7 @@ public class Warrior : MonoBehaviour
         animator.SetBool("Afk", true);
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage, Enemy enemy)
     {
         hp -= damage;
         if (hp <= 0)
@@ -86,5 +86,18 @@ public class Warrior : MonoBehaviour
         hp += heal;
         if (hp > maxHp)
             hp = maxHp;
+    }
+
+    public IEnumerator StartBattle(Enemy[] pack)
+    {
+        while (pack.Length > 0)
+        {
+            Enemy target = pack[0];
+            while (target)
+            {
+                target.TakeDamage();
+                yield return new WaitForSeconds(2f);
+            }
+        }
     }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Moveable
   - WarriorSight
+  - Warrior
   layers:
   - Default
   - TransparentFX
