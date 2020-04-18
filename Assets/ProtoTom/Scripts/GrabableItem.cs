@@ -7,8 +7,9 @@ public class GrabableItem : Interactable
 
     public float WeightDefault;
     public float WeightCarry;
+    public float GrabDistance;
 
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     public bool isCarried;
 
     private void Start()
