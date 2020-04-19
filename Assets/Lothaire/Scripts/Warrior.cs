@@ -18,6 +18,8 @@ public class Warrior : MonoBehaviour
     E_WarriorInterests currentInterests;
     bool busy = false;
     Vector2 exit;
+    WarriorInteractable target;
+    Coroutine walk;
 
     void Awake()
     {
@@ -30,6 +32,7 @@ public class Warrior : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         currentInterests = E_WarriorInterests.None;
+        target = null;
     }
 
     void Start()
@@ -44,7 +47,8 @@ public class Warrior : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(currentInterests);
+        // Debug.Log(walk);
+        // Debug.Log(currentInterests);
         if (!busy && Vector2.Distance(transform.position, exit) > 0.2f)
         {
             Vector2 dir = (exit - (Vector2)transform.position).normalized;
@@ -58,24 +62,30 @@ public class Warrior : MonoBehaviour
         if (interest.interestType > currentInterests)
         {
             currentInterests = interest.interestType;
-            StopAllCoroutines();
-            StartCoroutine(WalkToTarget(interest));
+            target = interest;
+            if (walk == null)
+                walk = StartCoroutine(WalkToTarget());
         }
     }
 
-    IEnumerator WalkToTarget(WarriorInteractable target)
+    IEnumerator WalkToTarget()
     {
         AngleSight(target.transform.position);
         busy = true;
-        while (Vector2.Distance(transform.position, target.transform.position) > 0.2f)
+        while (Vector2.Distance(transform.position, target.transform.position) > 1f)
         {
             Vector2 dir = (target.transform.position - transform.position).normalized;
             body.MovePosition((Vector2)transform.position + dir * speed * 2 * Time.deltaTime); // *2 because when he see something he run
             yield return null;
         }
         target.Interact();
+        walk = null;
         yield return new WaitForSeconds(3); //3 sec after(Animation etc), the warrior start to walk to the door again
-        busy = false;
+        if (currentInterests != E_WarriorInterests.Enemy)
+        {
+            currentInterests = E_WarriorInterests.None;
+            busy = false;
+        }
     }
 
     public void GoAfk()
@@ -104,24 +114,31 @@ public class Warrior : MonoBehaviour
             hp = maxHp;
     }
 
-    public IEnumerator StartBattle(Enemy[] pack)
+    public IEnumerator StartBattle(Enemy[] list)
     {
         busy = true;
-        while (pack.Length > 0)
+        currentInterests = E_WarriorInterests.Enemy;
+        List<Enemy> pack = new List<Enemy>();
+        foreach(Enemy enem in list)
+            pack.Add(enem);
+        while (pack.Count > 0)
         {
-            Enemy target = pack[0];
-            while (target)
+            Enemy targetHit = pack[0];
+            while (targetHit)
             {
-                target.TakeDamage();
+                animator.SetBool("Attacking", true);
+                targetHit.TakeDamage();
                 yield return new WaitForSeconds(2f);
             }
+            pack.Remove(targetHit);
         }
         busy = false;
+        currentInterests = E_WarriorInterests.None;
     }
 
-    void AngleSight(Vector2 target)
+    void AngleSight(Vector2 looking)
     {
-        float AngleRad = Mathf.Atan2(target.y - viewCone.position.y, target.x - viewCone.position.x);
+        float AngleRad = Mathf.Atan2(looking.y - viewCone.position.y, looking.x - viewCone.position.x);
         float AngleDeg = (180 / Mathf.PI) * AngleRad;
         viewCone.rotation = Quaternion.Euler(0, 0, AngleDeg);
     }

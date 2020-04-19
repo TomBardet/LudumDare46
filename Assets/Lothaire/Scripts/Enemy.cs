@@ -26,26 +26,33 @@ public class Enemy : WarriorInteractable
 
     public override void Interact()
     {
-        StartCoroutine(Warrior.instance.StartBattle(pack));
+        Warrior.instance.StartCoroutine(Warrior.instance.StartBattle(pack));
     }
 
     void Update()
     {
-        if (!aggro &&  Vector2.Distance(transform.position, Warrior.instance.transform.position) < aggroRange)
+        if (!aggro && Vector2.Distance(transform.position, Warrior.instance.transform.position) < aggroRange)
         {
-            aggro = true;
-            StartCoroutine(WalkToTarget(Warrior.instance.transform));
+            foreach(Enemy enemy in pack)
+                enemy.Aggro();
         }
+    }
+
+    public void Aggro()
+    {
+        aggro = true;
+        StartCoroutine(WalkToTarget(Warrior.instance.transform));
     }
 
     IEnumerator WalkToTarget(Transform warrior)
     {
-        while (Vector2.Distance(transform.position, warrior.transform.position) > 0.1f) // range must be smaller than warrior
+        while (Vector2.Distance(transform.position, warrior.transform.position) > 1f)
         {
             Vector2 dir = (warrior.transform.position - transform.position).normalized;
             body.MovePosition((Vector2)transform.position + dir * Warrior.instance.speed * 3 * Time.deltaTime);// Warrior run at double speed when see something, so ennemy at triple so it can catch up
             yield return null;
         }
+        yield return new WaitForSeconds(0.3f);
         Attack();
     }
 
@@ -61,6 +68,7 @@ public class Enemy : WarriorInteractable
     void Attack()
     {
         Warrior.instance.TakeDamage(1, this);
+        animator.SetBool("Attacking", true);
         StartCoroutine(AttackDelay());
     }
 
