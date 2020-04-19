@@ -11,13 +11,20 @@ public class Healer : MonoBehaviour
     public GrabableItem Tg_grab;
     public Vector2 offsetRope;
 
+    public float manaMax;
+    public float manaRegenPerSec;
+    public float manaRegenDelay;
+    public float healCost;
+    float currentMana;
+    bool isRegenerating;
+
     void Awake()
     {
         joints = GetComponent<SpringJoint2D>();
         line = GetComponent<LineRenderer>();
         joints.enabled = false;
         line.enabled = false;
-
+        currentMana = manaMax;
     }
 
     private void Update()
@@ -26,6 +33,8 @@ public class Healer : MonoBehaviour
         {
             UpdateRope();
         }
+        if (isRegenerating)
+            currentMana += Time.deltaTime * manaRegenPerSec;
     }
 
     public void Interact(string tag, Interactable _obj)
@@ -41,6 +50,29 @@ public class Healer : MonoBehaviour
     }
 
     public void StopInteract(string tag, Interactable _obj)
+    public void Heal()
+    {
+        if (currentMana >= healCost)
+        {
+            currentMana -= healCost;
+            Warrior.instance.ReceiveHeal(1);
+            StartCoroutine(RegenDelay());
+        }
+    }
+
+    IEnumerator RegenDelay()
+    {
+        float delay = manaRegenDelay;
+        isRegenerating = false;
+        while(delay > 0)
+        {
+            delay -= 1 * Time.deltaTime;
+            yield return null;
+        }
+        isRegenerating = true;
+    }
+
+    void AttachToObject(Interactable _obj)
     {
         switch (tag)
         {
