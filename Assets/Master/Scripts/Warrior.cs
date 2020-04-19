@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.AI;
 
 public class Warrior : MonoBehaviour
@@ -27,7 +28,7 @@ public class Warrior : MonoBehaviour
     [Header("Fighting")]
     public Enemy enemy;
     public float timeBetweenEachShot = 1f;
-    public int AttackDamage = 10;
+    //public int AttackDamage = 10;//On devrait laisser 1 vis a vis des gobelins non ? Sans variable, en dur
 
     float hp;
     Rigidbody2D body;
@@ -36,9 +37,11 @@ public class Warrior : MonoBehaviour
     E_WarriorInterests currentInterests;
     bool busy = false;
     Vector2 exit;
+    WarriorInteractable destination;
     Coroutine walking;
     float TgAngle = 0f;
 
+    public Slider healthBar;
     public enum WarriorAI {scanning, moveToDoor, moveToTarget, fight, die};
     public WarriorAI AI;
 
@@ -134,28 +137,30 @@ public class Warrior : MonoBehaviour
     public void MoveToTg()
     {
         busy = true;
-        WarriorInteractable destination = Tg_WalkTo.GetComponent<WarriorInteractable>();
+        WarriorInteractable newDestination = Tg_WalkTo.GetComponent<WarriorInteractable>();
         
-        if (destination.interestType == E_WarriorInterests.Sandwitch)
+        if (newDestination.interestType == E_WarriorInterests.Sandwitch)
             barks.ScreamBark(E_Barks.Sandswitch);
-        else if (destination.interestType == E_WarriorInterests.Chest)
+        else if (newDestination.interestType == E_WarriorInterests.Chest)
             barks.ScreamBark(E_Barks.Chest);
-        else if (destination.interestType == E_WarriorInterests.Enemy)
+        else if (newDestination.interestType == E_WarriorInterests.Enemy)
             barks.ScreamBark(E_Barks.Enemies);
+        Debug.Log(walking);
+        destination = newDestination;
         if (walking == null)
-            walking = StartCoroutine(WalkToTarget(destination));
+            walking = StartCoroutine(WalkToTarget());
     }
 
-    IEnumerator WalkToTarget(WarriorInteractable target)
+    IEnumerator WalkToTarget()
     {
-        AngleSight(target.transform.position);
-        while (Vector2.Distance(transform.position, target.transform.position) > 2f)
+        AngleSight(destination.transform.position);
+        while (Vector2.Distance(transform.position, destination.transform.position) > 2f)
         {
-            Vector2 dir = (target.transform.position - transform.position).normalized;
+            Vector2 dir = (destination.transform.position - transform.position).normalized;
             body.MovePosition((Vector2)transform.position + dir * chargeSpeed * Time.deltaTime); // *2 because when he see something he run
             yield return null;
         }
-        target.Interact();
+        destination.Interact();
         busy = false;
         Tg_WalkTo = null;
         //Après le walkTo, on fait un scan sauf s'il est en combat:
@@ -176,6 +181,7 @@ public class Warrior : MonoBehaviour
     public void TakeDamage(int damage, Enemy enemy)
     {
         hp -= damage;
+        healthBar.value = hp / maxHp;
         if (hp <= 0)
         {
             hp = 0;
@@ -210,7 +216,7 @@ public class Warrior : MonoBehaviour
             //Debug.Log("Fighting" + target);
             while(target.hp > 0)
             {
-                target.TakeDamage(AttackDamage);
+                target.TakeDamage();
                 //Debug.Log("Inflict Dmg");
                 yield return new WaitForSeconds(timeBetweenEachShot);
             }
@@ -233,18 +239,14 @@ public class Warrior : MonoBehaviour
     public void Scan()
     {
         busy = true;
-
         StopAllCoroutines();
         StartCoroutine(ScanCoroutine());
-
     }
 
     public IEnumerator ScanCoroutine()
     {
         Vector2 tg1 = (Vector2)transform.position + Vector2.up;
         Vector2 tg2 = (Vector2)transform.position - Vector2.up;
-
-        //Debug.Log(tg1);
         
         barks.ScreamBark(E_Barks.Scanning);
         var timer = scanDuration;
@@ -264,7 +266,6 @@ public class Warrior : MonoBehaviour
             RotateToward(tg2);
             yield return new WaitForEndOfFrame();
         }
-        //Debug.Log("PAUSE");
         yield return new WaitForSeconds(pauseAfterscan);
 
         busy = false;
@@ -283,9 +284,7 @@ public class Warrior : MonoBehaviour
     {
         float AngleRad = Mathf.Atan2(lookAt.y - viewCone.position.y, lookAt.x - viewCone.position.x);
         float AngleDeg = (180 / Mathf.PI) * AngleRad;
-        
         TgAngle = Mathf.MoveTowardsAngle(TgAngle, AngleDeg, scanSpeed);
-        //Debug.Log("Turning" +TgAngle);
         viewCone.rotation = Quaternion.Euler(0, 0, TgAngle);
     }
 }

@@ -210,8 +210,10 @@ PolygonCollider2D:
     - - {x: 5.1475596, y: 2.5058672}
       - {x: -0.015451015, y: 0.00074094534}
       - {x: 0.005089267, y: -0.014028311}
-      - {x: 5.0824323, y: -2.5582805}
-      - {x: 5.0488367, y: -2.554338}
+      - {x: -0.0016964832, y: 0.015167952}
+      - {x: 0.013994797, y: -0.00052404404}
+      - {x: 0.01178275, y: 0.0034182072}
+      - {x: 5.158237, y: -2.5635762}
 --- !u!114 &678927377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -898,12 +900,12 @@ MonoBehaviour:
   scanDuration: 1.5
   pauseAfterscan: 1
   Tg_WalkTo: {fileID: 0}
-  chargeSpeed: 1.1
+  chargeSpeed: 5
   pauseAfterMoveTo: 2
   Walkspeed: 3
   enemy: {fileID: 0}
   timeBetweenEachShot: 1
-  AttackDamage: 1
+  healthBar: {fileID: 0}
   AI: 0
 --- !u!1 &8093338411630417293
 GameObject:
