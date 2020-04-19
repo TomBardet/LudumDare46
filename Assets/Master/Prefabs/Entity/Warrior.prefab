@@ -289,6 +289,8 @@ MonoBehaviour:
   - XP !!!
   SandswitchBarks:
   - FOOD !!
+  scanningBarks:
+  - WHERE IS THE LOOT ?!
 --- !u!114 &1796197747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -898,10 +900,10 @@ MonoBehaviour:
   Tg_WalkTo: {fileID: 0}
   chargeSpeed: 1.1
   pauseAfterMoveTo: 2
-  Walkspeed: 1
+  Walkspeed: 3
   enemy: {fileID: 0}
   timeBetweenEachShot: 1
-  AttackDamage: 10
+  AttackDamage: 1
   AI: 0
 --- !u!1 &8093338411630417293
 GameObject:
