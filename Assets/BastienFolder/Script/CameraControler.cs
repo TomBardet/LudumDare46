@@ -8,7 +8,6 @@ public class CameraControler : MonoBehaviour
     public bool IsScaling = false;
     private Vector3 nextLevelPosition = new Vector3(0,0,0);
     private Rigidbody2D body;
-    private float startingSize = 5;
 
     //public variable
     public float TransitionSpeed = 1;
@@ -16,9 +15,7 @@ public class CameraControler : MonoBehaviour
     public GameObject NextLevel;
 
     private void Start() {
-        nextLevelPosition = NextLevel.transform.position;
         body = GetComponent<Rigidbody2D>();
-        startingSize = GetComponent<Camera>().orthographicSize;
     }
 
     // Update is called once per frame
@@ -35,11 +32,11 @@ public class CameraControler : MonoBehaviour
         //Scaling Pour l'instant sur un boolean, plus tard check si le niveau est finit 
         if (IsScaling) {
             //When the camera need do scale up
-            if(GetComponent<Camera>().orthographicSize <= NextLevel.GetComponent<Level>().levelSize * (int)startingSize)
-                StartCoroutine(ReScale(NextLevel.GetComponent<Level>().levelSize * (int)startingSize, true));
+            if(GetComponent<Camera>().orthographicSize <= NextLevel.GetComponent<Level>().levelSize)
+                StartCoroutine(ReScale(NextLevel.GetComponent<Level>().levelSize, true));
             //When the camera need do scale down
             else
-                StartCoroutine(ReScale(NextLevel.GetComponent<Level>().levelSize * (int)startingSize, false));
+                StartCoroutine(ReScale(NextLevel.GetComponent<Level>().levelSize, false));
             IsScaling = false;
         }
     }

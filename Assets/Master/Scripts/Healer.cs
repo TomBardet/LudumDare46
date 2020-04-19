@@ -5,6 +5,7 @@ using UnityEngine;
 public class Healer : MonoBehaviour
 {
     SpringJoint2D joints;
+    RelativeJoint2D relativJoints;
     LineRenderer line;
 
     public bool isGrabbing;
@@ -21,6 +22,7 @@ public class Healer : MonoBehaviour
     void Awake()
     {
         joints = GetComponent<SpringJoint2D>();
+        relativJoints = GetComponent<RelativeJoint2D>();
         line = GetComponent<LineRenderer>();
         joints.enabled = false;
         line.enabled = false;
@@ -85,28 +87,38 @@ public class Healer : MonoBehaviour
 
     void AttachToObject(Interactable _obj)
     {
-
         Tg_grab = _obj.GetComponent<GrabableItem>();
-
         if (Tg_grab == null) Debug.Log("Error récupération target de grab");
 
-        joints.connectedBody = Tg_grab.rb;
-        joints.connectedAnchor = Tg_grab.FindClosestPoint(transform.position);
-        joints.distance = Tg_grab.GrabDistance;
-        joints.enabled = true;
+        if (!Tg_grab.directMove)
+        {
 
-        line.enabled = true;
+            joints.connectedBody = Tg_grab.rb;
+            joints.connectedAnchor = Tg_grab.FindClosestPoint(transform.position);
+            joints.distance = Tg_grab.GrabDistance;
+            joints.enabled = true;
 
-        isGrabbing = true;
+            line.enabled = true;
 
-        _obj.isInteractingWith = true;
+            isGrabbing = true;
 
+            _obj.isInteractingWith = true;
+        }
+        else
+        {
+            relativJoints.connectedBody = Tg_grab.rb;
+            relativJoints.enabled = true;
+            isGrabbing = true;
+            _obj.isInteractingWith = true;
+
+        }
 
     }
 
     void ReleaseObj(Interactable _obj)
     {
         joints.enabled = false;
+        relativJoints.enabled = false;
 
         isGrabbing = false;
         line.enabled = false;

@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Elliot/LD Elliot 01.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/BastienFolder/Scenes/Level1.unity
+    guid: 7b141dcf16063a548abd5ead54c24e6f
+  - enabled: 1
+    path: Assets/BastienFolder/Scenes/Level2.unity
+    guid: 477f6bc52e310b1438b67358896f7f93
   m_configObjects: {}
