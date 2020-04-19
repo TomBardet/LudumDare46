@@ -313,7 +313,8 @@ MonoBehaviour:
   rb: {fileID: 0}
   isCarried: 0
   isReleased: 0
-  isPlank: 1
+  directMove: 1
+  isplank: 1
 --- !u!70 &6553179339363519288
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
