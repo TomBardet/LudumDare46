@@ -11,6 +11,13 @@ public class Healer : MonoBehaviour
     public GrabableItem Tg_grab;
     public Vector2 offsetRope;
 
+    public float manaMax;
+    public float manaRegenPerSec;
+    public float manaRegenDelay;
+    public float healCost;
+    float currentMana;
+    bool isRegenerating;
+
     void Awake()
     {
         joints = GetComponent<SpringJoint2D>();
@@ -18,6 +25,7 @@ public class Healer : MonoBehaviour
         joints.enabled = false;
         line.enabled = false;
 
+        currentMana = manaMax;
     }
 
     private void Update()
@@ -26,6 +34,9 @@ public class Healer : MonoBehaviour
         {
             UpdateRope();
         }
+
+        if (isRegenerating)
+            currentMana += Time.deltaTime * manaRegenPerSec;
     }
     public void Heal()
     {
