@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1332957693116912163}
   - component: {fileID: 4370308871158994205}
+  - component: {fileID: 6697538405920152750}
   m_Layer: 0
   m_Name: coffre
   m_TagString: Untagged
@@ -56,8 +57,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7624142470090739565}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.01, y: 0.091, z: 0}
-  m_LocalScale: {x: 0.42936, y: 0.42936, z: 0.42936}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1765781119601511273}
   m_RootOrder: 0
@@ -112,6 +113,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6697538405920152750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7624142470090739565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -1.2928438, y: -0.7099128, z: 0}
+  - {x: 1.2413778, y: -0.6927571, z: 0}
+  - {x: 1.2756891, y: 0.7613785, z: 0}
+  - {x: -1.2756891, y: 0.74422336, z: 0}
+  m_ShapePathHash: 272994021
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -137970
 --- !u!1 &7846016940008808585
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,9 +317,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInRange: 0
   triggerSize: 0.8
+  isInteractingWith: 0
+  startsize: {x: 0, y: 0, z: 0}
   WeightDefault: 150
   WeightCarry: 10
   GrabDistance: 0.3
+  ResetRotSpeed: 0
   grabpoints: []
   rb: {fileID: 0}
   isCarried: 0
+  isReleased: 0
+  directMove: 0
+  isplank: 0

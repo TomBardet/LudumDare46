@@ -178,6 +178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 59466692775710246}
+  - component: {fileID: 3191638828647744543}
   m_Layer: 0
   m_Name: Graph
   m_TagString: Untagged
@@ -194,13 +195,26 @@ Transform:
   m_GameObject: {fileID: 59466692775710247}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.03, y: 0, z: 0}
-  m_LocalScale: {x: 0.5500262, y: 0.5500262, z: 0.5500262}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8533035623372484545}
   - {fileID: 4412461201750201576}
   m_Father: {fileID: 59466691484079860}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3191638828647744543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59466692775710247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f48a8d66b2adc46887f23a3a88ac01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
 --- !u!1 &4326115269180880494
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +225,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8533035623372484545}
   - component: {fileID: 8482322444958307212}
+  - component: {fileID: 8347037594923320116}
   m_Layer: 0
   m_Name: Manivelle01
   m_TagString: Untagged
@@ -282,6 +297,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8347037594923320116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4326115269180880494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 0
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.635, y: -0.935, z: 0}
+  - {x: 0.635, y: -0.935, z: 0}
+  - {x: 0.635, y: 0.935, z: 0}
+  - {x: -0.635, y: 0.935, z: 0}
+  m_ShapePathHash: 0
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -125256
 --- !u!1 &4717339050369853492
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,6 +364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2830427781571000160}
   - component: {fileID: 674964821936591713}
+  - component: {fileID: 3412018793129529483}
   m_Layer: 0
   m_Name: Manivelle02
   m_TagString: Untagged
@@ -394,3 +436,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3412018793129529483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8280197891242325968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.17939949, y: -0.79481506, z: 0}
+  - {x: 0.09178352, y: -0.847384, z: 0}
+  - {x: 0.14435196, y: 0.84738445, z: 0}
+  - {x: -0.17939949, y: 0.88243103, z: 0}
+  m_ShapePathHash: 705265397
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -125260

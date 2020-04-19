@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1308886448181813192}
   - component: {fileID: 5871762123530502214}
+  - component: {fileID: 6754269957570345192}
   m_Layer: 0
   m_Name: tourelle_horizontal
   m_TagString: Untagged
@@ -81,6 +82,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6754269957570345192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183526223751726303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.5453758, y: -0.33589518, z: 0}
+  - {x: 0.65516853, y: -0.33589482, z: 0}
+  - {x: 0.6551676, y: 0.8299608, z: 0}
+  - {x: -0.5636749, y: 0.77506423, z: 0}
+  m_ShapePathHash: -1653751131
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -135178
 --- !u!1 &3807498365458065562
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,6 +147,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5630707437695259463}
+  - component: {fileID: 5035398889162914670}
   m_Layer: 0
   m_Name: Graph
   m_TagString: Untagged
@@ -136,13 +164,26 @@ Transform:
   m_GameObject: {fileID: 3944023252251476713}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.47694078, y: 0.47694078, z: 0.47694078}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1308886448181813192}
   - {fileID: 8918346149555933481}
   m_Father: {fileID: 7470433141083267172}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5035398889162914670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3944023252251476713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f48a8d66b2adc46887f23a3a88ac01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
 --- !u!1 &4907991355845410875
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8918346149555933481}
   - component: {fileID: 125250694369610960}
+  - component: {fileID: 4594509694699014162}
   m_Layer: 0
   m_Name: tourelle_vertical
   m_TagString: Untagged
@@ -298,3 +340,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4594509694699014162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6350551836852649975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.5453758, y: -0.33589518, z: 0}
+  - {x: 0.65516853, y: -0.33589482, z: 0}
+  - {x: 0.6551676, y: 0.8299608, z: 0}
+  - {x: -0.5636749, y: 0.77506423, z: 0}
+  m_ShapePathHash: -1653751131
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -135174
