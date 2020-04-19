@@ -293,10 +293,6 @@ MonoBehaviour:
   WeightDefault: 150
   WeightCarry: 10
   GrabDistance: 0.3
-  grabpoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  grabpoints: []
   rb: {fileID: 0}
   isCarried: 0
