@@ -24,7 +24,6 @@ public class GameController : MonoBehaviour
         GamePhase = GamePhaseType.Menu;
         MusicController = GetComponent<MusicController>();
         LevelController = GetComponent<LevelController>();
-        MusicController.musicMenu.start();
     }   
 
     // Update is called once per frame
@@ -59,7 +58,6 @@ public class GameController : MonoBehaviour
 
     public void EndGame() {
         UIController.TriggerEndGame();
-        MusicController.musicFight.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         GamePhase = GamePhaseType.EndGame;
         LevelController.ClearLevelContainer(LevelController.CurentLevel);
         LevelController.IncreaseCurentLevel();
@@ -68,8 +66,7 @@ public class GameController : MonoBehaviour
     public void GameStart() {
         UIController.TriggerGameStart();
         MusicController.musicLvl.setParameterByName("Player", 1);
-        MusicController.musicFight.setParameterByName("Fight", 0);
-        MusicController.musicFight.start();
+        MusicController.musicLvl.setParameterByName("Fight", 0);
         GamePhase = GamePhaseType.OnGame;
     }
     
