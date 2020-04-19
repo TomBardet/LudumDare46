@@ -25,5 +25,6 @@ public class UIController : MonoBehaviour
 
     public void TriggerGameStart() {
         UIAnimator.SetTrigger("GameStart");
+        Debug.Log("Animation pétage de porte");
     }
 }
