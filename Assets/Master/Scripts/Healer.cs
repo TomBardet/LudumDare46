@@ -90,7 +90,7 @@ public class Healer : MonoBehaviour
         Tg_grab = _obj.GetComponent<GrabableItem>();
         if (Tg_grab == null) Debug.Log("Error récupération target de grab");
 
-        if (!Tg_grab.isPlank)
+        if (!Tg_grab.directMove)
         {
 
             joints.connectedBody = Tg_grab.rb;

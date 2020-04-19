@@ -9,6 +9,7 @@ public class TurretBehavior : MonoBehaviour
     public GameObject prefabBullet;
     public Transform spawnBulletPos;
 
+
     [Header("SlowShot")]
     public float RateofFire_slow;
     public float bulletSpeed_slow;
@@ -64,6 +65,7 @@ public class TurretBehavior : MonoBehaviour
             timer = RateOfFire;
             GameObject b = Instantiate(prefabBullet);
             b.transform.position = spawnBulletPos.position;
+            
             b.transform.rotation = spawnBulletPos.rotation;
             b.GetComponent<BulletBehavior>().speed = bulletSpeed;
         }
