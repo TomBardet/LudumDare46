@@ -12,14 +12,16 @@ public class ManivelleBehavior : Interactable
     public float revertSpeed;
     public PlayableDirector TimelineManivelle;
     bool used;
+    public GameObject manivelleImg;
     public override void Interact()
     {
         used = true;
         if(progress<duration)
         {
             progress += InteractSpeed * Time.deltaTime;
-            //progress = progress / (float)duration;
 
+            //animation de tourner lentement:
+            manivelleImg.transform.Rotate(new Vector3(0, 0, 1), -1);
         }
     }
 
@@ -53,6 +55,8 @@ public class ManivelleBehavior : Interactable
         if (progress > 0 && !used)
         {
             progress -= revertSpeed * Time.deltaTime;
+            manivelleImg.transform.Rotate(new Vector3(0, 0, 1), 2.5f);
+
         }
         PlayTimeline();
 
