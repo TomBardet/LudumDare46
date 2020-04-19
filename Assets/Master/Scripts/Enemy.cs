@@ -6,8 +6,12 @@ public class Enemy : WarriorInteractable
 {
     public int hp;
     public float aggroRange;
-    public Enemy[] pack;
+    public List<Enemy> pack;
     public float chargeSpeed;
+
+    public Transform hpLayout;
+    public GameObject heartPrefab;
+
     bool aggro = false;
     Animator animator;
     Rigidbody2D body;
@@ -17,12 +21,16 @@ public class Enemy : WarriorInteractable
         animator = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
         interestType = E_WarriorInterests.Enemy;
+        if (!pack.Contains(this))
+            pack.Add(this);
+        for (int i = 0; i < hp; i++)
+            Instantiate(heartPrefab, hpLayout);
     }
 
     void OnDrawGizmosSelected()
 	{
 		Gizmos.color = Color.yellow;
-		Gizmos.DrawWireSphere(transform.position, aggroRange);
+		Gizmos.DrawWireSphere(transform.position, aggroRange - 1);
     }
 
     public override void Interact()
@@ -49,28 +57,36 @@ public class Enemy : WarriorInteractable
 
     IEnumerator WalkToTarget(Transform warrior)
     {
-        while (Vector2.Distance(transform.position, warrior.transform.position) > 1f)
+        while (Vector2.Distance(transform.position, warrior.transform.position) > 2f)
         {
             Vector2 dir = (warrior.transform.position - transform.position).normalized;
-            body.MovePosition((Vector2)transform.position + dir * chargeSpeed * Time.deltaTime);// Warrior run at double speed when see something, so ennemy at triple so it can catch up
+            body.MovePosition((Vector2)transform.position + dir * chargeSpeed * Time.deltaTime);
             yield return null;
         }
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.1f);
         Attack();
     }
 
-    public void TakeDamage(int dmg)
+    public void TakeDamage()
     {
-        hp -= dmg;
+        if (!aggro)
+            foreach(Enemy enemy in pack) 
+                enemy.Aggro();
+        hp -= 1;
+        if (hpLayout.childCount > 0)
+            Destroy(hpLayout.GetChild(0).gameObject);
         if (hp <= 0)
+        {
+            StopAllCoroutines();    
             Invoke("Death", 1f);
+        }
         else
             Attack();
     }
 
     void Attack()
     {
-        Warrior.instance.TakeDamage(1, this);
+        Warrior.instance.TakeDamage(10, this);
         StartCoroutine(AttackDelay());
     }
 

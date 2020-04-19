@@ -15,6 +15,8 @@ public class GrabableItem : Interactable
     public Rigidbody2D rb;
     public bool isCarried;
     public bool isReleased;
+    public bool directMove;
+    public bool isplank;
     Quaternion StartRot;
 
     private void Start()
@@ -31,7 +33,6 @@ public class GrabableItem : Interactable
         isCarried = true;
         rb.mass = WeightCarry;
         isReleased = false;
-
         transform.localScale = new Vector3(startsize.x + .13f, startsize.x + .13f, startsize.x + .13f);
 
     }
@@ -43,17 +44,20 @@ public class GrabableItem : Interactable
         isCarried = false;
         rb.mass = WeightDefault;
         transform.localScale = startsize;
-
         ResetRotation();
 
     }
 
     public override void Interact()
     {
-        if (isCarried) ReleaseBox();
-        else CarryBox();
-    }
+        if (isInteractingWith) return;
+        CarryBox();
 
+    }
+    public override void StopInteract()
+    {
+        ReleaseBox();
+    }
     public Vector3 FindClosestPoint(Vector3 pos)
     {
         var distance = 0f;
@@ -121,4 +125,6 @@ public class GrabableItem : Interactable
 
         isReleased = true;
     }
+
+    
 }
