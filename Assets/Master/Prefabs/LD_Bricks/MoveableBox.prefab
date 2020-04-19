@@ -127,7 +127,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   isCarried: 0
   isReleased: 0
-  directMove: 0
+  directMove: 1
   isplank: 0
 --- !u!1 &3392312549529669420
 GameObject:
@@ -356,7 +356,7 @@ MonoBehaviour:
   - {x: -1.1097622, y: 1.2029176, z: 0}
   m_ShapePathHash: 1104232285
   m_Mesh: {fileID: 0}
-  m_InstanceId: -149100
+  m_InstanceId: -163690
 --- !u!1 &8124923778633780251
 GameObject:
   m_ObjectHideFlags: 0
