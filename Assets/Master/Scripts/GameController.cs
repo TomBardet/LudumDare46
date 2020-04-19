@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    [Header("Controller")]
     public UIController UIController;
-    public int CurentLevel = 0;
+    private MusicController MusicController;
+    private LevelController LevelController;
+    [Header("KeyHole")]
     public float KeyHoleSpeed = 200;
-    public List<Level> LevelList = new List<Level>();
     public Rigidbody2D KeyHole;
+
+    [Header("Boolean")]
+    public bool IsLevelLoaded = false;
 
     private enum GamePhaseType{Menu, Observation, OnGame, EndGame, Cinematic };
     private GamePhaseType GamePhase = GamePhaseType.Menu;
@@ -17,13 +22,15 @@ public class GameController : MonoBehaviour
     void Start()
     {
         GamePhase = GamePhaseType.Menu;
+        MusicController = GetComponent<MusicController>();
+        LevelController = GetComponent<LevelController>();
+        MusicController.musicMenu.start();
     }   
 
     // Update is called once per frame
     void FixedUpdate() {
         if (GamePhase == GamePhaseType.Observation) {
             KeyHoleControlles(KeyHoleSpeed);
-            AddCameraBorderCollider();
         }
     }
     private void Update() {
@@ -31,29 +38,42 @@ public class GameController : MonoBehaviour
             GameStart();
         }
     }
+
+    /******************************** GAME PHASE ***************************************/
     public void OnPlay() {
         UIController.OnPlayPress();
+        MusicController.musicMenu.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        MusicController.musicLvl.setParameterByName("Player", 0);
+        MusicController.musicLvl.start();
         GamePhase = GamePhaseType.Observation;
-        //dissable player control
+        LevelController.OpenLevel(LevelController.CurentLevel);
     }
 
     public void OnNextLevel() {
         //Transition de level suivit de la phase d'observation ?
-        UIController.OnPlayPress();
+        MusicController.musicLvl.setParameterByName("Player", 0);
+        UIController.OnNextLevelPress();
         GamePhase = GamePhaseType.Observation;
+        LevelController.OpenLevel(LevelController.CurentLevel);
     }
 
     public void EndGame() {
         UIController.TriggerEndGame();
+        MusicController.musicFight.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         GamePhase = GamePhaseType.EndGame;
-        CurentLevel++;
+        LevelController.ClearLevelContainer(LevelController.CurentLevel);
+        LevelController.IncreaseCurentLevel();
     }
 
     public void GameStart() {
         UIController.TriggerGameStart();
+        MusicController.musicLvl.setParameterByName("Player", 1);
+        MusicController.musicFight.setParameterByName("Fight", 0);
+        MusicController.musicFight.start();
         GamePhase = GamePhaseType.OnGame;
     }
-
+    
+    /*************************** KEYHOLE ***************************/
     private void KeyHoleControlles(float speed) {
 
         Camera cam = Camera.main;
@@ -84,20 +104,6 @@ public class GameController : MonoBehaviour
         //Move Bottom
         if (KeyHole.transform.position.y - borderModifier*3f < bottomLeft.y) {
             KeyHole.transform.position = new Vector2(KeyHole.transform.position.x, KeyHole.transform.position.y + 0.1f);
-        }
-    }
-
-    //Create Border at screen size to contain keyhole
-    void AddCameraBorderCollider() {
-        Camera cam = Camera.main;
-        Vector2 bottomLeft = cam.ScreenToWorldPoint(new Vector3(0, 0, cam.nearClipPlane));
-        Vector2 topRight = cam.ScreenToWorldPoint(new Vector3(cam.pixelWidth, cam.pixelHeight, cam.nearClipPlane));
-        
-        if(KeyHole.transform.position.y > topRight.y || KeyHole.transform.position.y < bottomLeft.y) {
-            KeyHole.velocity = new Vector2(KeyHole.velocity.x,0);
-        }
-        if (KeyHole.transform.position.x > topRight.x || KeyHole.transform.position.x < bottomLeft.x) {
-            KeyHole.velocity = new Vector2(0, KeyHole.velocity.y);
         }
     }
 }
