@@ -8,6 +8,7 @@ public class TurretBehavior : MonoBehaviour
     public TurretBehav Behavior;
     public GameObject prefabBullet;
     public Transform spawnBulletPos;
+    Animator anim;
 
 
     [Header("SlowShot")]
@@ -26,7 +27,7 @@ public class TurretBehavior : MonoBehaviour
     private float timer;
     void Start()
     {
-           
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -68,20 +69,25 @@ public class TurretBehavior : MonoBehaviour
             
             b.transform.rotation = spawnBulletPos.rotation;
             b.GetComponent<BulletBehavior>().speed = bulletSpeed;
+            anim.SetBool("isFiring", true);
+
         }
         else
         {
             timer -= Time.deltaTime;
+            
         }
     }
 
    public void SetPacific()
     {
         Behavior = TurretBehav.pacific;
+        anim.SetBool("isFiring", false);
     }
     public void SetSlowRate()
     {
         Behavior = TurretBehav.slowShot;
+        
     }
     public void SetFastRate()
     {
