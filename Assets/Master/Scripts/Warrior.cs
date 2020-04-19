@@ -36,10 +36,13 @@ public class Warrior : MonoBehaviour
     E_WarriorInterests currentInterests;
     bool busy = false;
     Vector2 exit;
+    Coroutine walking;
     float TgAngle = 0f;
 
     public enum WarriorAI {scanning, moveToDoor, moveToTarget, fight, die};
     public WarriorAI AI;
+
+    Barks barks;
 
     void Awake()
     {
@@ -52,12 +55,13 @@ public class Warrior : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         currentInterests = E_WarriorInterests.None;
+        walking = null;
+        barks = GetComponentInChildren<Barks>();// c mosh mé jm
     }
 
     void Start()
     {
         exit = GameObject.FindObjectOfType<DoorExit>().transform.position;
-
         StartRoom();
     }
 
@@ -68,26 +72,26 @@ public class Warrior : MonoBehaviour
 
     void Update()
     {
-        switch(AI)
+        if (!busy)
         {
-            case WarriorAI.scanning:
-                if(!busy)
-                Scan();
-                break;
-            case WarriorAI.moveToDoor:
-                if (!busy)
-                MoveToDoor();
-                break;
-            case WarriorAI.moveToTarget:
-                if (!busy)
-                MoveToTg();
-                break;
-            case WarriorAI.fight:
-                if (!busy && enemy != null)
-                Fight();
-                break;
-            case WarriorAI.die:
-                break;
+            switch(AI)
+            {
+                case WarriorAI.scanning:
+                    Scan();
+                    break;
+                case WarriorAI.moveToDoor:
+                    MoveToDoor();
+                    break;
+                case WarriorAI.moveToTarget:
+                    MoveToTg();
+                    break;
+                case WarriorAI.fight:
+                    if (enemy != null)
+                        Fight();
+                    break;
+                case WarriorAI.die: // peut on l'enelver et simplement call die dans take damage comme un event ?
+                    break;
+            }
         }
     }
 
@@ -121,9 +125,16 @@ public class Warrior : MonoBehaviour
     public void MoveToTg()
     {
         busy = true;
-
-        StopAllCoroutines();
-        StartCoroutine(WalkToTarget(Tg_WalkTo.GetComponent<WarriorInteractable>()));
+        WarriorInteractable destination = Tg_WalkTo.GetComponent<WarriorInteractable>();
+        
+        if (destination.interestType == E_WarriorInterests.Sandwitch)
+            barks.ScreamBark(E_Barks.Sandswitch);
+        else if (destination.interestType == E_WarriorInterests.Chest)
+            barks.ScreamBark(E_Barks.Chest);
+        else if (destination.interestType == E_WarriorInterests.Enemy)
+            barks.ScreamBark(E_Barks.Enemies);
+        if (walking == null)
+            walking = StartCoroutine(WalkToTarget(destination));
     }
 
     IEnumerator WalkToTarget(WarriorInteractable target)
@@ -145,6 +156,7 @@ public class Warrior : MonoBehaviour
             AI = WarriorAI.scanning;
             currentInterests = 0;
         }
+        walking = null;
     }
 
     public void GoAfk()
@@ -224,8 +236,9 @@ public class Warrior : MonoBehaviour
         Vector2 tg1 = (Vector2)transform.position + Vector2.up;
         Vector2 tg2 = (Vector2)transform.position - Vector2.up;
 
-        Debug.Log(tg1);
-
+        //Debug.Log(tg1);
+        
+        barks.ScreamBark(E_Barks.Scanning);
         var timer = scanDuration;
         while (timer > 0)
         {
@@ -265,7 +278,7 @@ public class Warrior : MonoBehaviour
         float AngleDeg = (180 / Mathf.PI) * AngleRad;
         
         TgAngle = Mathf.MoveTowardsAngle(TgAngle, AngleDeg, scanSpeed);
-        Debug.Log("Turning" +TgAngle);
+        //Debug.Log("Turning" +TgAngle);
         viewCone.rotation = Quaternion.Euler(0, 0, TgAngle);
     }
 

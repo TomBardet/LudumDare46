@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Sandwitch : WarriorInteractable
 {
+    public void Awake()
+    {
+        interestType = E_WarriorInterests.Sandwitch;
+    }
+
     public override void Interact()
     {
         Debug.Log("Eating sandswitch !");

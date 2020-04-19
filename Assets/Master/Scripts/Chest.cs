@@ -6,6 +6,11 @@ public class Chest : WarriorInteractable
 {
     public bool trapped;
 
+    public void Awake()
+    {
+        interestType = E_WarriorInterests.Chest;
+    }
+
     public override void Interact()
     {
         Debug.Log("Opening loot chest !");
