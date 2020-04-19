@@ -9,15 +9,6 @@ public class PressurePlaque : MonoBehaviour
     public bool Power;
     public PlayableDirector TimelinePowerOn; 
     public PlayableDirector TimelinePowerOff;
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

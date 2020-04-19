@@ -40,31 +40,47 @@ public class Healer : MonoBehaviour
         }
     }
 
+    public void StopInteract(string tag, Interactable _obj)
+    {
+        switch (tag)
+        {
+            case "Moveable":
+                ReleaseObj(_obj);
+                break;
+            default:
+                break;
+        }
+    }
+
     void AttachToObject(Interactable _obj)
     {
-        if(!isGrabbing)
-        {
-            Tg_grab = _obj.GetComponent<GrabableItem>();
 
-            if (Tg_grab == null) Debug.Log("Error récupération target de grab");
+        Tg_grab = _obj.GetComponent<GrabableItem>();
 
-            joints.connectedBody = Tg_grab.rb;
-            joints.connectedAnchor = Tg_grab.FindClosestPoint(transform.position);
-            joints.distance = Tg_grab.GrabDistance;
-            joints.enabled = true;
+        if (Tg_grab == null) Debug.Log("Error récupération target de grab");
 
-            line.enabled = true;
+        joints.connectedBody = Tg_grab.rb;
+        joints.connectedAnchor = Tg_grab.FindClosestPoint(transform.position);
+        joints.distance = Tg_grab.GrabDistance;
+        joints.enabled = true;
 
-            isGrabbing = true;
-        }else
-        {
-            joints.enabled = false;
-            
-            isGrabbing = false;
-           line.enabled = false;
+        line.enabled = true;
+
+        isGrabbing = true;
+
+        _obj.isInteractingWith = true;
 
 
-        }
+    }
+
+    void ReleaseObj(Interactable _obj)
+    {
+        joints.enabled = false;
+
+        isGrabbing = false;
+        line.enabled = false;
+
+        _obj.isInteractingWith = false;
 
     }
 
