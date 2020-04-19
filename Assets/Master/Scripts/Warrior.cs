@@ -56,7 +56,7 @@ public class Warrior : MonoBehaviour
         animator = GetComponent<Animator>();
         currentInterests = E_WarriorInterests.None;
         walking = null;
-        barks = GetComponentInChildren<Barks>();// c mosh mé jm
+        barks = GetComponentInChildren<Barks>();
     }
 
     void Start()
@@ -113,16 +113,16 @@ public class Warrior : MonoBehaviour
             Vector2 dir;
             if (transform.position.x < exit.x - 4)
                 dir = Vector2.right;
-            else if (transform.position.y > exit.y)
+            else if (transform.position.y > exit.y + 0.1f)
                 dir = Vector2.down;
-            else if (transform.position.y < exit.y)
+            else if (transform.position.y < exit.y - 0.1f)
                 dir = Vector2.up;
             else
                 dir = (exit - (Vector2)transform.position).normalized;
             if (Vector2.Distance(transform.position, exit) > 1f)
             {
                 body.MovePosition((Vector2)transform.position + dir * Walkspeed * Time.deltaTime);
-                AngleSight(dir);
+                viewCone.right = (Vector3)exit - viewCone.position;
             }
         }
         else
@@ -149,14 +149,13 @@ public class Warrior : MonoBehaviour
     IEnumerator WalkToTarget(WarriorInteractable target)
     {
         AngleSight(target.transform.position);
-        while (Vector2.Distance(transform.position, target.transform.position) > 0.7f)
+        while (Vector2.Distance(transform.position, target.transform.position) > 2f)
         {
             Vector2 dir = (target.transform.position - transform.position).normalized;
             body.MovePosition((Vector2)transform.position + dir * chargeSpeed * Time.deltaTime); // *2 because when he see something he run
             yield return null;
         }
         target.Interact();
-        yield return new WaitForSeconds(pauseAfterMoveTo); //3 sec after(Animation etc), the warrior start to walk to the door again
         busy = false;
         Tg_WalkTo = null;
         //Après le walkTo, on fait un scan sauf s'il est en combat:
@@ -164,6 +163,7 @@ public class Warrior : MonoBehaviour
         {
             AI = WarriorAI.scanning;
             currentInterests = 0;
+            yield return new WaitForSeconds(pauseAfterMoveTo); //3 sec after(Animation etc), the warrior start to walk to the door again
         }
         walking = null;
     }
@@ -201,27 +201,26 @@ public class Warrior : MonoBehaviour
         StartCoroutine(StartBattle(enemy.pack));
     }
 
-    public IEnumerator StartBattle(Enemy[] pack)
+    public IEnumerator StartBattle(List<Enemy> pack)
     {
         busy = true;
-        for (int i = 0; i< pack.Length; i++)
+        for (int i = 0; i< pack.Count; i++)
         {
             Enemy target = pack[i];
-            Debug.Log("Fighting" + target);
+            //Debug.Log("Fighting" + target);
             while(target.hp > 0)
             {
                 target.TakeDamage(AttackDamage);
-                Debug.Log("Inflict Dmg");
+                //Debug.Log("Inflict Dmg");
                 yield return new WaitForSeconds(timeBetweenEachShot);
             }
             Debug.Log("Kill");
         }
-        Debug.Log("End of Pack");
+        //Debug.Log("End of Pack");
         busy = false;
 
         //à la fin d'un combat, retour au scan:
         AI = WarriorAI.scanning;
-
     }
 
     void AngleSight(Vector2 target)
@@ -265,7 +264,7 @@ public class Warrior : MonoBehaviour
             RotateToward(tg2);
             yield return new WaitForEndOfFrame();
         }
-        Debug.Log("PAUSE");
+        //Debug.Log("PAUSE");
         yield return new WaitForSeconds(pauseAfterscan);
 
         busy = false;
@@ -278,7 +277,6 @@ public class Warrior : MonoBehaviour
         {
             AI = WarriorAI.moveToDoor;
         }
-
     }
 
     void RotateToward(Vector2 lookAt)
@@ -289,23 +287,5 @@ public class Warrior : MonoBehaviour
         TgAngle = Mathf.MoveTowardsAngle(TgAngle, AngleDeg, scanSpeed);
         //Debug.Log("Turning" +TgAngle);
         viewCone.rotation = Quaternion.Euler(0, 0, TgAngle);
-    }
-
-    public IEnumerator RotateTowardTarget(Vector2 target, float speed)
-    {
-        var timer = speed;
-        while(timer > 0)
-        {
-            timer -= Time.deltaTime;
-
-            AngleSight(target);
-            yield return new WaitForSeconds(2f);
-        }
-    }
-
-    public IEnumerator Pause(float time)
-    {
-        Debug.Log("startpause");
-        yield return new WaitForSeconds(time);
     }
 }
