@@ -289,6 +289,7 @@ MonoBehaviour:
   - XP !!!
   SandswitchBarks:
   - FOOD !!
+  scanningBarks: []
 --- !u!114 &1796197747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -892,16 +893,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 50
   viewCone: {fileID: 678927374}
-  scanSpeed: 2.5
-  scanDuration: 1.5
-  pauseAfterscan: 1
+  scanSpeed: 0.8
+  scanDuration: 0.8
+  pauseAfterscan: 0
   Tg_WalkTo: {fileID: 0}
-  chargeSpeed: 1.1
+  chargeSpeed: 30
   pauseAfterMoveTo: 2
-  Walkspeed: 1
+  Walkspeed: 4.81
   enemy: {fileID: 0}
   timeBetweenEachShot: 1
   AttackDamage: 10
+  healthBar: {fileID: 0}
   AI: 0
 --- !u!1 &8093338411630417293
 GameObject:
