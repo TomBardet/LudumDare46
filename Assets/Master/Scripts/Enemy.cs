@@ -8,6 +8,10 @@ public class Enemy : WarriorInteractable
     public float aggroRange;
     public List<Enemy> pack;
     public float chargeSpeed;
+
+    public Transform hpLayout;
+    public GameObject heartPrefab;
+
     bool aggro = false;
     Animator animator;
     Rigidbody2D body;
@@ -19,12 +23,14 @@ public class Enemy : WarriorInteractable
         interestType = E_WarriorInterests.Enemy;
         if (!pack.Contains(this))
             pack.Add(this);
+        for (int i = 0; i < hp; i++)
+            Instantiate(heartPrefab, hpLayout);
     }
 
     void OnDrawGizmosSelected()
 	{
 		Gizmos.color = Color.yellow;
-		Gizmos.DrawWireSphere(transform.position, aggroRange);
+		Gizmos.DrawWireSphere(transform.position, aggroRange - 1);
     }
 
     public override void Interact()
@@ -61,9 +67,14 @@ public class Enemy : WarriorInteractable
         Attack();
     }
 
-    public void TakeDamage(int dmg)
+    public void TakeDamage()
     {
-        hp -= dmg;
+        if (!aggro)
+            foreach(Enemy enemy in pack) 
+                enemy.Aggro();
+        hp -= 1;
+        if (hpLayout.childCount > 0)
+            Destroy(hpLayout.GetChild(0).gameObject);
         if (hp <= 0)
         {
             StopAllCoroutines();    
@@ -75,7 +86,7 @@ public class Enemy : WarriorInteractable
 
     void Attack()
     {
-        Warrior.instance.TakeDamage(1, this);
+        Warrior.instance.TakeDamage(10, this);
         StartCoroutine(AttackDelay());
     }
 

@@ -15,12 +15,12 @@ MonoBehaviour:
   Path: event:/Music/MusicLVL
   guid: 98d7770c3199f14e86c5222a4b3c9e53
   Banks:
-  - {fileID: -3117316723799182085}
+  - {fileID: 2974528746120569438}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 4007270226318710742}
+  - {fileID: 431352773560437117}
   MinDistance: 0
   MaxDistance: 0
   Length: 101250
@@ -56,7 +56,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/Ben/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637229172694292353
+  lastModified: 637228986249026104
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -97,7 +97,7 @@ MonoBehaviour:
   lastModified: 637229172694471882
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-2082962525316868262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,19 +146,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -6759475560812255540}
-  - {fileID: -3117316723799182085}
-  - {fileID: 9047629330459947490}
+  - {fileID: 2974528746120569438}
+  - {fileID: 3997279761602548548}
   EditorEvents:
   - {fileID: -7477410511913309576}
   - {fileID: 6497523161983253988}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 9047629330459947490}
+  - {fileID: 3997279761602548548}
   StringsBanks:
   - {fileID: -6759475560812255540}
-  stringsBankWriteTime: 637229172694292353
+  stringsBankWriteTime: 637228986249026104
   cacheVersion: 3
---- !u!114 &4007270226318710742
+--- !u!114 &431352773560437117
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,6 +175,59 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
+--- !u!114 &2974528746120569438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/LvlBank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ben/Build/Desktop/LvlBank.bank
+  SubDir: 
+  lastModified: 637228986249016272
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &3997279761602548548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ben/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637228986249026104
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &4007270226318710742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusicLVL/Player
+  m_EditorClassIdentifier: 
+  Name: Player
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &6497523161983253988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +243,7 @@ MonoBehaviour:
   Path: event:/Ambiance/AmbianceLVL
   guid: baafdfc711d08b4e80262ea265112879
   Banks:
-  - {fileID: -3117316723799182085}
+  - {fileID: 2974528746120569438}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -251,4 +304,4 @@ MonoBehaviour:
   lastModified: 637229172694292353
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0

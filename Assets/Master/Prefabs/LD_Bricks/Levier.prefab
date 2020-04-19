@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3747041869127907092}
   - component: {fileID: 1836134714464207168}
+  - component: {fileID: 4011946655642959510}
   m_Layer: 0
   m_Name: Levier01
   m_TagString: Untagged
@@ -81,6 +82,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4011946655642959510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132573874078482966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 0
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -1.58, y: -1.365, z: 0}
+  - {x: 1.58, y: -1.365, z: 0}
+  - {x: 1.58, y: 1.365, z: 0}
+  - {x: -1.58, y: 1.365, z: 0}
+  m_ShapePathHash: 0
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -163644
 --- !u!1 &451326689950412161
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,6 +118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8600618406814021719}
   - component: {fileID: 7454155029645003339}
+  - component: {fileID: 5442524634378121785}
   m_Layer: 0
   m_Name: Levier03
   m_TagString: Untagged
@@ -150,7 +178,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 62d264189f406274cbda53f399fc2d16, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -162,6 +190,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5442524634378121785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451326689950412161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 1
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -0.37019348, y: -0.24009371, z: 0}
+  - {x: 0.5399914, y: -0.19764423, z: 0}
+  - {x: 0.5074043, y: 0.3239379, z: 0}
+  - {x: 0.1391983, y: 0.55846405, z: 0}
+  - {x: -0.2991333, y: 0.30271292, z: 0}
+  m_ShapePathHash: -1934258705
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -163648
 --- !u!1 &2044716992544177621
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,6 +344,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8635300212809349246}
   - component: {fileID: 3197703991711158729}
+  - component: {fileID: 2282583717280409893}
   m_Layer: 0
   m_Name: Levier02
   m_TagString: Untagged
@@ -348,7 +404,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 3c68a1e12f4f8ec44aa092871e28a8be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -360,6 +416,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2282583717280409893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3032864343716705869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
+  m_HasRenderer: 1
+  m_UseRendererSilhouette: 1
+  m_CastsShadows: 0
+  m_SelfShadows: 0
+  m_ApplyToSortingLayers: 00000000
+  m_ShapePath:
+  - {x: -1.58, y: -1.365, z: 0}
+  - {x: 1.58, y: -1.365, z: 0}
+  - {x: 1.58, y: 1.365, z: 0}
+  - {x: -1.58, y: 1.365, z: 0}
+  m_ShapePathHash: 0
+  m_Mesh: {fileID: 0}
+  m_InstanceId: -163646
 --- !u!1 &3837265902230195149
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +451,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9137496163755955962}
+  - component: {fileID: 5394965646572146073}
   m_Layer: 0
   m_Name: Graph
   m_TagString: Untagged
@@ -384,8 +467,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3837265902230195149}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.05, z: 0}
-  m_LocalScale: {x: 0.55882, y: 0.55882, z: 0.55882}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3747041869127907092}
   - {fileID: 8635300212809349246}
@@ -393,6 +476,19 @@ Transform:
   m_Father: {fileID: 2796216716288392300}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5394965646572146073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837265902230195149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38f48a8d66b2adc46887f23a3a88ac01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShadowGroup: 0
 --- !u!1 &6726732412490147279
 GameObject:
   m_ObjectHideFlags: 0
