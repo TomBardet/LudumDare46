@@ -58,7 +58,7 @@ public class PlayerPerception : MonoBehaviour
                 _interactable.Interact();
                 healer.Interact(_interactable.tag, _interactable);
             }
-            else if(_interactable.isInteractingWith && InteractInputUp())
+            else if(InteractInputUp())
             {
                 _interactable.StopInteract();
                 healer.StopInteract(_interactable.tag, _interactable);
