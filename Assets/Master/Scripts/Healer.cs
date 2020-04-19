@@ -5,6 +5,7 @@ using UnityEngine;
 public class Healer : MonoBehaviour
 {
     SpringJoint2D joints;
+    RelativeJoint2D relativJoints;
     LineRenderer line;
 
     public bool isGrabbing;
@@ -21,9 +22,11 @@ public class Healer : MonoBehaviour
     void Awake()
     {
         joints = GetComponent<SpringJoint2D>();
+        relativJoints = GetComponent<RelativeJoint2D>();
         line = GetComponent<LineRenderer>();
         joints.enabled = false;
         line.enabled = false;
+
         currentMana = manaMax;
     }
 
@@ -33,22 +36,10 @@ public class Healer : MonoBehaviour
         {
             UpdateRope();
         }
+
         if (isRegenerating)
             currentMana += Time.deltaTime * manaRegenPerSec;
     }
-
-    public void Interact(string tag, Interactable _obj)
-    {
-        switch(tag)
-        {
-            case "Moveable":
-                AttachToObject(_obj);
-                break;
-            default:
-                break;
-        }
-    }
-
     public void Heal()
     {
         if (currentMana >= healCost)
@@ -63,21 +54,44 @@ public class Healer : MonoBehaviour
     {
         float delay = manaRegenDelay;
         isRegenerating = false;
-        while(delay > 0)
+        while (delay > 0)
         {
             delay -= 1 * Time.deltaTime;
             yield return null;
         }
         isRegenerating = true;
     }
+    public void Interact(string tag, Interactable _obj)
+    {
+        switch(tag)
+        {
+            case "Moveable":
+                AttachToObject(_obj);
+                break;
+            default:
+                break;
+        }
+    }
+
+    public void StopInteract(string tag, Interactable _obj)
+    {
+        switch (tag)
+        {
+            case "Moveable":
+                ReleaseObj(_obj);
+                break;
+            default:
+                break;
+        }
+    }
 
     void AttachToObject(Interactable _obj)
     {
-        if(!isGrabbing)
-        {
-            Tg_grab = _obj.GetComponent<GrabableItem>();
+        Tg_grab = _obj.GetComponent<GrabableItem>();
+        if (Tg_grab == null) Debug.Log("Error récupération target de grab");
 
-            if (Tg_grab == null) Debug.Log("Error récupération target de grab");
+        if (!Tg_grab.isPlank)
+        {
 
             joints.connectedBody = Tg_grab.rb;
             joints.connectedAnchor = Tg_grab.FindClosestPoint(transform.position);
@@ -87,15 +101,29 @@ public class Healer : MonoBehaviour
             line.enabled = true;
 
             isGrabbing = true;
-        }else
-        {
-            joints.enabled = false;
-            
-            isGrabbing = false;
-           line.enabled = false;
 
+            _obj.isInteractingWith = true;
+        }
+        else
+        {
+            relativJoints.connectedBody = Tg_grab.rb;
+            relativJoints.enabled = true;
+            isGrabbing = true;
+            _obj.isInteractingWith = true;
 
         }
+
+    }
+
+    void ReleaseObj(Interactable _obj)
+    {
+        joints.enabled = false;
+        relativJoints.enabled = false;
+
+        isGrabbing = false;
+        line.enabled = false;
+
+        _obj.isInteractingWith = false;
 
     }
 
