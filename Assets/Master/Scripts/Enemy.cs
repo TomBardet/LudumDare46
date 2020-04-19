@@ -16,6 +16,7 @@ public class Enemy : WarriorInteractable
     {
         animator = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
+        interestType = E_WarriorInterests.Enemy;
     }
 
     void OnDrawGizmosSelected()

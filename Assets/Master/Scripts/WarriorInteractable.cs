@@ -15,7 +15,7 @@ public enum E_WarriorInterests
 public abstract class WarriorInteractable : MonoBehaviour
 {
     public abstract void Interact();
-    public E_WarriorInterests interestType;
+    [HideInInspector]public E_WarriorInterests interestType;
 
     void OnTriggerEnter2D(Collider2D other)
     {
