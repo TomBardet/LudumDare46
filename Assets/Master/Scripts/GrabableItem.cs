@@ -15,6 +15,7 @@ public class GrabableItem : Interactable
     public Rigidbody2D rb;
     public bool isCarried;
     public bool isReleased;
+    public bool isPlank;
     Quaternion StartRot;
 
     private void Start()
