@@ -101,8 +101,12 @@ MonoBehaviour:
   hp: 1
   aggroRange: 2
   pack:
-  - {fileID: 5447759897513123956}
-  chargeSpeed: 0
+  - {fileID: 0}
+  chargeSpeed: 6
+  timeBetweenEachAttack: 1
+  heartPrefab: {fileID: 7850272781519844, guid: 2d486cacce908be489bafba9db213003,
+    type: 3}
+  layout: {fileID: 3434358853291696536}
 --- !u!61 &3809430598761060432
 BoxCollider2D:
   m_ObjectHideFlags: 0
