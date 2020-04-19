@@ -19,7 +19,11 @@ public abstract class WarriorInteractable : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "WarriorSight")
+        if (other.tag == "WarriorSight" && interestType != E_WarriorInterests.Sandwitch)//Sandswitch work on contact not on sight
             Warrior.instance.See(this);
+        else if (interestType == E_WarriorInterests.Sandwitch && other.tag == "Warrior")
+        {
+            Warrior.instance.See(this);
+        }
     }
 }

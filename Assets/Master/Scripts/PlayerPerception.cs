@@ -39,19 +39,29 @@ public class PlayerPerception : MonoBehaviour
         }
     }
 
-    bool InteractInput()
+    bool InteractInputDown()
     {
-        return Input.GetKeyDown(KeyCode.E);
+        return Input.GetKey(KeyCode.E);
+    }
+    bool InteractInputUp()
+    {
+        return Input.GetKeyUp(KeyCode.E);
     }
 
     void Interacting()
     {
         if(_interactable != null)
         {
-            if (_interactable.isInRange && InteractInput())
+            if (_interactable.isInRange && InteractInputDown())
             {
+                if (_interactable.isInteractingWith) return;
                 _interactable.Interact();
                 healer.Interact(_interactable.tag, _interactable);
+            }
+            else if(InteractInputUp())
+            {
+                _interactable.StopInteract();
+                healer.StopInteract(_interactable.tag, _interactable);
             }
         }
     }

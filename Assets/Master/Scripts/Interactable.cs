@@ -6,8 +6,10 @@ public abstract class Interactable : MonoBehaviour
 {
     public bool isInRange;
     public float triggerSize;
+    public bool isInteractingWith;
 
     public abstract void Interact();
+    public abstract void StopInteract();
 
     public Vector3 startsize;
     private void Awake()
