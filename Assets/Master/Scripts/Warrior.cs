@@ -122,7 +122,7 @@ public class Warrior : MonoBehaviour
             if (Vector2.Distance(transform.position, exit) > 1f)
             {
                 body.MovePosition((Vector2)transform.position + dir * Walkspeed * Time.deltaTime);
-                AngleSight(dir);
+                viewCone.right = (Vector3)exit - viewCone.position;
             }
         }
         else
