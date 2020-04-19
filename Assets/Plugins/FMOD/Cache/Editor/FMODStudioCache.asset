@@ -1,6 +1,28 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+<<<<<<< HEAD
+--- !u!114 &-8469856510464637294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/LvlBank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ben/Build/Desktop/LvlBank.bank
+  SubDir: 
+  lastModified: 637229129435062294
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-8001672616448430790
+=======
 --- !u!114 &-8453645218889269544
+>>>>>>> b413789fbcbf16e9c7556b5f6f0bf34a5bbb5a15
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -14,7 +36,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/Ben/Build/Desktop/Master.bank
   SubDir: 
+<<<<<<< HEAD
+  lastModified: 637229129435072258
+=======
   lastModified: 637228953001935644
+>>>>>>> b413789fbcbf16e9c7556b5f6f0bf34a5bbb5a15
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -33,12 +59,20 @@ MonoBehaviour:
   Path: event:/Music/MusicLVL
   guid: 98d7770c3199f14e86c5222a4b3c9e53
   Banks:
+<<<<<<< HEAD
+  - {fileID: -8469856510464637294}
+=======
   - {fileID: 3870085796215769541}
+>>>>>>> b413789fbcbf16e9c7556b5f6f0bf34a5bbb5a15
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
+<<<<<<< HEAD
+  - {fileID: 1195358124466064084}
+=======
   - {fileID: 7651077529603871003}
+>>>>>>> b413789fbcbf16e9c7556b5f6f0bf34a5bbb5a15
   MinDistance: 0
   MaxDistance: 0
   Length: 101250
@@ -132,7 +166,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/Ben/Build/Desktop/Master.strings.bank
   SubDir: 
+<<<<<<< HEAD
+  lastModified: 637229129435082230
+=======
   lastModified: 637228953002123579
+>>>>>>> b413789fbcbf16e9c7556b5f6f0bf34a5bbb5a15
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -196,6 +234,8 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+<<<<<<< HEAD
+=======
 --- !u!114 &-3117316723799182085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +254,7 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+>>>>>>> b413789fbcbf16e9c7556b5f6f0bf34a5bbb5a15
 --- !u!114 &-2082962525316868262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,6 +272,8 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+<<<<<<< HEAD
+=======
 --- !u!114 &-1702631894734498532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +311,7 @@ MonoBehaviour:
   - Name: 
     Value: 1076
   Exists: 1
+>>>>>>> b413789fbcbf16e9c7556b5f6f0bf34a5bbb5a15
 --- !u!114 &-5213453031203421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,9 +342,15 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
+<<<<<<< HEAD
+  - {fileID: -6759475560812255540}
+  - {fileID: -8469856510464637294}
+  - {fileID: -8001672616448430790}
+=======
   - {fileID: -916631320473242643}
   - {fileID: 191569948597586361}
   - {fileID: -7289545717761761439}
+>>>>>>> b413789fbcbf16e9c7556b5f6f0bf34a5bbb5a15
   EditorEvents:
   - {fileID: -6802434561072008967}
   - {fileID: -4177948719629594981}
@@ -308,6 +358,14 @@ MonoBehaviour:
   - {fileID: 2040353854595208191}
   EditorParameters: []
   MasterBanks:
+<<<<<<< HEAD
+  - {fileID: -8001672616448430790}
+  StringsBanks:
+  - {fileID: -6759475560812255540}
+  stringsBankWriteTime: 637229129435082230
+  cacheVersion: 3
+--- !u!114 &1195358124466064084
+=======
   - {fileID: -7289545717761761439}
   StringsBanks:
   - {fileID: -916631320473242643}
@@ -332,6 +390,7 @@ MonoBehaviour:
   FileSizes: []
   Exists: 1
 --- !u!114 &431352773560437117
+>>>>>>> b413789fbcbf16e9c7556b5f6f0bf34a5bbb5a15
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -347,6 +406,9 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+<<<<<<< HEAD
+  Exists: 1
+=======
   Exists: 0
 --- !u!114 &2040353854595208191
 MonoBehaviour:
@@ -468,6 +530,7 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+>>>>>>> b413789fbcbf16e9c7556b5f6f0bf34a5bbb5a15
 --- !u!114 &6497523161983253988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,7 +546,11 @@ MonoBehaviour:
   Path: event:/Ambiance/AmbianceLVL
   guid: baafdfc711d08b4e80262ea265112879
   Banks:
+<<<<<<< HEAD
+  - {fileID: -8469856510464637294}
+=======
   - {fileID: 3870085796215769541}
+>>>>>>> b413789fbcbf16e9c7556b5f6f0bf34a5bbb5a15
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
