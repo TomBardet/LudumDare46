@@ -202,7 +202,7 @@ MonoBehaviour:
   aggroRange: 3
   pack:
   - {fileID: 0}
-  chargeSpeed: 1
+  chargeSpeed: 6
   timeBetweenEachAttack: 1
   heartPrefab: {fileID: 7850272781519844, guid: 2d486cacce908be489bafba9db213003,
     type: 3}

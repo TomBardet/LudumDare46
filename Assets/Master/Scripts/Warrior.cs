@@ -106,16 +106,25 @@ public class Warrior : MonoBehaviour
             Tg_WalkTo = interest.transform;
         }
     }
+
     public void MoveToDoor()
     {
         //on vérifie si il n'as pas de tg walk to
         if(Tg_WalkTo == null)
         {
+            Vector2 dir;
+            if (transform.position.x < exit.x - 4)
+                dir = Vector2.right;
+            else if (transform.position.y > exit.y)
+                dir = Vector2.down;
+            else if (transform.position.y < exit.y)
+                dir = Vector2.up;
+            else
+                dir = (exit - (Vector2)transform.position).normalized;
             if (Vector2.Distance(transform.position, exit) > 1f)
             {
-                Vector2 dir = (exit - (Vector2)transform.position).normalized;
                 body.MovePosition((Vector2)transform.position + dir * Walkspeed * Time.deltaTime);
-                AngleSight(exit);
+                AngleSight(dir);
             }
         }
         else
