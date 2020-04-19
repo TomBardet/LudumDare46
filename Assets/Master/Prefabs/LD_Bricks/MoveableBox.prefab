@@ -113,9 +113,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInRange: 0
   triggerSize: 0.8
+  startsize: {x: 0, y: 0, z: 0}
   WeightDefault: 150
   WeightCarry: 10
   GrabDistance: 0.3
+  ResetRotSpeed: 5
   grabpoints:
   - {fileID: 4052178186919925116}
   - {fileID: 2247269906365733082}
@@ -123,6 +125,7 @@ MonoBehaviour:
   - {fileID: 7094197910293185163}
   rb: {fileID: 0}
   isCarried: 0
+  isReleased: 0
 --- !u!1 &3392312549529669420
 GameObject:
   m_ObjectHideFlags: 0
