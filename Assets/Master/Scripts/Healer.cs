@@ -27,7 +27,27 @@ public class Healer : MonoBehaviour
             UpdateRope();
         }
     }
+    public void Heal()
+    {
+        if (currentMana >= healCost)
+        {
+            currentMana -= healCost;
+            Warrior.instance.ReceiveHeal(1);
+            StartCoroutine(RegenDelay());
+        }
+    }
 
+    IEnumerator RegenDelay()
+    {
+        float delay = manaRegenDelay;
+        isRegenerating = false;
+        while (delay > 0)
+        {
+            delay -= 1 * Time.deltaTime;
+            yield return null;
+        }
+        isRegenerating = true;
+    }
     public void Interact(string tag, Interactable _obj)
     {
         switch(tag)
