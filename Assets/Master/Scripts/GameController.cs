@@ -32,6 +32,7 @@ public class GameController : MonoBehaviour
     public GameObject dialogue2;
     float TimeKey;
     public float MaxTimeKey;
+    public GameObject MenuObj;
     // Start is called before the first frame update
     void Start()
     {
@@ -72,6 +73,7 @@ public class GameController : MonoBehaviour
     /******************************** GAME PHASE ***************************************/
     public void OnPlay()
     {
+        MenuObj.SetActive(false);
         UIController.OnPlayPress();
         MusicController.instance.musicMenu.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         MusicController.instance.musicLvl.setParameterByName("Player", 0);

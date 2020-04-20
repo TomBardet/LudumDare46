@@ -37,7 +37,7 @@ public class Chest : WarriorInteractable
     IEnumerator Explode()
     {
         yield return new WaitForSeconds(1f);
-        Warrior.instance.TakeDamage(10, null);
         MusicController.instance.PlayAnSFX(MusicController.instance.ChestExplosion);
+        Warrior.instance.TakeDamage(200, null);
     }
 }
