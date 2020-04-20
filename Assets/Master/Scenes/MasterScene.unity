@@ -1715,10 +1715,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LevelContainer: {fileID: 722619823}
   CurentLevel: 0
-  LevelsNumber: 10
+  LevelsNumber: 16
   LevelList:
+  - Elliot01
+  - Elliot02
+  - Elliot03
+  - Elliot04
+  - Elliot05
+  - Elliot06
+  - LD_Tom01
   - LD_Tom02
-  - LD_Tom02
+  - LD_Tom03
+  - LD_Tom04
+  - LD_Tom05
+  - Lvl_Nico_01
+  - Lvl_Nico_02
+  - Lvl_Nico_03
+  - Lvl_Nico_04
+  - Lvl_Nico_05
   Entrance: {fileID: 0}
 --- !u!1 &1705139994
 GameObject:
