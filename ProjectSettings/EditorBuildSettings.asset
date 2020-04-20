@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Elliot/LD Elliot 01.unity
+    path: Assets/Elliot/LD Elliot x.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/BastienFolder/Scenes/Level1.unity
