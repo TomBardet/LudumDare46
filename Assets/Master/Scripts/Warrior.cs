@@ -249,7 +249,7 @@ public class Warrior : MonoBehaviour
             while (target.hp > 0)
             {
                 animator.SetBool("Attacking", true);
-                target.TakeDamage();
+                target.TakeDamage(1);
                 //Debug.Log("Inflict Dmg");
                 yield return new WaitForSeconds(timeBetweenEachShot);
             }
