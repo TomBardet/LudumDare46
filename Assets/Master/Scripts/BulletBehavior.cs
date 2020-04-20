@@ -23,6 +23,10 @@ public class BulletBehavior : MonoBehaviour
             Warrior.instance.TakeDamage(500, null);
         else if (collision.gameObject.tag == "Player")
             Healer.instance.Dead();
+        else if (collision.gameObject.GetComponent<Enemy>())
+        {
+            collision.gameObject.GetComponent<Enemy>().TakeDamage(50);
+        }
         Destroy(gameObject);
     }
 

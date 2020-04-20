@@ -2566,4 +2566,7 @@ ScriptedImporter:
   textureAssetName: Goblin_complet_colo Texture
   prefabAssetName: Goblin_complet_colo Prefab
   spriteLibAssetName: Goblin_complet_colo Sprite Lib
-  secondarySpriteTextures: []
+  secondarySpriteTextures:
+  - name: _NormalMap
+    texture: {fileID: -3825779395770454475, guid: 147e66e9d7550d6428f8436ee7c21dbf,
+      type: 3}

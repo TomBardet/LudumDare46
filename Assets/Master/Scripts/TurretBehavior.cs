@@ -71,7 +71,7 @@ public class TurretBehavior : MonoBehaviour
             b.transform.parent = transform;
             b.GetComponent<BulletBehavior>().speed = bulletSpeed;
             anim.SetBool("isFiring", true);
-
+            MusicController.instance.PlayAnSFX(MusicController.instance.TurretShot);
         }
         else
         {

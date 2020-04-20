@@ -23,7 +23,7 @@ public class Healer : MonoBehaviour
     Slider manaBar;
     float currentMana;
     bool isRegenerating;
-
+    public bool isOnPlank;
     [HideInInspector]public bool dead;
 
     void Awake()
@@ -40,7 +40,6 @@ public class Healer : MonoBehaviour
     void Start()
     {
         manaBar = UIRef.instance.manaBar;
-        manaBar.value = currentMana / manaMax;
     }
 
     private void Update()
@@ -64,6 +63,7 @@ public class Healer : MonoBehaviour
             Warrior.instance.ReceiveHeal(healEffect);
             StopAllCoroutines();
             StartCoroutine(RegenDelay());
+            MusicController.instance.PlayAnSFX(MusicController.instance.Heal);
         }
     }
 
@@ -73,7 +73,7 @@ public class Healer : MonoBehaviour
         if(!dead)
         {
             dead = true;
-            Invoke("Defeat", 2f);
+            MusicController.instance.PlayAnSFX(MusicController.instance.HealerDeath);
         }
     }
 
@@ -99,6 +99,7 @@ public class Healer : MonoBehaviour
         switch(tag)
         {
             case "Moveable":
+                Debug.Log("interact");
                 AttachToObject(_obj);
                 break;
             default:
