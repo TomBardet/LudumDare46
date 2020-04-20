@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
     public UIController UIController;
     private MusicController MusicController;
     private LevelController LevelController;
+
     [Header("KeyHole")]
     public float KeyHoleSpeed = 200;
     public Rigidbody2D KeyHole;
