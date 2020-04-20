@@ -546,13 +546,14 @@ MonoBehaviour:
   viewCone: {fileID: 678927374}
   scanSpeed: 1.5
   scanDuration: 1.5
-  pauseAfterscan: 2
+  pauseAfterscan: 1
   Tg_WalkTo: {fileID: 0}
   chargeSpeed: 20
   pauseAfterMoveTo: 2
   Walkspeed: 4.81
   enemy: {fileID: 0}
   timeBetweenEachShot: 1
+  animator: {fileID: 0}
   AI: 0
 --- !u!1001 &8705106033016150215
 PrefabInstance:
