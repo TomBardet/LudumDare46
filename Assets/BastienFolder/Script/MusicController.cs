@@ -9,10 +9,13 @@ public class MusicController : MonoBehaviour
     [FMODUnity.EventRef]
     public string MusicLvl = "";
     public FMOD.Studio.EventInstance musicLvl;
+
     [FMODUnity.EventRef]
     public string MusicMenu = "";
     public FMOD.Studio.EventInstance musicMenu;
-    
+
+    [Header("-------------------- Parameters -------------------")]
+    public int FightLife = 100;
 
     [Header("----------------------- SFX -----------------------")]
     [FMODUnity.EventRef]
@@ -21,7 +24,12 @@ public class MusicController : MonoBehaviour
     private void Start() {
         musicLvl = FMODUnity.RuntimeManager.CreateInstance(MusicLvl);
         musicMenu = FMODUnity.RuntimeManager.CreateInstance(MusicMenu);
-	musicMenu.start();
+	    musicMenu.start();
+    }
+
+    public void SetLifeParameters(int life) {
+        FightLife = life;
+        musicLvl.setParameterByName("Life",life);
     }
 
     public void PlayAnSFX(string SfxPath) {

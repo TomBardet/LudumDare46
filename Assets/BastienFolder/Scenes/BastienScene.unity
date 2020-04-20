@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 0.5283019, g: 0.23673905, b: 0.23673905, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -368,7 +368,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &746175353
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1123,7 +1123,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1257324462
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1584,7 +1584,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MusicLvl: event:/Music/MusicLVL
   MusicMenu: event:/Music/MusicMenu
-  Resurection: event:/SFX/Resurection
+  FightLife: 100
+  Resurection: 
 --- !u!114 &1494795943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1880,7 +1881,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2090091735
 RectTransform:
   m_ObjectHideFlags: 0
