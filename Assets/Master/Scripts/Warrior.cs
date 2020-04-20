@@ -117,7 +117,6 @@ public class Warrior : MonoBehaviour
     {
         //on vérifie si il n'as pas de tg walk to
         animator.SetInteger("Movement", 1);
-        
         if (Tg_WalkTo == null)
         {
             Vector2 dir;
@@ -212,6 +211,7 @@ public class Warrior : MonoBehaviour
         hp += heal;
         if (hp > maxHp)
             hp = maxHp;
+        healthBar.value = hp / maxHp;
     }
 
     public void Fight()
