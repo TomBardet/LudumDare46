@@ -28,12 +28,12 @@ public class Warrior : MonoBehaviour
     [Header("Fighting")]
     public Enemy enemy;
     public float timeBetweenEachShot = 1f;
-    //public int AttackDamage = 10;//On devrait laisser 1 vis a vis des gobelins non ? Sans variable, en dur
+    //public int AttackDamage = 10;//On devrait laisser 1 vis a vis des gobelins non ? Sans variable, en dur
 
-    float hp;
+    float hp;
     Rigidbody2D body;
     Animator animator;
-    
+
     E_WarriorInterests currentInterests;
     bool busy = false;
     Vector2 exit;
@@ -42,7 +42,7 @@ public class Warrior : MonoBehaviour
     float TgAngle = 0f;
 
     public Slider healthBar;
-    public enum WarriorAI {scanning, moveToDoor, moveToTarget, fight, die};
+    public enum WarriorAI { scanning, moveToDoor, moveToTarget, fight, die };
     public WarriorAI AI;
 
     Barks barks;
@@ -53,7 +53,7 @@ public class Warrior : MonoBehaviour
             instance = this;
         else
             Destroy(this);
-        
+
         hp = maxHp;
         body = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -75,9 +75,13 @@ public class Warrior : MonoBehaviour
 
     void Update()
     {
+        if (AI == WarriorAI.scanning && enemy != null)
+        {
+            AI = WarriorAI.fight;
+        }
         if (!busy)
         {
-            switch(AI)
+            switch (AI)
             {
                 case WarriorAI.scanning:
                     Scan();
@@ -92,14 +96,14 @@ public class Warrior : MonoBehaviour
                     if (enemy != null)
                         Fight();
                     break;
-                case WarriorAI.die: // peut on l'enelver et simplement call die dans take damage comme un event ?
-                    break;
+                case WarriorAI.die: // peut on l'enelver et simplement call die dans take damage comme un event ?
+                    break;
             }
         }
     }
 
-    //appelé si un obj dans le champ de vision
-    public void See(WarriorInteractable interest)
+    //appelé si un obj dans le champ de vision
+    public void See(WarriorInteractable interest)
     {
         if (interest.interestType > currentInterests)
         {
@@ -110,8 +114,9 @@ public class Warrior : MonoBehaviour
 
     public void MoveToDoor()
     {
-        //on vérifie si il n'as pas de tg walk to
-        if(Tg_WalkTo == null)
+        //on vérifie si il n'as pas de tg walk to
+        animator.SetInteger("Movement", 1);
+        if (Tg_WalkTo == null)
         {
             Vector2 dir;
             if (transform.position.x < exit.x - 4)
@@ -125,20 +130,20 @@ public class Warrior : MonoBehaviour
             if (Vector2.Distance(transform.position, exit) > 1f)
             {
                 body.MovePosition((Vector2)transform.position + dir * Walkspeed * Time.deltaTime);
-                viewCone.right = (Vector3)exit - viewCone.position;
-            }
+                viewCone.right = dir;//(Vector3)exit - viewCone.position;
+            }
         }
         else
         {
             AI = WarriorAI.moveToTarget;
         }
-        
+
     }
     public void MoveToTg()
     {
         busy = true;
         WarriorInteractable newDestination = Tg_WalkTo.GetComponent<WarriorInteractable>();
-        
+
         if (newDestination.interestType == E_WarriorInterests.Sandwitch)
             barks.ScreamBark(E_Barks.Sandswitch);
         else if (newDestination.interestType == E_WarriorInterests.Chest)
@@ -154,42 +159,51 @@ public class Warrior : MonoBehaviour
     IEnumerator WalkToTarget()
     {
         AngleSight(destination.transform.position);
+        animator.SetInteger("Movement", 1);
         while (Vector2.Distance(transform.position, destination.transform.position) > 2f)
         {
             Vector2 dir = (destination.transform.position - transform.position).normalized;
-            body.MovePosition((Vector2)transform.position + dir * chargeSpeed * Time.deltaTime); // *2 because when he see something he run
-            yield return null;
+            body.MovePosition((Vector2)transform.position + dir * chargeSpeed * Time.deltaTime); // *2 because when he see something he run
+            yield return null;
         }
+        animator.SetInteger("Movement", 0);
         destination.Interact();
-        busy = false;
-        Tg_WalkTo = null;
-        //Après le walkTo, on fait un scan sauf s'il est en combat:
-        if(AI != WarriorAI.fight)
+        //Après le walkTo, on fait un scan sauf s'il est en combat:
+        if (AI != WarriorAI.fight && enemy == null)
         {
-            AI = WarriorAI.scanning;
+            yield return new WaitForSeconds(pauseAfterMoveTo); //3 sec after(Animation etc), the warrior start to walk to the door again
+            AI = WarriorAI.scanning;
+            Debug.Log("waited " + pauseAfterMoveTo + " sec, now we are scanning and enem = " + enemy);
             currentInterests = 0;
-            yield return new WaitForSeconds(pauseAfterMoveTo); //3 sec after(Animation etc), the warrior start to walk to the door again
         }
         walking = null;
+        busy = false;
+        Tg_WalkTo = null;
     }
 
     public void GoAfk()
     {
-        animator.SetBool("Eating", true);
+        animator.SetBool("Afk", true);
     }
 
-    public void TakeDamage(int damage, Enemy enemy)
+    public void TakeDamage(int damage, Enemy p_enemy)
     {
         hp -= damage;
         healthBar.value = hp / maxHp;
         if (hp <= 0)
         {
             hp = 0;
+            StopAllCoroutines();
+            animator.SetBool("Dead", true);
             GameManager.Defeat();
         }
-        if (currentInterests == E_WarriorInterests.None && enemy != null)
+        if (currentInterests == E_WarriorInterests.None && p_enemy != null)
         {
             See(enemy);
+        }
+        else if (p_enemy != null)//If warrior is busy with a chest, but being hitted by a gobelin, he prepare to fight when hes done looting
+        {
+            enemy = p_enemy;
         }
     }
 
@@ -202,6 +216,7 @@ public class Warrior : MonoBehaviour
 
     public void Fight()
     {
+        Debug.Log("Fighting");
         busy = true;
         StopAllCoroutines();
         StartCoroutine(StartBattle(enemy.pack));
@@ -210,23 +225,24 @@ public class Warrior : MonoBehaviour
     public IEnumerator StartBattle(List<Enemy> pack)
     {
         busy = true;
-        for (int i = 0; i< pack.Count; i++)
+        for (int i = 0; i < pack.Count; i++)
         {
             Enemy target = pack[i];
-            //Debug.Log("Fighting" + target);
-            while(target.hp > 0)
+            //Debug.Log("Fighting" + target);
+            while (target.hp > 0)
             {
+                animator.SetBool("Attacking", true);
                 target.TakeDamage();
-                //Debug.Log("Inflict Dmg");
-                yield return new WaitForSeconds(timeBetweenEachShot);
+                //Debug.Log("Inflict Dmg");
+                yield return new WaitForSeconds(timeBetweenEachShot);
             }
             Debug.Log("Kill");
         }
-        //Debug.Log("End of Pack");
-        busy = false;
+        //Debug.Log("End of Pack");
+        busy = false;
 
-        //à la fin d'un combat, retour au scan:
-        AI = WarriorAI.scanning;
+        //à la fin d'un combat, retour au scan:
+        AI = WarriorAI.scanning;
     }
 
     void AngleSight(Vector2 target)
@@ -245,9 +261,10 @@ public class Warrior : MonoBehaviour
 
     public IEnumerator ScanCoroutine()
     {
+        animator.SetInteger("Movement", 0);
         Vector2 tg1 = (Vector2)transform.position + Vector2.up;
         Vector2 tg2 = (Vector2)transform.position - Vector2.up;
-        
+
         barks.ScreamBark(E_Barks.Scanning);
         var timer = scanDuration;
         while (timer > 0)
@@ -256,6 +273,10 @@ public class Warrior : MonoBehaviour
 
             RotateToward(tg1);
             yield return new WaitForEndOfFrame();
+            if (enemy != null)
+            {
+                yield break;
+            }
         }
 
         timer = scanDuration * 2;
@@ -265,17 +286,21 @@ public class Warrior : MonoBehaviour
 
             RotateToward(tg2);
             yield return new WaitForEndOfFrame();
+            if (enemy != null)
+            {
+                yield break;
+            }
         }
         yield return new WaitForSeconds(pauseAfterscan);
 
         busy = false;
-        //si il a trouvé une target
-        if(Tg_WalkTo != null)
+        //si il a trouvé une target
+        if (Tg_WalkTo != null)
         {
             AI = WarriorAI.moveToTarget;
         }
-        else //si il n'a rien trouvé il se dirige vers la porte
-        {
+        else //si il n'a rien trouvé il se dirige vers la porte
+        {
             AI = WarriorAI.moveToDoor;
         }
     }
@@ -287,4 +312,19 @@ public class Warrior : MonoBehaviour
         TgAngle = Mathf.MoveTowardsAngle(TgAngle, AngleDeg, scanSpeed);
         viewCone.rotation = Quaternion.Euler(0, 0, TgAngle);
     }
+
+    // void SeeClosestEnemy()
+    // {
+    //     //Should be enemy close
+    //     Collider2D[] closeEnemies = Physics2D.OverlapCircleAll(transform.position, 3f, LayerMask.GetMask("WarriorInteractable"));
+    //     foreach (Collider2D col in closeEnemies)
+    //     {
+    //         if (col.GetComponent<Enemy>())
+    //         {
+    //             See(col.GetComponent<WarriorInteractable>());
+    //             return ;
+    //         }
+    //     }
+    //     Debug.Log("Couldnt find any close enemy in a fight ?");
+    // }
 }

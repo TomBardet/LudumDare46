@@ -5,10 +5,12 @@ using UnityEngine;
 public class UIController : MonoBehaviour
 {
     private Animator UIAnimator;
+    LevelController LC;
     // Start is called before the first frame update
     void Start()
     {
         UIAnimator = GetComponent<Animator>();
+        LC = FindObjectOfType<LevelController>();
     }
 
     public void OnPlayPress() {
@@ -26,5 +28,6 @@ public class UIController : MonoBehaviour
     public void TriggerGameStart() {
         UIAnimator.SetTrigger("GameStart");
         Debug.Log("Animation pétage de porte");
+        LC.Entrance.PlayEntrance();
     }
 }

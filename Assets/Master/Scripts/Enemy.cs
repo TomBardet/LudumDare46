@@ -15,7 +15,7 @@ public class Enemy : WarriorInteractable
     bool aggro = false;
     Animator animator;
     Rigidbody2D body;
-    
+
     void Awake()
     {
         animator = GetComponent<Animator>();
@@ -28,9 +28,9 @@ public class Enemy : WarriorInteractable
     }
 
     void OnDrawGizmosSelected()
-	{
-		Gizmos.color = Color.yellow;
-		Gizmos.DrawWireSphere(transform.position, aggroRange - 1);
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, aggroRange - 1);
     }
 
     public override void Interact()
@@ -39,24 +39,24 @@ public class Enemy : WarriorInteractable
         Warrior.instance.AI = Warrior.WarriorAI.fight;
     }
 
-    void Update() 
-    { 
-        if (!aggro && Vector2.Distance(transform.position, Warrior.instance.transform.position) < aggroRange) 
-        { 
-            foreach(Enemy enemy in pack) 
-                enemy.Aggro(); 
-        } 
-    } 
- 
-    public void Aggro() 
-    { 
-        aggro = true; 
-        StartCoroutine(WalkToTarget(Warrior.instance.transform)); 
-    } 
+    void Update()
+    {
+        if (!aggro && Vector2.Distance(transform.position, Warrior.instance.transform.position) < aggroRange)
+        {
+            foreach (Enemy enemy in pack)
+                enemy.Aggro();
+        }
+    }
 
+    public void Aggro()
+    {
+        aggro = true;
+        StartCoroutine(WalkToTarget(Warrior.instance.transform));
+    }
 
     IEnumerator WalkToTarget(Transform warrior)
     {
+        animator.SetInteger("Movement", 1);
         while (Vector2.Distance(transform.position, warrior.transform.position) > 2f)
         {
             Vector2 dir = (warrior.transform.position - transform.position).normalized;
@@ -64,20 +64,22 @@ public class Enemy : WarriorInteractable
             yield return null;
         }
         yield return new WaitForSeconds(0.1f);
+        animator.SetInteger("Movement", 0);
         Attack();
     }
 
     public void TakeDamage()
     {
         if (!aggro)
-            foreach(Enemy enemy in pack) 
+            foreach (Enemy enemy in pack)
                 enemy.Aggro();
         hp -= 1;
         if (hpLayout.childCount > 0)
             Destroy(hpLayout.GetChild(0).gameObject);
         if (hp <= 0)
         {
-            StopAllCoroutines();    
+            StopAllCoroutines();
+            animator.SetBool("Dead", true);
             Invoke("Death", 1f);
         }
         else
@@ -86,6 +88,7 @@ public class Enemy : WarriorInteractable
 
     void Attack()
     {
+        animator.SetBool("Attacking", true);
         Warrior.instance.TakeDamage(10, this);
         StartCoroutine(AttackDelay());
     }
@@ -93,11 +96,12 @@ public class Enemy : WarriorInteractable
     IEnumerator AttackDelay()
     {
         yield return new WaitForSeconds(2f);
-        StartCoroutine(WalkToTarget(Warrior.instance.transform)); // If Warrior is going for loot and ignore mob, they have to walk again to catch him
-    }
+        StartCoroutine(WalkToTarget(Warrior.instance.transform)); // If Warrior is going for loot and ignore mob, they have to walk again to catch him
+    }
 
     void Death()
     {
         Destroy(gameObject);
     }
 }
+

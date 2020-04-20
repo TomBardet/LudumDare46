@@ -4,15 +4,6 @@ using UnityEngine;
 
 public class DoorExit : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Transform Tg_Door;
+    
 }
