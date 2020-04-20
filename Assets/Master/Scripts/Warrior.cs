@@ -33,6 +33,7 @@ public class Warrior : MonoBehaviour
     float hp;
     Rigidbody2D body;
     public Animator animator;
+    bool dead = false;
 
     E_WarriorInterests currentInterests;
     bool busy = false;
@@ -199,12 +200,14 @@ public class Warrior : MonoBehaviour
     {
         hp -= damage;
         healthBar.value = hp / maxHp;
-        if (hp <= 0)
+        if (hp <= 0 && !dead)
         {
             hp = 0;
             StopAllCoroutines();
             animator.SetBool("Dead", true);
+
             Invoke("Dead", 2f);
+            dead = true;
         }
         if (currentInterests == E_WarriorInterests.None && p_enemy != null)
         {
