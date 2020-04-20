@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Healer : MonoBehaviour
 {
+    public static Healer instance;
     SpringJoint2D joints;
     RelativeJoint2D relativJoints;
     LineRenderer line;
@@ -24,6 +25,7 @@ public class Healer : MonoBehaviour
 
     void Awake()
     {
+        instance = this;
         joints = GetComponent<SpringJoint2D>();
         relativJoints = GetComponent<RelativeJoint2D>();
         line = GetComponent<LineRenderer>();
@@ -125,7 +127,7 @@ public class Healer : MonoBehaviour
 
     }
 
-    void ReleaseObj(Interactable _obj)
+    public void ReleaseObj(Interactable _obj)
     {
         joints.enabled = false;
         relativJoints.enabled = false;
