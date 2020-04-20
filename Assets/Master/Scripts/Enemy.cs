@@ -111,5 +111,11 @@ public class Enemy : WarriorInteractable
         MusicController.instance.PlayAnSFX(MusicController.instance.GoblinDeath);
         Destroy(gameObject);
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Bullet")
+            TakeDamage(50);
+    }
 }
 
