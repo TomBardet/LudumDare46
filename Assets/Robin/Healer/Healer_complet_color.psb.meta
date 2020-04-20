@@ -2796,6 +2796,6 @@ ScriptedImporter:
   prefabAssetName: Healer_complet_color Prefab
   spriteLibAssetName: Healer_complet_color Sprite Lib
   secondarySpriteTextures:
-  - name: healer
+  - name: _NormalMap
     texture: {fileID: -7004474155604517678, guid: a8dad921402696f45bfd78dc26a4ed7a,
       type: 3}
