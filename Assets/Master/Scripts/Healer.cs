@@ -19,7 +19,7 @@ public class Healer : MonoBehaviour
     public float manaRegenPerSec;
     public float manaRegenDelay;
     public float healCost;
-    public float healEffect;
+    public int healEffect;
     Slider manaBar;
     float currentMana;
     bool isRegenerating;
