@@ -58,7 +58,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 499
   m_TargetDisplay: 0
 --- !u!114 &82322960445102714
 MonoBehaviour:
@@ -256,8 +256,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 0.4
-  m_fontSizeBase: 0.4
+  m_fontSize: 0.6
+  m_fontSizeBase: 0.6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -403,6 +403,7 @@ MonoBehaviour:
   healEffect: 0
   isOnPlank: 0
   dead: 0
+  barks: {fileID: 0}
 --- !u!114 &5206768336939386288
 MonoBehaviour:
   m_ObjectHideFlags: 0

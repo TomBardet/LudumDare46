@@ -42,6 +42,8 @@ public class Healer : MonoBehaviour
     void Start()
     {
         manaBar = UIRef.instance.manaBar;
+        currentMana = manaMax;
+        manaBar.value = currentMana / manaMax;
     }
 
     private void Update()
