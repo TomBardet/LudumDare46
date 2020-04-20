@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1230,6 +1230,18 @@ Transform:
   m_Father: {fileID: 253974380}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &442746020 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5447759897513123956, guid: e94f18ca0a2a8cf46a05e720f8658bf7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2040936971}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de07c366b83733f4daa88cdb320f0b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &475293643
 GameObject:
   m_ObjectHideFlags: 0
@@ -5025,6 +5037,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goblin (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5447759897513123956, guid: e94f18ca0a2a8cf46a05e720f8658bf7,
+        type: 3}
+      propertyPath: pack.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447759897513123956, guid: e94f18ca0a2a8cf46a05e720f8658bf7,
+        type: 3}
+      propertyPath: pack.Array.data[0]
+      value: 
+      objectReference: {fileID: 442746020}
+    - target: {fileID: 5447759897513123956, guid: e94f18ca0a2a8cf46a05e720f8658bf7,
+        type: 3}
+      propertyPath: pack.Array.data[1]
+      value: 
+      objectReference: {fileID: 2035171595}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e94f18ca0a2a8cf46a05e720f8658bf7, type: 3}
 --- !u!4 &1760261426 stripped
@@ -5977,6 +6004,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2030381331}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2035171595 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5447759897513123956, guid: e94f18ca0a2a8cf46a05e720f8658bf7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1760261425}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de07c366b83733f4daa88cdb320f0b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2040936971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6044,6 +6083,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Goblin (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5447759897513123956, guid: e94f18ca0a2a8cf46a05e720f8658bf7,
+        type: 3}
+      propertyPath: pack.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5447759897513123956, guid: e94f18ca0a2a8cf46a05e720f8658bf7,
+        type: 3}
+      propertyPath: pack.Array.data[0]
+      value: 
+      objectReference: {fileID: 442746020}
+    - target: {fileID: 5447759897513123956, guid: e94f18ca0a2a8cf46a05e720f8658bf7,
+        type: 3}
+      propertyPath: pack.Array.data[1]
+      value: 
+      objectReference: {fileID: 2035171595}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e94f18ca0a2a8cf46a05e720f8658bf7, type: 3}
 --- !u!4 &2040936972 stripped
