@@ -148,6 +148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5848506301560552850}
   - component: {fileID: 3251635731516272705}
+  - component: {fileID: 8018768370177065777}
   m_Layer: 0
   m_Name: Killzone
   m_TagString: Untagged
@@ -186,6 +187,49 @@ MonoBehaviour:
   isActive: 0
   anim: {fileID: 3185424334800843172}
   trigger: {fileID: 8931670319005527388}
+--- !u!114 &8018768370177065777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5848506301560552853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: e782d2a11684a894b9d28bec73915e42, type: 2}
+    - {fileID: 11400000, guid: b5a9c7b664517364994ecb79a25fa774, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3251635731516272705}
+          m_MethodName: setInactive
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 3251635731516272705}
+          m_MethodName: setActive
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5848506302947612298
 GameObject:
   m_ObjectHideFlags: 0
