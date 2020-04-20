@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Healer : MonoBehaviour
 {
+    public static Healer instance;
     SpringJoint2D joints;
     RelativeJoint2D relativJoints;
     LineRenderer line;
@@ -13,24 +14,29 @@ public class Healer : MonoBehaviour
     public GrabableItem Tg_grab;
     public Vector2 offsetRope;
 
-    public Slider manaBar;
+
     public float manaMax;
     public float manaRegenPerSec;
     public float manaRegenDelay;
     public float healCost;
+    Slider manaBar;
     float currentMana;
     bool isRegenerating;
 
     void Awake()
     {
+        instance = this;
         joints = GetComponent<SpringJoint2D>();
         relativJoints = GetComponent<RelativeJoint2D>();
         line = GetComponent<LineRenderer>();
         joints.enabled = false;
         line.enabled = false;
-
+        manaBar = UIRef.instance.manaBar;
         currentMana = manaMax;
     }
+
+    void Start()
+    {}
 
     private void Update()
     {
@@ -42,6 +48,8 @@ public class Healer : MonoBehaviour
         if (isRegenerating)
             currentMana += Time.deltaTime * manaRegenPerSec;
         manaBar.value = currentMana / manaMax;
+        if (Input.GetKeyDown(KeyCode.Space))
+            Heal();
     }
     public void Heal()
     {
@@ -119,7 +127,7 @@ public class Healer : MonoBehaviour
 
     }
 
-    void ReleaseObj(Interactable _obj)
+    public void ReleaseObj(Interactable _obj)
     {
         joints.enabled = false;
         relativJoints.enabled = false;

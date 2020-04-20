@@ -19,7 +19,10 @@ public class LevierBehavior : Interactable
     public override void Interact()
     {
         if (isInteractingWith) return;
-        if(Power)
+
+        Power = !Power;
+
+        if (Power)
         {
             isInteractingWith = true;
             if (TimelinePowerOn == null) Debug.Log("Pas de timeline power on !");
@@ -34,7 +37,6 @@ public class LevierBehavior : Interactable
             TimelinePowerOff.Play();
         }
 
-        Power = !Power;
         anim.SetTrigger("interact");
     }
 

@@ -15,6 +15,8 @@ public class Chest : WarriorInteractable
     {
         Debug.Log("Opening loot chest !");
         interestType = E_WarriorInterests.EmptyChest;
+        if (Healer.instance.Tg_grab == GetComponent<GrabableItem>())
+            Healer.instance.ReleaseObj(Healer.instance.Tg_grab);
         if (trapped)
             StartCoroutine(Explode());
     }

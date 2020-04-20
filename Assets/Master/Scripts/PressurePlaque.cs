@@ -29,9 +29,13 @@ public class PressurePlaque : MonoBehaviour
 
             if (TimelinePowerOn == null) Debug.Log("Pas de timeline power on !");
 
+            TimelinePowerOn.time = 0;
+            TimelinePowerOff.Stop();
             TimelinePowerOn.Play();
+            Debug.Log("playd");
+
         }
-        
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -44,7 +48,11 @@ public class PressurePlaque : MonoBehaviour
 
             if (TimelinePowerOff == null) Debug.Log("Pas de timeline power off !");
 
+            TimelinePowerOff.time = 0;
+            TimelinePowerOn.Stop();
+
             TimelinePowerOff.Play();
+            Debug.Log("play");
         }
     }
 

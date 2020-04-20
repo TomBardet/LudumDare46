@@ -6,6 +6,7 @@ public class Enemy : WarriorInteractable
 {
     public int hp;
     public float aggroRange;
+    public int damage;
     public List<Enemy> pack;
     public float chargeSpeed;
 
@@ -41,7 +42,7 @@ public class Enemy : WarriorInteractable
 
     void Update()
     {
-        if (!aggro && Vector2.Distance(transform.position, Warrior.instance.transform.position) < aggroRange)
+        if (Warrior.instance && !aggro && Vector2.Distance(transform.position, Warrior.instance.transform.position) < aggroRange)
         {
             foreach (Enemy enemy in pack)
                 enemy.Aggro();
@@ -89,7 +90,7 @@ public class Enemy : WarriorInteractable
     void Attack()
     {
         animator.SetBool("Attacking", true);
-        Warrior.instance.TakeDamage(10, this);
+        Warrior.instance.TakeDamage(damage, this);
         StartCoroutine(AttackDelay());
     }
 
