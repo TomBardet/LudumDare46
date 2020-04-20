@@ -1764,8 +1764,8 @@ MonoBehaviour:
   CurentLevel: 0
   LevelsNumber: 10
   LevelList:
-  - LD_Tom02
   - LD_Tom04
+  - LD_Tom02
   Entrance: {fileID: 0}
 --- !u!1 &1705139994
 GameObject:

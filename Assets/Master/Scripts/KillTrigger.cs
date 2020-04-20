@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class KillTrigger : MonoBehaviour
 {
+    public bool isActive;
+
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Trigger + " + collision.gameObject.tag + " its = " + collision.gameObject.name);
+
         if (collision.gameObject.tag == "Warrior")
-            Warrior.instance.TakeDamage(500, null);
+        {
+            if (!Warrior.instance.isOnPlank) Warrior.instance.TakeDamage(500, null);
+        }
         else if (collision.gameObject.tag == "Player")
-            Healer.instance.Dead();
+        {
+            if (!Healer.instance.isOnPlank)
+                Healer.instance.Dead();
+        }
         else if (collision.gameObject.GetComponent<Enemy>())
         {
             collision.gameObject.GetComponent<Enemy>().TakeDamage(50);
         }
     }
+
+
 }

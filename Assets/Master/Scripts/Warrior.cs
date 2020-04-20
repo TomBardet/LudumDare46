@@ -48,6 +48,7 @@ public class Warrior : MonoBehaviour
     public WarriorAI AI;
 
     Barks barks;
+    public bool isOnPlank;
 
     void Awake()
     {

@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Master/Scenes/SampleSceneDimanche.unity
     guid: eaaa2c563e87c6e4abf7fcb6eb438d9e
+  - enabled: 1
+    path: Assets/Master/Scenes/LD_Tom01.unity
+    guid: e779491b751628e48a8234f691ddff7d
   m_configObjects: {}
