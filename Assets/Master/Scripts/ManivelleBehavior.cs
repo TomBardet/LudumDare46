@@ -13,6 +13,7 @@ public class ManivelleBehavior : Interactable
     public PlayableDirector TimelineManivelle;
     bool used;
     public GameObject manivelleImg;
+    private FMOD.Studio.PLAYBACK_STATE playbackState;
     public override void Interact()
     {
         used = true;
@@ -22,6 +23,12 @@ public class ManivelleBehavior : Interactable
 
             //animation de tourner lentement:
             manivelleImg.transform.Rotate(new Vector3(0, 0, 1), -1);
+        }
+        MusicController.instance.manivelle.getPlaybackState(out playbackState);
+        
+        if (playbackState != FMOD.Studio.PLAYBACK_STATE.PLAYING) {
+            MusicController.instance.manivelle.setParameterByName("IsManivelle", 1);
+            MusicController.instance.manivelle.start();
         }
     }
 
@@ -42,6 +49,7 @@ public class ManivelleBehavior : Interactable
     public override void StopInteract()
     {
         used = false;
+        MusicController.instance.manivelle.setParameterByName("IsManivelle", 0);
     }
 
     void Start()
@@ -56,10 +64,7 @@ public class ManivelleBehavior : Interactable
         {
             progress -= revertSpeed * Time.deltaTime;
             manivelleImg.transform.Rotate(new Vector3(0, 0, 1), 2.5f);
-
         }
         PlayTimeline();
-
-
     }
 }

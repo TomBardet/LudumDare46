@@ -38,6 +38,7 @@ public class LevierBehavior : Interactable
         }
 
         anim.SetTrigger("interact");
+        MusicController.instance.PlayAnSFX(MusicController.instance.Lever);
     }
 
     public override void InteractibleFdbck()

@@ -8,7 +8,6 @@ public class GameController : MonoBehaviour
 {
     [Header("Controller")]
     public UIController UIController;
-    private MusicController MusicController;
     private LevelController LevelController;
 
     [Header("KeyHole")]
@@ -38,7 +37,6 @@ public class GameController : MonoBehaviour
     {
         instance = this;
         GamePhase = GamePhaseType.Menu;
-        MusicController = GetComponent<MusicController>();
         LevelController = GetComponent<LevelController>();
     }
 
@@ -75,9 +73,9 @@ public class GameController : MonoBehaviour
     public void OnPlay()
     {
         UIController.OnPlayPress();
-        MusicController.musicMenu.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-        MusicController.musicLvl.setParameterByName("Player", 0);
-        MusicController.musicLvl.start();
+        MusicController.instance.musicMenu.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        MusicController.instance.musicLvl.setParameterByName("Player", 0);
+        MusicController.instance.musicLvl.start();
         GamePhase = GamePhaseType.Observation;
         TimeKey = MaxTimeKey;
         KeyHole.gameObject.SetActive(true);
@@ -92,7 +90,7 @@ public class GameController : MonoBehaviour
     public void OnNextLevel()
     {
         //Transition de level suivit de la phase d'observation ?
-        MusicController.musicLvl.setParameterByName("Player", 0);
+        MusicController.instance.musicLvl.setParameterByName("Player", 0);
         UIController.OnNextLevelPress();
         GamePhase = GamePhaseType.Observation;
         TimeKey = MaxTimeKey;
@@ -137,11 +135,10 @@ public class GameController : MonoBehaviour
         buttonWin.SetActive(false);
     }
 
-    public void GameStart(bool isReset)
-    {
-        UIController.TriggerGameStart(isReset);
-        MusicController.musicLvl.setParameterByName("Player", 1);
-        MusicController.musicLvl.setParameterByName("Fight", 0);
+    public void GameStart() {
+        UIController.TriggerGameStart();
+        MusicController.instance.musicLvl.setParameterByName("Player", 1);
+        MusicController.instance.musicLvl.setParameterByName("Fight", 0);
         GamePhase = GamePhaseType.OnGame;
         KeyHole.gameObject.SetActive(false);
         

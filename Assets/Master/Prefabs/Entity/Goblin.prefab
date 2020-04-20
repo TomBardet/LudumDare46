@@ -50,10 +50,9 @@ MonoBehaviour:
   interestType: 9
   hp: 3
   aggroRange: 2.7
-  damage: 7
+  damage: 10
   pack: []
   chargeSpeed: 2
-  timeBetweenAttacks: 1
   hpLayout: {fileID: 365008163249302212}
   heartPrefab: {fileID: 7850272781519844, guid: 2d486cacce908be489bafba9db213003,
     type: 3}
