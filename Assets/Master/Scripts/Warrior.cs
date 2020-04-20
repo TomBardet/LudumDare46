@@ -32,7 +32,7 @@ public class Warrior : MonoBehaviour
 
     float hp;
     Rigidbody2D body;
-    Animator animator;
+    public Animator animator;
 
     E_WarriorInterests currentInterests;
     bool busy = false;
@@ -43,7 +43,7 @@ public class Warrior : MonoBehaviour
     Vector3 originalSight;
 
     Slider healthBar;
-    public enum WarriorAI { scanning, moveToDoor, moveToTarget, fight, die, animating };
+    public enum WarriorAI { scanning, moveToDoor, moveToTarget, fight, die,win, animating };
     public WarriorAI AI;
 
     Barks barks;
@@ -68,8 +68,8 @@ public class Warrior : MonoBehaviour
     void Start()
     {
         healthBar = UIRef.instance.healthBar;
-        exit = GameObject.FindObjectOfType<DoorExit>().transform.position;
-        StartRoom();
+        exit = GameObject.FindObjectOfType<DoorExit>().Tg_Door.position;
+        Invoke("StartRoom", 3f);
     }
 
     public void StartRoom()
@@ -139,6 +139,11 @@ public class Warrior : MonoBehaviour
                 body.MovePosition((Vector2)transform.position + dir * Walkspeed * Time.deltaTime);
                 viewCone.right = dir;//(Vector3)exit - viewCone.position;
             }
+            else
+            {
+                AI = WarriorAI.win;
+                FindObjectOfType<DoorEntrance>().PlayExit();
+            }
         }
         else
         {
