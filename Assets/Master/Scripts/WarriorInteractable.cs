@@ -9,7 +9,7 @@ public enum E_WarriorInterests
     Sandwitch = 1,
     Enemy = 9,
     Chest = 10,
-    EmptyChest = 0,
+    EmptyChest = -1,
 }
 
 public abstract class WarriorInteractable : MonoBehaviour

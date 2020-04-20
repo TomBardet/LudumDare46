@@ -41,7 +41,7 @@ public class Enemy : WarriorInteractable
 
     void Update()
     {
-        if (!aggro && Vector2.Distance(transform.position, Warrior.instance.transform.position) < aggroRange)
+        if (Warrior.instance && !aggro && Vector2.Distance(transform.position, Warrior.instance.transform.position) < aggroRange)
         {
             foreach (Enemy enemy in pack)
                 enemy.Aggro();
