@@ -1,22 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9137420936979586891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusicLVL/Player
-  m_EditorClassIdentifier: 
-  Name: Player
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
 --- !u!114 &-8953157072340139634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53,29 +36,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
---- !u!114 &-8670318111217131551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Personnage/Goblin_Hit
-  m_EditorClassIdentifier: 
-  Path: event:/Personnage/Goblin_Hit
-  guid: 1647f5e883ca6c4680ea0911985045e4
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 822
 --- !u!114 &-8612075227661154872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,7 +51,7 @@ MonoBehaviour:
   Path: event:/Personnage/Guerrier_Death
   guid: 93901df93d9cbd4bb3ce0c7f1a6696f9
   Banks:
-  - {fileID: -6977800810256913739}
+  - {fileID: -8210237550375263508}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -114,7 +74,7 @@ MonoBehaviour:
   Path: event:/Personnage/Guerrier_Find
   guid: b829859068d4cc4b9372425acf1c3f7a
   Banks:
-  - {fileID: -6977800810256913739}
+  - {fileID: -8210237550375263508}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -137,7 +97,7 @@ MonoBehaviour:
   Path: event:/Music/MusicMenu
   guid: 8c99fa5d7b74924b9cc8ba0a541f6fbf
   Banks:
-  - {fileID: -6977800810256913739}
+  - {fileID: -8210237550375263508}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -162,7 +122,7 @@ MonoBehaviour:
   lastModified: 637229939408234793
   LoadResult: 0
   FileSizes: []
-  Exists: 0
+  Exists: 1
 --- !u!114 &-8027109723010097389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,7 +138,7 @@ MonoBehaviour:
   Path: event:/Personnage/Guerrier_Start
   guid: ffe1812f56ac424da299206dd7ee4e51
   Banks:
-  - {fileID: -6977800810256913739}
+  - {fileID: -8210237550375263508}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -186,23 +146,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1500
---- !u!114 &-7856277728069714708
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Manivelle/IsManivelle
-  m_EditorClassIdentifier: 
-  Name: IsManivelle
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
 --- !u!114 &-7712796482867977834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,88 +183,6 @@ MonoBehaviour:
   - Name: 
     Value: 1076
   Exists: 1
---- !u!114 &-7382279998830038735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/TourelleTir
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/TourelleTir
-  guid: 5b12d960b8d9ed488805cd0624083720
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 435
---- !u!114 &-7156789181621215280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/ObjetDrop
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/ObjetDrop
-  guid: 081bf9b6b83fdb41833883068040e5be
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 235
---- !u!114 &-6977800810256913739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/LvlBank.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Ben/Build/Desktop/LvlBank.bank
-  SubDir: 
-  lastModified: 637229930984232785
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &-6860389469255401471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Ben/Build/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637230092428226264
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &-6562662223179320361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -339,49 +200,6 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
---- !u!114 &-6139537207100871967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Resurection
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Resurection
-  guid: 26576ccbd64ce845a2fb3a4159d776f5
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 3272
---- !u!114 &-5815565042547135005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Ben/Build/Desktop/Master.strings.bank
-  SubDir: 
-  lastModified: 637230092428275891
-  LoadResult: 0
-  FileSizes:
-  - Name: 
-    Value: 2034
-  Exists: 1
 --- !u!114 &-5813229033771994915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -398,30 +216,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 0
---- !u!114 &-5553358322340654333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Personnage/Goblin_Death
-  m_EditorClassIdentifier: 
-  Path: event:/Personnage/Goblin_Death
-  guid: b2116b666e10bc4994581c8180f1e308
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1137
+  Exists: 1
 --- !u!114 &-5551660121166128769
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,7 +250,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 0
+  Exists: 1
 --- !u!114 &-5320140502956189825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,7 +266,7 @@ MonoBehaviour:
   Path: event:/SFX/Levier
   guid: 575999cda1237342b0d70a32a5845bdd
   Banks:
-  - {fileID: -6977800810256913739}
+  - {fileID: -8210237550375263508}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -532,29 +327,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &-4115209187329460223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Heal
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Heal
-  guid: 012842b839548c44b1ad363ff4eb5b94
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1768
 --- !u!114 &-4024059899993062946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,70 +342,6 @@ MonoBehaviour:
   Path: Assets/Ben/Build/Desktop/Master.bank
   SubDir: 
   lastModified: 637229739817952104
-  LoadResult: 0
-  FileSizes: []
-  Exists: 0
---- !u!114 &-3929315258864766817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Personnage/Guerrier_End
-  m_EditorClassIdentifier: 
-  Path: event:/Personnage/Guerrier_End
-  guid: 21319dcb203dac4885e7ec983b6913fa
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1365
---- !u!114 &-3564760189886560829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambiance/AmbianceLVL
-  m_EditorClassIdentifier: 
-  Path: event:/Ambiance/AmbianceLVL
-  guid: baafdfc711d08b4e80262ea265112879
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 14500
---- !u!114 &-3418190562891423545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/LvlBank.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Ben/Build/Desktop/LvlBank.bank
-  SubDir: 
-  lastModified: 637230092428008218
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -655,23 +363,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
---- !u!114 &-3236706528573859322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Manivelle/IsManivelle
-  m_EditorClassIdentifier: 
-  Name: IsManivelle
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
 --- !u!114 &-2972606733836503293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -687,14 +378,14 @@ MonoBehaviour:
   Path: event:/Music/MusicLVL
   guid: 98d7770c3199f14e86c5222a4b3c9e53
   Banks:
-  - {fileID: -6977800810256913739}
+  - {fileID: -8210237550375263508}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 2577211150604438197}
-  - {fileID: 1293807774735827709}
-  - {fileID: 8221981520916964495}
+  - {fileID: 4622628900202300783}
+  - {fileID: -5813229033771994915}
+  - {fileID: -5344780472906286583}
   MinDistance: 0
   MaxDistance: 0
   Length: 139636
@@ -713,7 +404,7 @@ MonoBehaviour:
   Path: event:/SFX/PorteBreak
   guid: 125f6d503bd1f848b82630bb6c25acf6
   Banks:
-  - {fileID: -6977800810256913739}
+  - {fileID: -8210237550375263508}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -762,46 +453,6 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
---- !u!114 &-2099715343952998967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusicLVL/Life
-  m_EditorClassIdentifier: 
-  Name: Life
-  Min: 0
-  Max: 100
-  Default: 100
-  Exists: 1
---- !u!114 &-1590878123047793014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Personnage/Guerrier_Death
-  m_EditorClassIdentifier: 
-  Path: event:/Personnage/Guerrier_Death
-  guid: 93901df93d9cbd4bb3ce0c7f1a6696f9
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1250
 --- !u!114 &-1432201242946116352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -817,12 +468,12 @@ MonoBehaviour:
   Path: event:/SFX/Manivelle
   guid: b8e39391dc761b42976053931664abb6
   Banks:
-  - {fileID: -6977800810256913739}
+  - {fileID: -8210237550375263508}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -3236706528573859322}
+  - {fileID: 888075655076075576}
   MinDistance: 0
   MaxDistance: 0
   Length: 1678
@@ -909,7 +560,7 @@ MonoBehaviour:
   Path: event:/SFX/ObjetDrop
   guid: 081bf9b6b83fdb41833883068040e5be
   Banks:
-  - {fileID: -6977800810256913739}
+  - {fileID: -8210237550375263508}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -930,41 +581,36 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: -5815565042547135005}
-  - {fileID: -3418190562891423545}
-  - {fileID: -6860389469255401471}
+  - {fileID: 4113645549707342799}
+  - {fileID: -8210237550375263508}
+  - {fileID: -4024059899993062946}
   EditorEvents:
-  - {fileID: -4115209187329460223}
-  - {fileID: -7156789181621215280}
-  - {fileID: 3752624315547783291}
-  - {fileID: 5626642273313169541}
-  - {fileID: -8670318111217131551}
-  - {fileID: -3929315258864766817}
-  - {fileID: 7237515027805012704}
-  - {fileID: -6139537207100871967}
-  - {fileID: 4496056320652504717}
-  - {fileID: 5460384771626769551}
-  - {fileID: 4561609551637235220}
-  - {fileID: 4534381740948950085}
-  - {fileID: -7382279998830038735}
-  - {fileID: 9216149596073387479}
-  - {fileID: 8010301143745610109}
-  - {fileID: -1590878123047793014}
-  - {fileID: 6139693027441657379}
-  - {fileID: -5553358322340654333}
-  - {fileID: 5704289461133931935}
-  - {fileID: 1090636519616954048}
-  - {fileID: -3564760189886560829}
-  - {fileID: 7858852482181035500}
-  - {fileID: 8834606726486892527}
-  - {fileID: 4327294219563757720}
-  - {fileID: 408045020090155773}
+  - {fileID: -303027877110839021}
+  - {fileID: -2855887428908432974}
+  - {fileID: 1955220661850264329}
+  - {fileID: 74764249253360407}
+  - {fileID: 354915308503190435}
+  - {fileID: 3498743605418898088}
+  - {fileID: 70971743917088702}
+  - {fileID: 1705756009458813511}
+  - {fileID: -5320140502956189825}
+  - {fileID: 3781232965474973940}
+  - {fileID: -8253121366975199114}
+  - {fileID: -8612075227661154872}
+  - {fileID: -2972606733836503293}
+  - {fileID: 6576168361071333173}
+  - {fileID: -8380597827667733049}
+  - {fileID: -1432201242946116352}
+  - {fileID: 1743390645985060791}
+  - {fileID: 1522971790051483702}
+  - {fileID: 2409826785712694887}
+  - {fileID: -8027109723010097389}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -6860389469255401471}
+  - {fileID: -4024059899993062946}
   StringsBanks:
-  - {fileID: -5815565042547135005}
-  stringsBankWriteTime: 637230092428275891
+  - {fileID: 4113645549707342799}
+  stringsBankWriteTime: 637229939407616438
   cacheVersion: 3
 --- !u!114 &70971743917088702
 MonoBehaviour:
@@ -981,7 +627,7 @@ MonoBehaviour:
   Path: event:/Personnage/Guerrier_Eat
   guid: 2c37dd315838c245b951b3e983441a71
   Banks:
-  - {fileID: -6977800810256913739}
+  - {fileID: -8210237550375263508}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1004,7 +650,7 @@ MonoBehaviour:
   Path: event:/Personnage/Guerrier_End
   guid: 21319dcb203dac4885e7ec983b6913fa
   Banks:
-  - {fileID: -6977800810256913739}
+  - {fileID: -8210237550375263508}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1027,7 +673,7 @@ MonoBehaviour:
   Path: event:/SFX/PlaqueOff
   guid: 23490f484e5ac14e8a3692f69f246f29
   Banks:
-  - {fileID: -6977800810256913739}
+  - {fileID: -8210237550375263508}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1035,29 +681,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 132
---- !u!114 &408045020090155773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Personnage/Guerrier_Start
-  m_EditorClassIdentifier: 
-  Path: event:/Personnage/Guerrier_Start
-  guid: ffe1812f56ac424da299206dd7ee4e51
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1500
 --- !u!114 &577058398926367403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1092,7 +715,7 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
-  Exists: 0
+  Exists: 1
 --- !u!114 &997790392256916167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1116,30 +739,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3272
---- !u!114 &1090636519616954048
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Manivelle
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Manivelle
-  guid: b8e39391dc761b42976053931664abb6
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -7856277728069714708}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1678
 --- !u!114 &1196027553069401521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1157,23 +756,6 @@ MonoBehaviour:
   Max: 100
   Default: 100
   Exists: 1
---- !u!114 &1293807774735827709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusicLVL/Player
-  m_EditorClassIdentifier: 
-  Name: Player
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
 --- !u!114 &1522971790051483702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1189,7 +771,7 @@ MonoBehaviour:
   Path: event:/Personnage/Goblin_Trigger
   guid: bb12efeb74aca04ab8b1ffae46ce4baf
   Banks:
-  - {fileID: -6977800810256913739}
+  - {fileID: -8210237550375263508}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1212,7 +794,7 @@ MonoBehaviour:
   Path: event:/SFX/ObjetDrag
   guid: 391f87e61158de4992a4e9775ff8d1e5
   Banks:
-  - {fileID: -6977800810256913739}
+  - {fileID: -8210237550375263508}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1235,7 +817,7 @@ MonoBehaviour:
   Path: event:/Ambiance/AmbianceLVL
   guid: baafdfc711d08b4e80262ea265112879
   Banks:
-  - {fileID: -6977800810256913739}
+  - {fileID: -8210237550375263508}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1258,7 +840,7 @@ MonoBehaviour:
   Path: event:/Personnage/Goblin_Hit
   guid: 1647f5e883ca6c4680ea0911985045e4
   Banks:
-  - {fileID: -6977800810256913739}
+  - {fileID: -8210237550375263508}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1281,7 +863,7 @@ MonoBehaviour:
   Path: event:/SFX/PlaqueOn
   guid: dd57dac80a7c8c46912957935fee98d4
   Banks:
-  - {fileID: -6977800810256913739}
+  - {fileID: -8210237550375263508}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1289,23 +871,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 140
---- !u!114 &2577211150604438197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusicLVL/Life
-  m_EditorClassIdentifier: 
-  Name: Life
-  Min: 0
-  Max: 100
-  Default: 100
-  Exists: 1
 --- !u!114 &2668316980301150080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1338,7 +903,7 @@ MonoBehaviour:
   Path: event:/SFX/Resurection
   guid: 26576ccbd64ce845a2fb3a4159d776f5
   Banks:
-  - {fileID: -6977800810256913739}
+  - {fileID: -8210237550375263508}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1346,29 +911,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 3272
---- !u!114 &3752624315547783291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Coffre
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Coffre
-  guid: 11c895a31b690a48a4adfc57462e5ee7
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1411
 --- !u!114 &3781232965474973940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1384,7 +926,7 @@ MonoBehaviour:
   Path: event:/Personnage/Guerrier_Hit
   guid: 7a45e75c74ebff47b4d3e53d2a1112b3
   Banks:
-  - {fileID: -6977800810256913739}
+  - {fileID: -8210237550375263508}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1406,104 +948,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/Ben/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637229930984371532
+  lastModified: 637229939407616438
   LoadResult: 0
   FileSizes:
   - Name: 
     Value: 1818
   Exists: 1
---- !u!114 &4327294219563757720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/PlaqueOn
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/PlaqueOn
-  guid: dd57dac80a7c8c46912957935fee98d4
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 140
---- !u!114 &4496056320652504717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Personnage/Guerrier_Eat
-  m_EditorClassIdentifier: 
-  Path: event:/Personnage/Guerrier_Eat
-  guid: 2c37dd315838c245b951b3e983441a71
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 2593
---- !u!114 &4534381740948950085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Personnage/Healer_Death
-  m_EditorClassIdentifier: 
-  Path: event:/Personnage/Healer_Death
-  guid: 5a97135bb87e5d478a15ce0273ff7b8d
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1390
---- !u!114 &4561609551637235220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Levier
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Levier
-  guid: 575999cda1237342b0d70a32a5845bdd
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 500
 --- !u!114 &4622628900202300783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1520,7 +970,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 100
-  Exists: 0
+  Exists: 1
 --- !u!114 &4783763826160426476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1590,24 +1040,6 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 1
---- !u!114 &5121526316455990245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Ben/Build/Desktop/Master.bank
-  SubDir: 
-  lastModified: 637229930984317335
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
 --- !u!114 &5122477419135116615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1631,118 +1063,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 34909
---- !u!114 &5460384771626769551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/ObjetDrag
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/ObjetDrag
-  guid: 391f87e61158de4992a4e9775ff8d1e5
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 235
---- !u!114 &5626642273313169541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/PorteBreak
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/PorteBreak
-  guid: 125f6d503bd1f848b82630bb6c25acf6
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1159
---- !u!114 &5704289461133931935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Personnage/Guerrier_Find
-  m_EditorClassIdentifier: 
-  Path: event:/Personnage/Guerrier_Find
-  guid: b829859068d4cc4b9372425acf1c3f7a
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1105
---- !u!114 &5738944190132122924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusicLVL/Fight
-  m_EditorClassIdentifier: 
-  Name: Fight
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
---- !u!114 &6139693027441657379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/MusicLVL
-  m_EditorClassIdentifier: 
-  Path: event:/Music/MusicLVL
-  guid: 98d7770c3199f14e86c5222a4b3c9e53
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -2099715343952998967}
-  - {fileID: -9137420936979586891}
-  - {fileID: 5738944190132122924}
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 139636
 --- !u!114 &6343901694356901222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1784,7 +1104,7 @@ MonoBehaviour:
   Path: event:/Personnage/Goblin_Death
   guid: b2116b666e10bc4994581c8180f1e308
   Banks:
-  - {fileID: -6977800810256913739}
+  - {fileID: -8210237550375263508}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1792,138 +1112,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1137
---- !u!114 &7237515027805012704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/PlaqueOff
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/PlaqueOff
-  guid: 23490f484e5ac14e8a3692f69f246f29
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 132
---- !u!114 &7858852482181035500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Personnage/Goblin_Trigger
-  m_EditorClassIdentifier: 
-  Path: event:/Personnage/Goblin_Trigger
-  guid: bb12efeb74aca04ab8b1ffae46ce4baf
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1105
---- !u!114 &8010301143745610109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/MusicMenu
-  m_EditorClassIdentifier: 
-  Path: event:/Music/MusicMenu
-  guid: 8c99fa5d7b74924b9cc8ba0a541f6fbf
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 34909
---- !u!114 &8221981520916964495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/MusicLVL/Fight
-  m_EditorClassIdentifier: 
-  Name: Fight
-  Min: 0
-  Max: 1
-  Default: 0
-  Exists: 1
---- !u!114 &8834606726486892527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/CoffreBoom
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/CoffreBoom
-  guid: c2fafecd12a9ac4c8b7bf9ba9f518c8a
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 1490
---- !u!114 &9216149596073387479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Personnage/Guerrier_Hit
-  m_EditorClassIdentifier: 
-  Path: event:/Personnage/Guerrier_Hit
-  guid: 7a45e75c74ebff47b4d3e53d2a1112b3
-  Banks:
-  - {fileID: -3418190562891423545}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 822
 --- !u!114 &9220222404823854187
 MonoBehaviour:
   m_ObjectHideFlags: 0
