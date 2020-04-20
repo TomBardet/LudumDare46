@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -33,12 +33,12 @@ public class Movement : MonoBehaviour
         {
             Speed += acceleration * Time.deltaTime ;
             Speed = Mathf.Clamp(Speed, 0, maxSpeed);
-
-            anim.SetBool("isMoving", true);
-        }else
+            anim.SetBool("IsMoving", true);
+        }
+        else
         {
             Speed = Mathf.MoveTowards(Speed, 0, decceleration);
-            anim.SetBool("isMoving", false);
+            anim.SetBool("IsMoving", false);
         }
 
         CheckIsFacingRight();

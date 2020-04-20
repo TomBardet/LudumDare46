@@ -18,7 +18,7 @@ public class Enemy : WarriorInteractable
 
     void Awake()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         body = GetComponent<Rigidbody2D>();
         interestType = E_WarriorInterests.Enemy;
         if (!pack.Contains(this))

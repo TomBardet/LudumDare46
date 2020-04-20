@@ -56,7 +56,7 @@ public class Warrior : MonoBehaviour
 
         hp = maxHp;
         body = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         currentInterests = E_WarriorInterests.None;
         walking = null;
         barks = GetComponentInChildren<Barks>();
@@ -150,7 +150,6 @@ public class Warrior : MonoBehaviour
             barks.ScreamBark(E_Barks.Chest);
         else if (newDestination.interestType == E_WarriorInterests.Enemy)
             barks.ScreamBark(E_Barks.Enemies);
-        Debug.Log(walking);
         destination = newDestination;
         if (walking == null)
             walking = StartCoroutine(WalkToTarget());
@@ -173,7 +172,6 @@ public class Warrior : MonoBehaviour
         {
             yield return new WaitForSeconds(pauseAfterMoveTo); //3 sec after(Animation etc), the warrior start to walk to the door again
             AI = WarriorAI.scanning;
-            Debug.Log("waited " + pauseAfterMoveTo + " sec, now we are scanning and enem = " + enemy);
             currentInterests = 0;
         }
         walking = null;
@@ -216,7 +214,6 @@ public class Warrior : MonoBehaviour
 
     public void Fight()
     {
-        Debug.Log("Fighting");
         busy = true;
         StopAllCoroutines();
         StartCoroutine(StartBattle(enemy.pack));
