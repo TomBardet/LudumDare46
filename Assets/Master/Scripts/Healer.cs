@@ -63,6 +63,7 @@ public class Healer : MonoBehaviour
             Warrior.instance.ReceiveHeal(healEffect);
             StopAllCoroutines();
             StartCoroutine(RegenDelay());
+            MusicController.instance.PlayAnSFX(MusicController.instance.Heal);
         }
     }
 
@@ -72,7 +73,7 @@ public class Healer : MonoBehaviour
         if(!dead)
         {
             dead = true;
-            Invoke("Defeat", 2f);
+            MusicController.instance.PlayAnSFX(MusicController.instance.HealerDeath);
         }
     }
 

@@ -30,11 +30,14 @@ public class Chest : WarriorInteractable
             Healer.instance.ReleaseObj(Healer.instance.Tg_grab);
         if (trapped)
             StartCoroutine(Explode());
-    }
+        else
+            MusicController.instance.PlayAnSFX(MusicController.instance.Chest);
+    }   
 
     IEnumerator Explode()
     {
         yield return new WaitForSeconds(1f);
+        MusicController.instance.PlayAnSFX(MusicController.instance.ChestExplosion);
         Warrior.instance.TakeDamage(200, null);
     }
 }
