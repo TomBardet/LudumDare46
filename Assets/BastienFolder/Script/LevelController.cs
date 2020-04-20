@@ -11,6 +11,8 @@ public class LevelController : MonoBehaviour {
     public int LevelsNumber = 10;
     public List<string> LevelList = new List<string>();
 
+    public DoorEntrance Entrance;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +41,8 @@ public class LevelController : MonoBehaviour {
         GameObject newLevel = GameObject.Find("LEVEL");
         newLevel.transform.SetParent(LevelContainer.transform);
         newLevel.transform.position = Vector2.zero;
+        Entrance = newLevel.GetComponentInChildren<DoorEntrance>();
+
         CameraControler camera = Camera.main.GetComponent<CameraControler>();
         camera.NextLevel = newLevel;
         camera.IsMoving = true;

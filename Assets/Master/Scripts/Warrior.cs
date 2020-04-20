@@ -42,7 +42,7 @@ public class Warrior : MonoBehaviour
     float TgAngle = 0f;
 
     public Slider healthBar;
-    public enum WarriorAI {scanning, moveToDoor, moveToTarget, fight, die};
+    public enum WarriorAI {scanning, moveToDoor, moveToTarget, fight, win, die};
     public WarriorAI AI;
 
     Barks barks;
@@ -64,7 +64,7 @@ public class Warrior : MonoBehaviour
 
     void Start()
     {
-        exit = GameObject.FindObjectOfType<DoorExit>().transform.position;
+        exit = GameObject.FindObjectOfType<DoorExit>().Tg_Door.transform.position;
         StartRoom();
     }
 
@@ -126,6 +126,12 @@ public class Warrior : MonoBehaviour
             {
                 body.MovePosition((Vector2)transform.position + dir * Walkspeed * Time.deltaTime);
                 viewCone.right = (Vector3)exit - viewCone.position;
+            }
+            else
+            {
+                Debug.Log("Win");
+                AI = WarriorAI.win;
+                FindObjectOfType<DoorEntrance>().PlayExit();
             }
         }
         else

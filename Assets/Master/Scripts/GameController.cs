@@ -8,12 +8,15 @@ public class GameController : MonoBehaviour
     public UIController UIController;
     private MusicController MusicController;
     private LevelController LevelController;
+
     [Header("KeyHole")]
     public float KeyHoleSpeed = 200;
     public Rigidbody2D KeyHole;
 
     [Header("Boolean")]
     public bool IsLevelLoaded = false;
+
+    public GameObject buttonWin;
 
     private enum GamePhaseType{Menu, Observation, OnGame, EndGame, Cinematic };
     private GamePhaseType GamePhase = GamePhaseType.Menu;
@@ -45,6 +48,7 @@ public class GameController : MonoBehaviour
         MusicController.musicLvl.setParameterByName("Player", 0);
         MusicController.musicLvl.start();
         GamePhase = GamePhaseType.Observation;
+        KeyHole.gameObject.SetActive(true);
         LevelController.OpenLevel(LevelController.CurentLevel);
     }
 
@@ -56,11 +60,18 @@ public class GameController : MonoBehaviour
         LevelController.OpenLevel(LevelController.CurentLevel);
     }
 
+    public void OnWin()
+    {
+        buttonWin.SetActive(true);
+    }
+    
     public void EndGame() {
         UIController.TriggerEndGame();
         GamePhase = GamePhaseType.EndGame;
         LevelController.ClearLevelContainer(LevelController.CurentLevel);
         LevelController.IncreaseCurentLevel();
+        buttonWin.SetActive(false);
+
     }
 
     public void GameStart() {
@@ -68,8 +79,10 @@ public class GameController : MonoBehaviour
         MusicController.musicLvl.setParameterByName("Player", 1);
         MusicController.musicLvl.setParameterByName("Fight", 0);
         GamePhase = GamePhaseType.OnGame;
+        KeyHole.gameObject.SetActive(false);
+
     }
-    
+
     /*************************** KEYHOLE ***************************/
     private void KeyHoleControlles(float speed) {
 

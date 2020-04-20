@@ -451,7 +451,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 2
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 17eb94c8759ff2c48b6a5fe0df3dc2a2, type: 2}
@@ -511,7 +511,7 @@ MonoBehaviour:
   - {x: -0.765, y: 0.515, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 31086
+  m_InstanceId: 65712
 --- !u!1 &4993744889765546825
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,7 +559,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 2
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 0b2d6b3bc09dad945861a584e1b822fa, type: 2}
@@ -626,7 +626,7 @@ MonoBehaviour:
   - {x: -0.5921726, y: -0.5677905, z: 0}
   m_ShapePathHash: 1500309383
   m_Mesh: {fileID: 0}
-  m_InstanceId: 31104
+  m_InstanceId: 65730
 --- !u!1 &5713958114824002911
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,7 +674,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 2
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: fad6da78ea5e0204bb6d2661fb63cc75, type: 2}
@@ -734,7 +734,7 @@ MonoBehaviour:
   - {x: -0.9, y: 0.855, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 31120
+  m_InstanceId: 65746
 --- !u!1 &6354445788847759950
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,7 +782,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 2
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 112d82ecca683bb4aa20944d043c1ab2, type: 2}
@@ -842,7 +842,7 @@ MonoBehaviour:
   - {x: -1.575, y: 1.15, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 31092
+  m_InstanceId: 65718
 --- !u!1 &7518855575280840352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1069,7 +1069,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 2
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 2fa455b73af570342b327f545002c091, type: 2}
@@ -1129,7 +1129,7 @@ MonoBehaviour:
   - {x: -1.005, y: 1.54, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 31096
+  m_InstanceId: 65722
 --- !u!1 &8762257990343698176
 GameObject:
   m_ObjectHideFlags: 0
