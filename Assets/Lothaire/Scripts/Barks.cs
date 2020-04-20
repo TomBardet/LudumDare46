@@ -42,6 +42,11 @@ public class Barks : MonoBehaviour
         }
     }
 
+    public void CustomBark(string bark)
+    {
+        StartCoroutine(Barking(bark));
+    }
+
     IEnumerator Barking(string bark)
     {
         float time = barkDuration;

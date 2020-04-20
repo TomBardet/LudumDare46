@@ -47,7 +47,7 @@ public class Warrior : MonoBehaviour
     public enum WarriorAI { scanning, moveToDoor, moveToTarget, fight, die,win, animating };
     public WarriorAI AI;
 
-    Barks barks;
+    [HideInInspector]public Barks barks;
     public bool isOnPlank;
 
     void Awake()
@@ -161,11 +161,20 @@ public class Warrior : MonoBehaviour
         WarriorInteractable newDestination = Tg_WalkTo.GetComponent<WarriorInteractable>();
 
         if (newDestination.interestType == E_WarriorInterests.Sandwitch)
+        {
             barks.ScreamBark(E_Barks.Sandswitch);
+            Healer.instance.barks.ScreamBark(E_Barks.Sandswitch);
+        }
         else if (newDestination.interestType == E_WarriorInterests.Chest)
+        {
             barks.ScreamBark(E_Barks.Chest);
+            Healer.instance.barks.ScreamBark(E_Barks.Chest);
+        }
         else if (newDestination.interestType == E_WarriorInterests.Enemy)
+        {
             barks.ScreamBark(E_Barks.Enemies);
+            Healer.instance.barks.ScreamBark(E_Barks.Enemies);
+        }
         destination = newDestination;
         if (walking == null)
             walking = StartCoroutine(WalkToTarget());
@@ -291,6 +300,7 @@ public class Warrior : MonoBehaviour
         Vector2 tg2 = (Vector2)transform.position - Vector2.up;
 
         barks.ScreamBark(E_Barks.Scanning);
+        Healer.instance.barks.ScreamBark(E_Barks.Scanning);
         var timer = scanDuration;
         viewCone.rotation = Quaternion.Euler(0, 0, originalSight.z);
         TgAngle = 0f;

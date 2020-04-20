@@ -25,6 +25,7 @@ public class Healer : MonoBehaviour
     bool isRegenerating;
     public bool isOnPlank;
     [HideInInspector]public bool dead;
+    [HideInInspector]public Barks barks;
 
     void Awake()
     {
@@ -35,6 +36,7 @@ public class Healer : MonoBehaviour
         joints.enabled = false;
         line.enabled = false;
         currentMana = manaMax;
+        barks = GetComponentInChildren<Barks>();
     }
 
     void Start()
