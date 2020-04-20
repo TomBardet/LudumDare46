@@ -69,6 +69,7 @@ public class Warrior : MonoBehaviour
     void Start()
     {
         healthBar = UIRef.instance.healthBar;
+        healthBar.value = hp / maxHp;
         exit = GameObject.FindObjectOfType<DoorExit>().Tg_Door.position;
         Invoke("StartRoom", 3f);
     }
