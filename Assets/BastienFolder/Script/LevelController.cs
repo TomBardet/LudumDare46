@@ -17,9 +17,9 @@ public class LevelController : MonoBehaviour {
     void Start()
     {
         //initialize levels list
-        for (int i = 1; i < LevelsNumber + 1; i++) {
-            LevelList.Add("Level" + i);
-        }
+        //for (int i = 1; i < LevelsNumber + 1; i++) {
+        //    LevelList.Add("Level" + i);
+        //}
     }
 
     public void OpenLevel(int index) {

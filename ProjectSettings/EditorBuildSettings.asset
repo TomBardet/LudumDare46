@@ -9,9 +9,51 @@ EditorBuildSettings:
     path: Assets/Master/Scenes/MasterScene.unity
     guid: 0e84a5e3756b7bd43a278c9f042905f7
   - enabled: 1
+    path: Assets/Master/Scenes/LD_Tom01.unity
+    guid: e779491b751628e48a8234f691ddff7d
+  - enabled: 1
     path: Assets/Master/Scenes/LD_Tom02.unity
     guid: e851828bc1f2c794b9bf36f9f8ab34d8
   - enabled: 1
+    path: Assets/Master/Scenes/LD_Tom03.unity
+    guid: c05a15730aa8dc2489985aa4588fdec3
+  - enabled: 1
     path: Assets/Master/Scenes/LD_Tom04.unity
     guid: 92d2a765c9f007047b3b9e82e9c53d06
+  - enabled: 1
+    path: Assets/Master/Scenes/LD_Tom05.unity
+    guid: 6842a00dc72d7344088e001eae9b006e
+  - enabled: 1
+    path: Assets/Nico/Scenes/Lvl_Nico_01.unity
+    guid: 7268f905a3dafdc41b67b1eea2b46ee0
+  - enabled: 1
+    path: Assets/Nico/Scenes/Lvl_Nico_02.unity
+    guid: 87d5de802a8513944b8245c85f6f2d92
+  - enabled: 1
+    path: Assets/Nico/Scenes/Lvl_Nico_03.unity
+    guid: dbfcdd03a030392459361b1c85e60093
+  - enabled: 1
+    path: Assets/Nico/Scenes/Lvl_Nico_04.unity
+    guid: 902a1aace0c2f7343887d643a35346a8
+  - enabled: 1
+    path: Assets/Nico/Scenes/Lvl_Nico_05.unity
+    guid: 5a553848469bd0245b027af19440b37a
+  - enabled: 1
+    path: Assets/Elliot/Elliot01.unity
+    guid: 4fbf45e91e2af6f4599b3ef2d33df842
+  - enabled: 1
+    path: Assets/Elliot/Elliot02.unity
+    guid: cdb856ff08cee784f871e3a75085f674
+  - enabled: 1
+    path: Assets/Elliot/Elliot03.unity
+    guid: e5973bb96bc14b347b1c6ef08d961340
+  - enabled: 1
+    path: Assets/Elliot/Elliot04.unity
+    guid: bf53d814beaae17429d8f84006c8c4de
+  - enabled: 1
+    path: Assets/Elliot/Elliot05.unity
+    guid: 8be562f9a5a8576409af34f32758e7d1
+  - enabled: 1
+    path: Assets/Elliot/Elliot06.unity
+    guid: cfbbef142a97402439cb34dc2650b598
   m_configObjects: {}
