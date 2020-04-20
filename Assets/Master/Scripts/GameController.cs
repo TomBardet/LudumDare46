@@ -67,6 +67,10 @@ public class GameController : MonoBehaviour
             Debug.Log("HERE");
 
         }
+        if (GamePhase == GamePhaseType.Menu && Input.GetKeyDown(KeyCode.Space))
+        {
+            OnPlay();
+        }
         if (TimeKey >= 0) TimeKey -= Time.deltaTime;
     }
 
@@ -151,7 +155,7 @@ public class GameController : MonoBehaviour
     {
         LevelController.ClearLevelContainer(LevelController.CurentLevel);
         LevelController.OpenLevel(LevelController.CurentLevel);
-
+        MusicController.instance.PlayAnSFX(MusicController.instance.Resurection);
         GameStart(true);
     }
 

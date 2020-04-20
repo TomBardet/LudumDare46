@@ -30,6 +30,7 @@ public class Warrior : MonoBehaviour
     public float timeBetweenEachShot = 1f;
     //public int AttackDamage = 10;//On devrait laisser 1 vis a vis des gobelins non ? Sans variable, en dur
 
+    public ParticleSystem healParticles;
     float hp;
     Rigidbody2D body;
     public Animator animator;
@@ -248,6 +249,7 @@ public class Warrior : MonoBehaviour
             hp = maxHp;
         healthBar.value = hp / maxHp;
         MusicController.instance.SetLifeParameters(hp, maxHp);
+        healParticles.Play();
     }
 
     public void Fight()
