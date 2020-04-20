@@ -33,7 +33,7 @@ public class PressurePlaque : MonoBehaviour
             TimelinePowerOff.Stop();
             TimelinePowerOn.Play();
             Debug.Log("playd");
-
+            MusicController.instance.PlayAnSFX(MusicController.instance.PressurePlateOn);
         }
 
     }
@@ -53,6 +53,7 @@ public class PressurePlaque : MonoBehaviour
 
             TimelinePowerOff.Play();
             Debug.Log("play");
+            MusicController.instance.PlayAnSFX(MusicController.instance.PressurePlateOff);
         }
     }
 

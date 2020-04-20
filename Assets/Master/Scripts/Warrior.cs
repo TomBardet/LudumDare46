@@ -88,6 +88,7 @@ public class Warrior : MonoBehaviour
         }
         if (!busy)
         {
+            MusicController.instance.musicLvl.setParameterByName("Fight",0);
             switch (AI)
             {
                 case WarriorAI.scanning:
@@ -100,6 +101,7 @@ public class Warrior : MonoBehaviour
                     MoveToTg();
                     break;
                 case WarriorAI.fight:
+                    MusicController.instance.musicLvl.setParameterByName("Fight", 1);
                     if (enemy != null)
                         Fight();
                     break;
@@ -116,6 +118,7 @@ public class Warrior : MonoBehaviour
         {
             currentInterests = interest.interestType;
             Tg_WalkTo = interest.transform;
+            MusicController.instance.PlayAnSFX(MusicController.instance.WarriorFind);
         }
     }
 
@@ -206,6 +209,7 @@ public class Warrior : MonoBehaviour
             StopAllCoroutines();
             animator.SetBool("Dead", true);
             GameManager.Defeat();
+            MusicController.instance.PlayAnSFX(MusicController.instance.WarriorDeath);
         }
         if (currentInterests == E_WarriorInterests.None && p_enemy != null)
         {
@@ -215,6 +219,7 @@ public class Warrior : MonoBehaviour
         {
             enemy = p_enemy;
         }
+        MusicController.instance.SetLifeParameters(hp, maxHp);
     }
 
     public void ReceiveHeal(int heal)
@@ -223,6 +228,7 @@ public class Warrior : MonoBehaviour
         if (hp > maxHp)
             hp = maxHp;
         healthBar.value = hp / maxHp;
+        MusicController.instance.SetLifeParameters(hp, maxHp);
     }
 
     public void Fight()
@@ -243,6 +249,7 @@ public class Warrior : MonoBehaviour
             {
                 animator.SetBool("Attacking", true);
                 target.TakeDamage();
+                MusicController.instance.PlayAnSFX(MusicController.instance.WarriorHit);
                 //Debug.Log("Inflict Dmg");
                 yield return new WaitForSeconds(timeBetweenEachShot);
             }
