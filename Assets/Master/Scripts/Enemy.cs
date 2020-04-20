@@ -46,13 +46,16 @@ public class Enemy : WarriorInteractable
         if (Warrior.instance && !aggro && Vector2.Distance(transform.position, Warrior.instance.transform.position) < aggroRange)
         {
             foreach (Enemy enemy in pack)
+            {
                 enemy.Aggro();
+            }
         }
     }
 
     public void Aggro()
     {
         aggro = true;
+        StopAllCoroutines();
         StartCoroutine(WalkToTarget(Warrior.instance.transform));
     }
 
@@ -84,12 +87,11 @@ public class Enemy : WarriorInteractable
             animator.SetBool("Dead", true);
             Invoke("Death", 1f);
         }
-        else
-            Attack();
     }
 
     void Attack()
     {
+        Debug.Log("Attacking by " + gameObject.name);
         animator.SetBool("Attacking", true);
         Warrior.instance.TakeDamage(damage, this);
         StartCoroutine(AttackDelay());
@@ -97,6 +99,7 @@ public class Enemy : WarriorInteractable
 
     IEnumerator AttackDelay()
     {
+        Debug.Log(timeBetweenAttacks);
         yield return new WaitForSeconds(timeBetweenAttacks);
         StartCoroutine(WalkToTarget(Warrior.instance.transform)); // If Warrior is going for loot and ignore mob, they have to walk again to catch him
     }
