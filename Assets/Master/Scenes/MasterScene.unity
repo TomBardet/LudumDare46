@@ -455,6 +455,21 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1492410470}
+    - target: {fileID: 4893440674364330584, guid: b71571869cf58c64face86a4245e78a4,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893440674364330584, guid: b71571869cf58c64face86a4245e78a4,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4893440674364330584, guid: b71571869cf58c64face86a4245e78a4,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4893440674491865069, guid: b71571869cf58c64face86a4245e78a4,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -464,6 +479,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6255151869778697923, guid: b71571869cf58c64face86a4245e78a4,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6255151869778697923, guid: b71571869cf58c64face86a4245e78a4,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6255151869778697923, guid: b71571869cf58c64face86a4245e78a4,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b71571869cf58c64face86a4245e78a4, type: 3}
@@ -551,7 +581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &764627954
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1689,7 +1719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsMoving: 0
   IsScaling: 0
-  TransitionSpeed: 10000
+  TransitionSpeed: 100
   ScalingSpeed: 2
   NextLevel: {fileID: 0}
 --- !u!50 &1492410473
@@ -1810,6 +1840,7 @@ MonoBehaviour:
   KeyHoleSpeed: 200
   KeyHole: {fileID: 124485747}
   IsLevelLoaded: 0
+  buttonWin: {fileID: 764627953}
 --- !u!4 &1494795941
 Transform:
   m_ObjectHideFlags: 0
@@ -1856,6 +1887,7 @@ MonoBehaviour:
   LevelsNumber: 10
   LevelList:
   - SampleSceneDimanche
+  Entrance: {fileID: 0}
 --- !u!1 &1705139994
 GameObject:
   m_ObjectHideFlags: 0

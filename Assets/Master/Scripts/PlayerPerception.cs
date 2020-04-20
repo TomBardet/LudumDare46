@@ -7,9 +7,11 @@ public class PlayerPerception : MonoBehaviour
     Interactable _interactable;
     Healer healer;
 
+    GameController GC;
     private void Awake()
     {
         healer = GetComponent<Healer>();
+        GC = FindObjectOfType<GameController>();
     }
     private void Update()
     {
@@ -18,6 +20,10 @@ public class PlayerPerception : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(collision.CompareTag("EndLevel"))
+        {
+            GC.OnWin();
+        }
         if (healer.isGrabbing) return;
 
         _interactable = collision.GetComponent<Interactable>();

@@ -154,7 +154,7 @@ MonoBehaviour:
   - {x: -0.92, y: 0.56, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 57836
+  m_InstanceId: 66056
 --- !u!114 &5799795282280751146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,7 +180,7 @@ MonoBehaviour:
   - {x: -0.515, y: 0.565, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 57832
+  m_InstanceId: 66052
 --- !u!114 &1303299185275145898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,7 +208,7 @@ MonoBehaviour:
   - {x: -0.7979069, y: 0.026020586, z: 0}
   m_ShapePathHash: 556264541
   m_Mesh: {fileID: 0}
-  m_InstanceId: 57822
+  m_InstanceId: 66042
 --- !u!114 &1602241127773039308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,7 +234,7 @@ MonoBehaviour:
   - {x: -0.735, y: 0.47, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: 57824
+  m_InstanceId: 66044
 --- !u!1001 &5206768337173272920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -316,6 +316,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 493118175434262336, guid: 8efc22d20efebb04dbba0b1d824154a6,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 493118175434262336, guid: 8efc22d20efebb04dbba0b1d824154a6,
+        type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 603234090055608682, guid: 8efc22d20efebb04dbba0b1d824154a6,
         type: 3}
@@ -463,6 +473,16 @@ PrefabInstance:
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5938131226096560445, guid: 8efc22d20efebb04dbba0b1d824154a6,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5938131226096560445, guid: 8efc22d20efebb04dbba0b1d824154a6,
+        type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6110644379104547515, guid: 8efc22d20efebb04dbba0b1d824154a6,
         type: 3}
       propertyPath: m_Sprite
@@ -483,6 +503,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110644379104547515, guid: 8efc22d20efebb04dbba0b1d824154a6,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110644379104547515, guid: 8efc22d20efebb04dbba0b1d824154a6,
+        type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6274943470588171723, guid: 8efc22d20efebb04dbba0b1d824154a6,
         type: 3}
@@ -564,6 +594,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8482116390848780328, guid: 8efc22d20efebb04dbba0b1d824154a6,
+        type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8482116390848780328, guid: 8efc22d20efebb04dbba0b1d824154a6,
+        type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8956422056222056861, guid: 8efc22d20efebb04dbba0b1d824154a6,
         type: 3}

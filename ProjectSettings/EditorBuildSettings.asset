@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/BastienFolder/Scenes/Level2.unity
     guid: 477f6bc52e310b1438b67358896f7f93
+  - enabled: 1
+    path: Assets/Master/Scenes/MasterScene.unity
+    guid: 0e84a5e3756b7bd43a278c9f042905f7
+  - enabled: 1
+    path: Assets/Master/Scenes/SampleSceneDimanche.unity
+    guid: eaaa2c563e87c6e4abf7fcb6eb438d9e
   m_configObjects: {}
