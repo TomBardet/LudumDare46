@@ -8846,6 +8846,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.79
       objectReference: {fileID: 0}
+    - target: {fileID: 2610197621162338329, guid: 171f4652dfd775f49bdeef480a506296,
+        type: 3}
+      propertyPath: healEffect
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610197621162338329, guid: 171f4652dfd775f49bdeef480a506296,
+        type: 3}
+      propertyPath: manaRegenPerSec
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610197621162338329, guid: 171f4652dfd775f49bdeef480a506296,
+        type: 3}
+      propertyPath: manaRegenDelay
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2610197621162338329, guid: 171f4652dfd775f49bdeef480a506296,
+        type: 3}
+      propertyPath: healCost
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2914793591092701915, guid: 171f4652dfd775f49bdeef480a506296,
         type: 3}
       propertyPath: m_Mesh
@@ -8955,6 +8975,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -2.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780622517487119293, guid: 171f4652dfd775f49bdeef480a506296,
+        type: 3}
+      propertyPath: maxHp
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780622517487119293, guid: 171f4652dfd775f49bdeef480a506296,
+        type: 3}
+      propertyPath: chargeSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780622517487119293, guid: 171f4652dfd775f49bdeef480a506296,
+        type: 3}
+      propertyPath: timeBetweenEachShot
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780622517487119293, guid: 171f4652dfd775f49bdeef480a506296,
+        type: 3}
+      propertyPath: scanSpeed
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780622517487119293, guid: 171f4652dfd775f49bdeef480a506296,
+        type: 3}
+      propertyPath: scanDuration
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4780622517487119293, guid: 171f4652dfd775f49bdeef480a506296,
+        type: 3}
+      propertyPath: pauseAfterscan
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5127244161479938603, guid: 171f4652dfd775f49bdeef480a506296,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 5994024665445696974, guid: 171f4652dfd775f49bdeef480a506296,
         type: 3}
