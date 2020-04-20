@@ -96,7 +96,7 @@ PlayableDirector:
   m_GameObject: {fileID: 1133930408452562490}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 9bf6713b75b1f2d43ae5573e82aba8b0, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 4ccfdc742658ea646a06fe19d3407aa8, type: 2}
   m_InitialState: 0
   m_WrapMode: 0
   m_DirectorUpdateMode: 1
@@ -442,7 +442,7 @@ GameObject:
   m_Layer: 0
   m_Name: SpawnPosWarrior
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1454,7 +1454,7 @@ PrefabInstance:
     - target: {fileID: 296462081067408408, guid: 6ee931737d09776458e44252853d691f,
         type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: -0.00000035762787
+      value: 0.00000059604645
       objectReference: {fileID: 0}
     - target: {fileID: 296462081067408408, guid: 6ee931737d09776458e44252853d691f,
         type: 3}
@@ -1474,7 +1474,7 @@ PrefabInstance:
     - target: {fileID: 304396294014928608, guid: 6ee931737d09776458e44252853d691f,
         type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: -0.0036994815
+      value: -0.0036990047
       objectReference: {fileID: 0}
     - target: {fileID: 304396294014928608, guid: 6ee931737d09776458e44252853d691f,
         type: 3}
@@ -1484,7 +1484,7 @@ PrefabInstance:
     - target: {fileID: 304396294014928608, guid: 6ee931737d09776458e44252853d691f,
         type: 3}
       propertyPath: m_Bounds.m_Extent.x
-      value: 0.7361037
+      value: 0.73610324
       objectReference: {fileID: 0}
     - target: {fileID: 304396294014928608, guid: 6ee931737d09776458e44252853d691f,
         type: 3}
@@ -1514,7 +1514,7 @@ PrefabInstance:
     - target: {fileID: 1938563190356000611, guid: 6ee931737d09776458e44252853d691f,
         type: 3}
       propertyPath: m_Bounds.m_Center.x
-      value: 0.013914585
+      value: 0.013915539
       objectReference: {fileID: 0}
     - target: {fileID: 1938563190356000611, guid: 6ee931737d09776458e44252853d691f,
         type: 3}

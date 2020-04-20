@@ -69,7 +69,7 @@ MonoBehaviour:
   Path: event:/Personnage/Guerrier_Death
   guid: 93901df93d9cbd4bb3ce0c7f1a6696f9
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -109,7 +109,7 @@ MonoBehaviour:
   Path: event:/Personnage/Guerrier_Find
   guid: b829859068d4cc4b9372425acf1c3f7a
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -117,6 +117,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1105
+--- !u!114 &-8357023795564065533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusicLVL/Life
+  m_EditorClassIdentifier: 
+  Name: Life
+  Min: 0
+  Max: 100
+  Default: 100
+  Exists: 1
 --- !u!114 &-8253121366975199114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,7 +149,7 @@ MonoBehaviour:
   Path: event:/Music/MusicMenu
   guid: 8c99fa5d7b74924b9cc8ba0a541f6fbf
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -190,7 +207,7 @@ MonoBehaviour:
   Path: event:/Personnage/Guerrier_Start
   guid: ffe1812f56ac424da299206dd7ee4e51
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -268,7 +285,7 @@ MonoBehaviour:
   Path: event:/SFX/TourelleTir
   guid: 5b12d960b8d9ed488805cd0624083720
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -276,6 +293,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 435
+--- !u!114 &-6903486181823222946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/LvlBank.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ben/Build/Desktop/LvlBank.bank
+  SubDir: 
+  lastModified: 637230121036044205
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-6562662223179320361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,7 +394,7 @@ MonoBehaviour:
   Path: event:/SFX/Levier
   guid: 575999cda1237342b0d70a32a5845bdd
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -438,6 +473,40 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-4819246872620934774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Manivelle/IsManivelle
+  m_EditorClassIdentifier: 
+  Name: IsManivelle
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
+--- !u!114 &-4425908263732909121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusicLVL/Fight
+  m_EditorClassIdentifier: 
+  Name: Fight
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &-4024059899993062946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -471,7 +540,7 @@ MonoBehaviour:
   Path: event:/SFX/Coffre
   guid: 11c895a31b690a48a4adfc57462e5ee7
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -512,14 +581,14 @@ MonoBehaviour:
   Path: event:/Music/MusicLVL
   guid: 98d7770c3199f14e86c5222a4b3c9e53
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 5323986090572619618}
-  - {fileID: -8477071902980288428}
-  - {fileID: -2008414340651193684}
+  - {fileID: -8357023795564065533}
+  - {fileID: 97069037988650034}
+  - {fileID: -4425908263732909121}
   MinDistance: 0
   MaxDistance: 0
   Length: 139636
@@ -538,7 +607,7 @@ MonoBehaviour:
   Path: event:/SFX/PorteBreak
   guid: 125f6d503bd1f848b82630bb6c25acf6
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -619,12 +688,12 @@ MonoBehaviour:
   Path: event:/SFX/Manivelle
   guid: b8e39391dc761b42976053931664abb6
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 4055301732228835115}
+  - {fileID: -4819246872620934774}
   MinDistance: 0
   MaxDistance: 0
   Length: 1678
@@ -711,7 +780,7 @@ MonoBehaviour:
   Path: event:/Personnage/Healer_Death
   guid: 5a97135bb87e5d478a15ce0273ff7b8d
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -734,7 +803,7 @@ MonoBehaviour:
   Path: event:/SFX/ObjetDrop
   guid: 081bf9b6b83fdb41833883068040e5be
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -756,8 +825,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 4113645549707342799}
-  - {fileID: -8735931021597909549}
-  - {fileID: 4707387274871863746}
+  - {fileID: -6903486181823222946}
+  - {fileID: 8845677452705987606}
   EditorEvents:
   - {fileID: -303027877110839021}
   - {fileID: -2855887428908432974}
@@ -786,10 +855,10 @@ MonoBehaviour:
   - {fileID: 6746171085661702203}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 4707387274871863746}
+  - {fileID: 8845677452705987606}
   StringsBanks:
   - {fileID: 4113645549707342799}
-  stringsBankWriteTime: 637230123206550796
+  stringsBankWriteTime: 637230121034301008
   cacheVersion: 3
 --- !u!114 &70971743917088702
 MonoBehaviour:
@@ -806,7 +875,7 @@ MonoBehaviour:
   Path: event:/Personnage/Guerrier_Eat
   guid: 2c37dd315838c245b951b3e983441a71
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -829,7 +898,7 @@ MonoBehaviour:
   Path: event:/Personnage/Guerrier_End
   guid: 21319dcb203dac4885e7ec983b6913fa
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -837,6 +906,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 1365
+--- !u!114 &97069037988650034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MusicLVL/Player
+  m_EditorClassIdentifier: 
+  Name: Player
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 1
 --- !u!114 &354915308503190435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -852,7 +938,7 @@ MonoBehaviour:
   Path: event:/SFX/PlaqueOff
   guid: 23490f484e5ac14e8a3692f69f246f29
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -927,7 +1013,7 @@ MonoBehaviour:
   Path: event:/SFX/Heal
   guid: 012842b839548c44b1ad363ff4eb5b94
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -990,7 +1076,7 @@ MonoBehaviour:
   Path: event:/Personnage/Goblin_Trigger
   guid: bb12efeb74aca04ab8b1ffae46ce4baf
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1013,7 +1099,7 @@ MonoBehaviour:
   Path: event:/SFX/ObjetDrag
   guid: 391f87e61158de4992a4e9775ff8d1e5
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1036,7 +1122,7 @@ MonoBehaviour:
   Path: event:/Ambiance/AmbianceLVL
   guid: baafdfc711d08b4e80262ea265112879
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1059,7 +1145,7 @@ MonoBehaviour:
   Path: event:/Personnage/Goblin_Hit
   guid: 1647f5e883ca6c4680ea0911985045e4
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1082,7 +1168,7 @@ MonoBehaviour:
   Path: event:/SFX/PlaqueOn
   guid: dd57dac80a7c8c46912957935fee98d4
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1122,7 +1208,7 @@ MonoBehaviour:
   Path: event:/SFX/Resurection
   guid: 26576ccbd64ce845a2fb3a4159d776f5
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1145,7 +1231,7 @@ MonoBehaviour:
   Path: event:/Personnage/Guerrier_Hit
   guid: 7a45e75c74ebff47b4d3e53d2a1112b3
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1201,7 +1287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/Ben/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637230123206550796
+  lastModified: 637230121034301008
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -1392,7 +1478,7 @@ MonoBehaviour:
   Path: event:/Personnage/Goblin_Death
   guid: b2116b666e10bc4994581c8180f1e308
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1415,7 +1501,7 @@ MonoBehaviour:
   Path: event:/SFX/CoffreBoom
   guid: c2fafecd12a9ac4c8b7bf9ba9f518c8a
   Banks:
-  - {fileID: -8735931021597909549}
+  - {fileID: -6903486181823222946}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1440,6 +1526,24 @@ MonoBehaviour:
   Max: 1
   Default: 0
   Exists: 0
+--- !u!114 &8845677452705987606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Ben/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637229739817952104
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &9220222404823854187
 MonoBehaviour:
   m_ObjectHideFlags: 0
