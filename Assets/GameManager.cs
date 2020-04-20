@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public static class GameManager
 {
@@ -16,9 +17,8 @@ public static class GameManager
 
     }
 
-
     public static void Defeat()//Called by warrior on death
     {
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

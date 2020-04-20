@@ -205,7 +205,7 @@ public class Warrior : MonoBehaviour
             hp = 0;
             StopAllCoroutines();
             animator.SetBool("Dead", true);
-            GameManager.Defeat();
+            Invoke("Dead", 2f);
         }
         if (currentInterests == E_WarriorInterests.None && p_enemy != null)
         {
@@ -215,6 +215,11 @@ public class Warrior : MonoBehaviour
         {
             enemy = p_enemy;
         }
+    }
+
+    void Dead()
+    {
+        GameManager.Defeat();
     }
 
     public void ReceiveHeal(int heal)
