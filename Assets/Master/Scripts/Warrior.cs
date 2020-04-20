@@ -41,7 +41,7 @@ public class Warrior : MonoBehaviour
     Coroutine walking;
     float TgAngle = 0f;
 
-    public Slider healthBar;
+    Slider healthBar;
     public enum WarriorAI { scanning, moveToDoor, moveToTarget, fight, die };
     public WarriorAI AI;
 
@@ -64,6 +64,7 @@ public class Warrior : MonoBehaviour
 
     void Start()
     {
+        healthBar = UIRef.instance.healthBar;
         exit = GameObject.FindObjectOfType<DoorExit>().transform.position;
         StartRoom();
     }
@@ -116,6 +117,7 @@ public class Warrior : MonoBehaviour
     {
         //on vérifie si il n'as pas de tg walk to
         animator.SetInteger("Movement", 1);
+        
         if (Tg_WalkTo == null)
         {
             Vector2 dir;
@@ -237,7 +239,7 @@ public class Warrior : MonoBehaviour
         }
         //Debug.Log("End of Pack");
         busy = false;
-
+        currentInterests = E_WarriorInterests.None;
         //à la fin d'un combat, retour au scan:
         AI = WarriorAI.scanning;
     }
