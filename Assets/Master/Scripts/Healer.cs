@@ -23,7 +23,7 @@ public class Healer : MonoBehaviour
     Slider manaBar;
     float currentMana;
     bool isRegenerating;
-
+    public bool isOnPlank;
     [HideInInspector]public bool dead;
 
     void Awake()
@@ -98,6 +98,7 @@ public class Healer : MonoBehaviour
         switch(tag)
         {
             case "Moveable":
+                Debug.Log("interact");
                 AttachToObject(_obj);
                 break;
             default:
