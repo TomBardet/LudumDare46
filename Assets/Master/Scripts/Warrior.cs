@@ -74,7 +74,6 @@ public class Warrior : MonoBehaviour
 
     public void StartRoom()
     {
-        Debug.Log("SCANNING");
         AI = WarriorAI.scanning;
     }
 

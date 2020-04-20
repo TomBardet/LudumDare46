@@ -19,6 +19,6 @@ public static class GameManager
 
     public static void Defeat()//Called by warrior on death
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GameController.instance.ResetLevel();
     }
 }
