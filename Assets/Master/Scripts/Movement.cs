@@ -27,6 +27,11 @@ public class Movement : MonoBehaviour
     {
         moveDirection.x = Input.GetAxisRaw("Horizontal");
         moveDirection.y = Input.GetAxisRaw("Vertical");
+        if (Healer.instance.dead)
+        {
+            moveDirection.x = 0;
+            moveDirection.y = 0;
+        }
         moveDirection = moveDirection.normalized;
 
         if(moveDirection.x > 0.1f || moveDirection.x < -0.1f || moveDirection.y > 0.1f || moveDirection.y < -0.1f)

@@ -24,6 +24,8 @@ public class Healer : MonoBehaviour
     float currentMana;
     bool isRegenerating;
 
+    [HideInInspector]public bool dead;
+
     void Awake()
     {
         instance = this;
@@ -59,8 +61,21 @@ public class Healer : MonoBehaviour
         {
             currentMana -= healCost;
             Warrior.instance.ReceiveHeal(healEffect);
+            StopAllCoroutines();
             StartCoroutine(RegenDelay());
         }
+    }
+
+    public void Dead()
+    {
+        GetComponentInChildren<Animator>().SetBool("Dead", true);
+        dead = true;
+        Invoke("Defeat", 2f);  
+    }
+
+    void Defeat()
+    {
+        GameManager.Defeat();
     }
 
     IEnumerator RegenDelay()

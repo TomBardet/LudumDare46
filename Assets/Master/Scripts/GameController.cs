@@ -18,31 +18,39 @@ public class GameController : MonoBehaviour
 
     public GameObject buttonWin;
 
-    private enum GamePhaseType{Menu, Observation, OnGame, EndGame, Cinematic };
+    private enum GamePhaseType { Menu, Observation, OnGame, EndGame, Cinematic };
     private GamePhaseType GamePhase = GamePhaseType.Menu;
+
+    public static GameController instance;
 
     // Start is called before the first frame update
     void Start()
     {
+        instance = this;
         GamePhase = GamePhaseType.Menu;
         MusicController = GetComponent<MusicController>();
         LevelController = GetComponent<LevelController>();
-    }   
+    }
 
     // Update is called once per frame
-    void FixedUpdate() {
-        if (GamePhase == GamePhaseType.Observation) {
+    void FixedUpdate()
+    {
+        if (GamePhase == GamePhaseType.Observation)
+        {
             KeyHoleControlles(KeyHoleSpeed);
         }
     }
-    private void Update() {
-        if (GamePhase == GamePhaseType.Observation && Input.GetButtonDown("Jump")) {
+    private void Update()
+    {
+        if (GamePhase == GamePhaseType.Observation && Input.GetButtonDown("Jump"))
+        {
             GameStart();
         }
     }
 
     /******************************** GAME PHASE ***************************************/
-    public void OnPlay() {
+    public void OnPlay()
+    {
         UIController.OnPlayPress();
         MusicController.musicMenu.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         MusicController.musicLvl.setParameterByName("Player", 0);
@@ -52,7 +60,8 @@ public class GameController : MonoBehaviour
         LevelController.OpenLevel(LevelController.CurentLevel);
     }
 
-    public void OnNextLevel() {
+    public void OnNextLevel()
+    {
         //Transition de level suivit de la phase d'observation ?
         MusicController.musicLvl.setParameterByName("Player", 0);
         UIController.OnNextLevelPress();
@@ -64,8 +73,9 @@ public class GameController : MonoBehaviour
     {
         buttonWin.SetActive(true);
     }
-    
-    public void EndGame() {
+
+    public void EndGame()
+    {
         UIController.TriggerEndGame();
         GamePhase = GamePhaseType.EndGame;
         LevelController.ClearLevelContainer(LevelController.CurentLevel);
@@ -74,7 +84,8 @@ public class GameController : MonoBehaviour
 
     }
 
-    public void GameStart() {
+    public void GameStart()
+    {
         UIController.TriggerGameStart();
         MusicController.musicLvl.setParameterByName("Player", 1);
         MusicController.musicLvl.setParameterByName("Fight", 0);
@@ -83,8 +94,16 @@ public class GameController : MonoBehaviour
 
     }
 
+    public void ResetLevel()
+    {
+        LevelController.ClearLevelContainer(LevelController.CurentLevel);
+        LevelController.OpenLevel(LevelController.CurentLevel);
+        GameStart();
+    }
+
     /*************************** KEYHOLE ***************************/
-    private void KeyHoleControlles(float speed) {
+    private void KeyHoleControlles(float speed)
+    {
 
         Camera cam = Camera.main;
         Vector2 bottomLeft = cam.ScreenToWorldPoint(new Vector3(0, 0, cam.nearClipPlane));
@@ -92,27 +111,32 @@ public class GameController : MonoBehaviour
         float borderModifier = 0.5f;
 
         Vector2 moveDirection = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
-        
-        if (moveDirection.x > 0.1f || moveDirection.x < -0.1f || moveDirection.y > 0.1f || moveDirection.y < -0.1f) {
+
+        if (moveDirection.x > 0.1f || moveDirection.x < -0.1f || moveDirection.y > 0.1f || moveDirection.y < -0.1f)
+        {
             KeyHole.velocity = moveDirection * speed * Time.deltaTime;
         }
         else
             KeyHole.velocity = Vector2.zero;
 
         //Move Right
-        if (KeyHole.transform.position.x + borderModifier > topRight.x) {
+        if (KeyHole.transform.position.x + borderModifier > topRight.x)
+        {
             KeyHole.transform.position = new Vector2(KeyHole.transform.position.x - 0.1f, KeyHole.transform.position.y);
         }
         //Move Left
-        if (KeyHole.transform.position.x - borderModifier < bottomLeft.x) {
+        if (KeyHole.transform.position.x - borderModifier < bottomLeft.x)
+        {
             KeyHole.transform.position = new Vector2(KeyHole.transform.position.x + 0.1f, KeyHole.transform.position.y);
         }
         //Move Top
-        if (KeyHole.transform.position.y + borderModifier*3f > topRight.y) {
+        if (KeyHole.transform.position.y + borderModifier * 3f > topRight.y)
+        {
             KeyHole.transform.position = new Vector2(KeyHole.transform.position.x, KeyHole.transform.position.y - 0.1f);
         }
         //Move Bottom
-        if (KeyHole.transform.position.y - borderModifier*3f < bottomLeft.y) {
+        if (KeyHole.transform.position.y - borderModifier * 3f < bottomLeft.y)
+        {
             KeyHole.transform.position = new Vector2(KeyHole.transform.position.x, KeyHole.transform.position.y + 0.1f);
         }
     }
