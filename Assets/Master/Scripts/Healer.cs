@@ -78,6 +78,8 @@ public class Healer : MonoBehaviour
         {
             dead = true;
             MusicController.instance.PlayAnSFX(MusicController.instance.HealerDeath);
+            Invoke("Defeat", 2f);
+
         }
     }
 
@@ -127,6 +129,8 @@ public class Healer : MonoBehaviour
     {
         Tg_grab = _obj.GetComponent<GrabableItem>();
         if (Tg_grab == null) Debug.Log("Error récupération target de grab");
+
+        if (Tg_grab.isplank) isOnPlank = true;
 
         if (!Tg_grab.directMove)
         {

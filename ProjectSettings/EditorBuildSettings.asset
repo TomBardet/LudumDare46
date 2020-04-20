@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Master/Scenes/LD_Tom04.unity
     guid: 92d2a765c9f007047b3b9e82e9c53d06
+  - enabled: 1
+    path: Assets/Elliot/Elliot01.unity
+    guid: 4fbf45e91e2af6f4599b3ef2d33df842
+  - enabled: 1
+    path: Assets/Master/Scenes/LD_Tom03.unity
+    guid: c05a15730aa8dc2489985aa4588fdec3
   m_configObjects: {}
