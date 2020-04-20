@@ -3352,6 +3352,6 @@ ScriptedImporter:
   prefabAssetName: Warrior_complet_color Prefab
   spriteLibAssetName: Warrior_complet_color Sprite Lib
   secondarySpriteTextures:
-  - name: Normal_W
+  - name: _NormalMap
     texture: {fileID: -4764527373622802292, guid: 853d889b5dd4dfd44acf5d70121de9c0,
       type: 3}

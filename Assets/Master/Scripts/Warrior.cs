@@ -89,6 +89,7 @@ public class Warrior : MonoBehaviour
         }
         if (!busy)
         {
+            MusicController.instance.musicLvl.setParameterByName("Fight",0);
             switch (AI)
             {
                 case WarriorAI.scanning:
@@ -101,6 +102,7 @@ public class Warrior : MonoBehaviour
                     MoveToTg();
                     break;
                 case WarriorAI.fight:
+                    MusicController.instance.musicLvl.setParameterByName("Fight", 1);
                     if (enemy != null)
                         Fight();
                     break;
@@ -117,6 +119,7 @@ public class Warrior : MonoBehaviour
         {
             currentInterests = interest.interestType;
             Tg_WalkTo = interest.transform;
+            MusicController.instance.PlayAnSFX(MusicController.instance.WarriorFind);
         }
     }
 
@@ -206,7 +209,8 @@ public class Warrior : MonoBehaviour
             hp = 0;
             StopAllCoroutines();
             animator.SetBool("Dead", true);
-
+            GameManager.Defeat();
+            MusicController.instance.PlayAnSFX(MusicController.instance.WarriorDeath);
             Invoke("Dead", 2f);
             dead = true;
         }
@@ -218,6 +222,7 @@ public class Warrior : MonoBehaviour
         {
             enemy = p_enemy;
         }
+        MusicController.instance.SetLifeParameters(hp, maxHp);
     }
 
     void Dead()
@@ -231,6 +236,7 @@ public class Warrior : MonoBehaviour
         if (hp > maxHp)
             hp = maxHp;
         healthBar.value = hp / maxHp;
+        MusicController.instance.SetLifeParameters(hp, maxHp);
     }
 
     public void Fight()
@@ -250,6 +256,7 @@ public class Warrior : MonoBehaviour
             while (target.hp > 0)
             {
                 animator.SetBool("Attacking", true);
+                MusicController.instance.PlayAnSFX(MusicController.instance.WarriorHit);
                 target.TakeDamage(1);
                 //Debug.Log("Inflict Dmg");
                 yield return new WaitForSeconds(timeBetweenEachShot);
