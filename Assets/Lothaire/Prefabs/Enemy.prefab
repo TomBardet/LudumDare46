@@ -102,6 +102,9 @@ MonoBehaviour:
   pack:
   - {fileID: 5447759897513123956}
   - {fileID: 0}
+  chargeSpeed: 0
+  hpLayout: {fileID: 0}
+  heartPrefab: {fileID: 0}
 --- !u!61 &3809430598761060432
 BoxCollider2D:
   m_ObjectHideFlags: 0

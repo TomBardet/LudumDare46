@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Healer : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class Healer : MonoBehaviour
     public GrabableItem Tg_grab;
     public Vector2 offsetRope;
 
+    public Slider manaBar;
     public float manaMax;
     public float manaRegenPerSec;
     public float manaRegenDelay;
@@ -39,6 +41,7 @@ public class Healer : MonoBehaviour
 
         if (isRegenerating)
             currentMana += Time.deltaTime * manaRegenPerSec;
+        manaBar.value = currentMana / manaMax;
     }
     public void Heal()
     {
@@ -61,6 +64,7 @@ public class Healer : MonoBehaviour
         }
         isRegenerating = true;
     }
+
     public void Interact(string tag, Interactable _obj)
     {
         switch(tag)
