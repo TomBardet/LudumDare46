@@ -27,9 +27,9 @@ public class MusicController : MonoBehaviour
 	    musicMenu.start();
     }
 
-    public void SetLifeParameters(int life) {
-        FightLife = life;
-        musicLvl.setParameterByName("Life",life);
+    public void SetLifeParameters(float warriorLife) {
+        FightLife =(int)warriorLife / Warrior.instance.maxHp * 100;
+        musicLvl.setParameterByName("Life", FightLife);
     }
 
     public void PlayAnSFX(string SfxPath) {
