@@ -34,7 +34,7 @@ public class GrabableItem : Interactable
         rb.mass = WeightCarry;
         isReleased = false;
         transform.localScale = new Vector3(startsize.x + .13f, startsize.x + .13f, startsize.x + .13f);
-
+        MusicController.instance.PlayAnSFX(MusicController.instance.DragObject);
     }
 
     void ReleaseBox()
@@ -45,6 +45,7 @@ public class GrabableItem : Interactable
         rb.mass = WeightDefault;
         transform.localScale = startsize;
         ResetRotation();
+        MusicController.instance.PlayAnSFX(MusicController.instance.DropObject);
 
     }
 

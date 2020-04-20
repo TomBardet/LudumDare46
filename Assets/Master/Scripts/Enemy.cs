@@ -54,6 +54,7 @@ public class Enemy : WarriorInteractable
     {
         aggro = true;
         StartCoroutine(WalkToTarget(Warrior.instance.transform));
+        MusicController.instance.PlayAnSFX(MusicController.instance.GoblinTrigger);
     }
 
     IEnumerator WalkToTarget(Transform warrior)
@@ -93,6 +94,7 @@ public class Enemy : WarriorInteractable
         animator.SetBool("Attacking", true);
         Warrior.instance.TakeDamage(damage, this);
         StartCoroutine(AttackDelay());
+        MusicController.instance.PlayAnSFX(MusicController.instance.GoblinHit);
     }
 
     IEnumerator AttackDelay()
@@ -103,6 +105,7 @@ public class Enemy : WarriorInteractable
 
     void Death()
     {
+        MusicController.instance.PlayAnSFX(MusicController.instance.GoblinDeath);
         Destroy(gameObject);
     }
 }

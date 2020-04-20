@@ -358,6 +358,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: e047e3f5f06b424478cf5f5c22391e2f, type: 2}
+    - target: {fileID: 997144029232438716, guid: eae18fc06e5ecc841ad1fc78ff20b54a,
+        type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1536664610919546959, guid: eae18fc06e5ecc841ad1fc78ff20b54a,
         type: 3}
       propertyPath: m_Bounds.m_Center.x
@@ -367,6 +372,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Bounds.m_Center.y
       value: 0.007642746
+      objectReference: {fileID: 0}
+    - target: {fileID: 1569876512326745767, guid: eae18fc06e5ecc841ad1fc78ff20b54a,
+        type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2338535386061529353, guid: eae18fc06e5ecc841ad1fc78ff20b54a,
+        type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4089664996202573064, guid: eae18fc06e5ecc841ad1fc78ff20b54a,
+        type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7585210800052373689, guid: eae18fc06e5ecc841ad1fc78ff20b54a,
         type: 3}

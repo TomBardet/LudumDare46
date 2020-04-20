@@ -546,13 +546,14 @@ MonoBehaviour:
   viewCone: {fileID: 678927374}
   scanSpeed: 1.5
   scanDuration: 1.5
-  pauseAfterscan: 2
+  pauseAfterscan: 1
   Tg_WalkTo: {fileID: 0}
   chargeSpeed: 20
   pauseAfterMoveTo: 2
   Walkspeed: 4.81
   enemy: {fileID: 0}
   timeBetweenEachShot: 1
+  animator: {fileID: 0}
   AI: 0
 --- !u!1001 &8705106033016150215
 PrefabInstance:
@@ -566,6 +567,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Warrior_complet_color
       objectReference: {fileID: 0}
+    - target: {fileID: 2871437643122240268, guid: feb073c3049ad5f4ba27daae9da19bf4,
+        type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3223624080632545722, guid: feb073c3049ad5f4ba27daae9da19bf4,
         type: 3}
       propertyPath: m_Bounds.m_Center.y
@@ -576,6 +582,16 @@ PrefabInstance:
       propertyPath: m_Bounds.m_Center.x
       value: 0.0011903048
       objectReference: {fileID: 0}
+    - target: {fileID: 3903822604098742718, guid: feb073c3049ad5f4ba27daae9da19bf4,
+        type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322495127168128667, guid: feb073c3049ad5f4ba27daae9da19bf4,
+        type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4694302161663475557, guid: feb073c3049ad5f4ba27daae9da19bf4,
         type: 3}
       propertyPath: m_Bounds.m_Center.y
@@ -585,6 +601,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Bounds.m_Center.x
       value: 0.09699011
+      objectReference: {fileID: 0}
+    - target: {fileID: 4731135437519047470, guid: feb073c3049ad5f4ba27daae9da19bf4,
+        type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4864208208724750084, guid: feb073c3049ad5f4ba27daae9da19bf4,
         type: 3}
@@ -645,6 +666,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Bounds.m_Extent.y
       value: 1.1595902
+      objectReference: {fileID: 0}
+    - target: {fileID: 7500213229269743110, guid: feb073c3049ad5f4ba27daae9da19bf4,
+        type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8358810788329900488, guid: feb073c3049ad5f4ba27daae9da19bf4,
         type: 3}
