@@ -50,7 +50,11 @@ public class Healer : MonoBehaviour
         }
 
         if (isRegenerating)
+        {
             currentMana += Time.deltaTime * manaRegenPerSec;
+            if (currentMana > manaMax)
+                currentMana = manaMax;
+        }
         manaBar.value = currentMana / manaMax;
         if (Input.GetKeyDown(KeyCode.Space))
             Heal();

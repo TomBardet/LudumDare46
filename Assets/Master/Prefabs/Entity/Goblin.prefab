@@ -53,6 +53,7 @@ MonoBehaviour:
   damage: 10
   pack: []
   chargeSpeed: 2
+  timeBetweenAttacks: 0.5
   hpLayout: {fileID: 365008163249302212}
   heartPrefab: {fileID: 7850272781519844, guid: 2d486cacce908be489bafba9db213003,
     type: 3}
