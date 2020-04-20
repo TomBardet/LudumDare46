@@ -31,12 +31,13 @@ public class Healer : MonoBehaviour
         line = GetComponent<LineRenderer>();
         joints.enabled = false;
         line.enabled = false;
-        manaBar = UIRef.instance.manaBar;
         currentMana = manaMax;
     }
 
     void Start()
-    {}
+    {
+        manaBar = UIRef.instance.manaBar;
+    }
 
     private void Update()
     {
