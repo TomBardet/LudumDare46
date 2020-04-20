@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1308886448181813192}
   - component: {fileID: 5871762123530502214}
   - component: {fileID: 6754269957570345192}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: tourelle_horizontal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 298548357900316631}
   - component: {fileID: 3195797094531317406}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Pivot
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
@@ -160,7 +160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1749362560291895603}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: spawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5630707437695259463}
   - component: {fileID: 5035398889162914670}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Graph
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 4444716882100767394}
   - component: {fileID: 8713550960291782804}
   - component: {fileID: 2980395001640996335}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 8918346149555933481}
   - component: {fileID: 125250694369610960}
   - component: {fileID: 4594509694699014162}
-  m_Layer: 0
+  m_Layer: 17
   m_Name: tourelle_vertical
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -435,4 +435,4 @@ MonoBehaviour:
   - {x: -0.5636749, y: 0.77506423, z: 0}
   m_ShapePathHash: -1653751131
   m_Mesh: {fileID: 0}
-  m_InstanceId: 37796
+  m_InstanceId: 26264
