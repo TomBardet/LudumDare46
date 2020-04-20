@@ -10,6 +10,8 @@ public class Chest : WarriorInteractable
     public GameObject _sprChest;
 
     public Animator anim;
+    public ParticleSystem coin;
+    public ParticleSystem death;
 
     public void Awake()
     {
@@ -29,9 +31,15 @@ public class Chest : WarriorInteractable
         if (Healer.instance.Tg_grab == GetComponent<GrabableItem>())
             Healer.instance.ReleaseObj(Healer.instance.Tg_grab);
         if (trapped)
+        {
             StartCoroutine(Explode());
+            death.Play();
+        }
         else
+        {
             MusicController.instance.PlayAnSFX(MusicController.instance.Chest);
+            coin.Play();
+        }
     }   
 
     IEnumerator Explode()

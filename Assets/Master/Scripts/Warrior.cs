@@ -218,7 +218,7 @@ public class Warrior : MonoBehaviour
             hp = 0;
             StopAllCoroutines();
             animator.SetBool("Dead", true);
-            GameManager.Defeat();
+           // GameManager.Defeat();
             MusicController.instance.PlayAnSFX(MusicController.instance.WarriorDeath);
             Invoke("Dead", 2f);
             dead = true;
