@@ -19,6 +19,10 @@ public class BulletBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.tag == "Warrior")
+            Warrior.instance.TakeDamage(500, null);
+        else if (collision.gameObject.tag == "Player")
+            Healer.instance.Dead();
         Destroy(gameObject);
     }
 

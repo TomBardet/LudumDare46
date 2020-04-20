@@ -19,9 +19,12 @@ public class Healer : MonoBehaviour
     public float manaRegenPerSec;
     public float manaRegenDelay;
     public float healCost;
+    public int healEffect;
     Slider manaBar;
     float currentMana;
     bool isRegenerating;
+
+    [HideInInspector]public bool dead;
 
     void Awake()
     {
@@ -57,9 +60,22 @@ public class Healer : MonoBehaviour
         if (currentMana >= healCost)
         {
             currentMana -= healCost;
-            Warrior.instance.ReceiveHeal(1);
+            Warrior.instance.ReceiveHeal(healEffect);
+            StopAllCoroutines();
             StartCoroutine(RegenDelay());
         }
+    }
+
+    public void Dead()
+    {
+        GetComponentInChildren<Animator>().SetBool("Dead", true);
+        dead = true;
+        Invoke("Defeat", 1f);  
+    }
+
+    void Defeat()
+    {
+        GameManager.Defeat();
     }
 
     IEnumerator RegenDelay()

@@ -70,7 +70,6 @@ public class TurretBehavior : MonoBehaviour
             b.transform.rotation = spawnBulletPos.rotation;
             b.GetComponent<BulletBehavior>().speed = bulletSpeed;
             anim.SetBool("isFiring", true);
-            Debug.Log("shot");
 
         }
         else
