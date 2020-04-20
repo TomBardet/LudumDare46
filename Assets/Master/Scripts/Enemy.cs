@@ -6,6 +6,7 @@ public class Enemy : WarriorInteractable
 {
     public int hp;
     public float aggroRange;
+    public int damage;
     public List<Enemy> pack;
     public float chargeSpeed;
 
@@ -89,7 +90,7 @@ public class Enemy : WarriorInteractable
     void Attack()
     {
         animator.SetBool("Attacking", true);
-        Warrior.instance.TakeDamage(10, this);
+        Warrior.instance.TakeDamage(damage, this);
         StartCoroutine(AttackDelay());
     }
 
