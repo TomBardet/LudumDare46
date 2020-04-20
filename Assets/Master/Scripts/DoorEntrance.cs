@@ -13,17 +13,22 @@ public class DoorEntrance : MonoBehaviour
     public Transform parent;
     public GameObject prefabWarrior;
     public GameObject prefabHealer;
-    void Start()
+    void Awake()
     {
         TimelineEntrance = GetComponent<PlayableDirector>();
     }
 
+    [ContextMenu("PlayEntrance")]
+
     public void PlayEntrance()
     {
+        Debug.Log(TimelineEntrance);
+        TimelineEntrance.Stop();
         TimelineEntrance.Play(Entrance);
     }
     public void PlayExit()
     {
+        TimelineEntrance.Stop();
         TimelineEntrance.Play(Exit);
     }
     //Utilisé dans des timelines

@@ -10,7 +10,7 @@ public class LevelController : MonoBehaviour {
     public int CurentLevel = 0;
     public int LevelsNumber = 10;
     public List<string> LevelList = new List<string>();
-
+    
     public DoorEntrance Entrance;
 
     // Start is called before the first frame update

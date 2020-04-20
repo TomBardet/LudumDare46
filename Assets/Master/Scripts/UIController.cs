@@ -25,9 +25,16 @@ public class UIController : MonoBehaviour
         UIAnimator.SetTrigger("EndGame");
     }
 
-    public void TriggerGameStart() {
-        UIAnimator.SetTrigger("GameStart");
+    public void TriggerGameStart(bool isReset) {
+       
+        if(!isReset) UIAnimator.SetTrigger("GameStart");
         Debug.Log("Animation pétage de porte");
+        Invoke("EntranceAnim", 1f);
+        //LC.Entrance.PlayEntrance();
+    }
+
+    void EntranceAnim()
+    {
         LC.Entrance.PlayEntrance();
     }
 }
