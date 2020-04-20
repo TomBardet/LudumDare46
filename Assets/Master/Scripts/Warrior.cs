@@ -80,7 +80,7 @@ public class Warrior : MonoBehaviour
 
     void Update()
     {
-        if (AI == WarriorAI.animating)
+        if (AI == WarriorAI.animating || animator.GetBool("Dead"))
             return ;
         if (AI == WarriorAI.scanning && enemy != null)
         {
