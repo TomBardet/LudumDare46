@@ -57,10 +57,20 @@ public class MusicController : MonoBehaviour
     public string PressurePlateOn = "event:/Sfx/PlaqueOn";
     [FMODUnity.EventRef]
     public string PressurePlateOff = "event:/Sfx/PlaqueOff";
+    [FMODUnity.EventRef]
+    public string TurretShot = "event:/Sfx/TourelleTir";
+    [FMODUnity.EventRef]
+    public string Chest = "event:/Sfx/Coffre";
+    [FMODUnity.EventRef]
+    public string ChestExplosion = "event:/Sfx/CoffreBoom";
 
     [Header("--------------------- Healer ---------------------")]
     [FMODUnity.EventRef]
-    public string Resurection = "";
+    public string Resurection = "event:/Sfx/Resurection";
+    [FMODUnity.EventRef]
+    public string Heal = "event:/Sfx/Heal";
+    [FMODUnity.EventRef]
+    public string HealerDeath = "event:/Personnage/Healer_Death";
 
     private void Awake() {
         if (instance == null)

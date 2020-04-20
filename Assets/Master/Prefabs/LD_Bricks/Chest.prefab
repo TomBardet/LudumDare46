@@ -382,7 +382,7 @@ MonoBehaviour:
   - {x: -1.2756891, y: 0.74422336, z: 0}
   m_ShapePathHash: 272994021
   m_Mesh: {fileID: 0}
-  m_InstanceId: 45256
+  m_InstanceId: -49372
 --- !u!1 &4993686805734175856
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,7 +514,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 96f553e630288be46980e6bb86bf3ad4, type: 2}
+  - {fileID: 2100000, guid: c5d404ce60c399c4da4079cd8ea72672, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -571,7 +571,7 @@ MonoBehaviour:
   - {x: -1.2756891, y: 0.74422336, z: 0}
   m_ShapePathHash: 272994021
   m_Mesh: {fileID: 0}
-  m_InstanceId: -9504
+  m_InstanceId: -49376
 --- !u!1 &6904299718368724475
 GameObject:
   m_ObjectHideFlags: 0

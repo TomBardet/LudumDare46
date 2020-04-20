@@ -135,8 +135,8 @@ public class GameController : MonoBehaviour
         buttonWin.SetActive(false);
     }
 
-    public void GameStart() {
-        UIController.TriggerGameStart();
+    public void GameStart(bool isReset) {
+        UIController.TriggerGameStart(isReset);
         MusicController.instance.musicLvl.setParameterByName("Player", 1);
         MusicController.instance.musicLvl.setParameterByName("Fight", 0);
         GamePhase = GamePhaseType.OnGame;
