@@ -43,4 +43,12 @@ public class Killzone : MonoBehaviour
         anim.SetBool("isInactive", true);
 
     }
+
+    public void toggleState()
+    {
+        trigger.enabled = !isActive;
+        isActive = !isActive;
+        anim.SetBool("isInactive", !isActive);
+
+    }
 }
