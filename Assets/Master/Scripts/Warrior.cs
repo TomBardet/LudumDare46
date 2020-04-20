@@ -40,10 +40,10 @@ public class Warrior : MonoBehaviour
     WarriorInteractable destination;
     Coroutine walking;
     float TgAngle = 0f;
-    Quaternion originalSight;
+    Vector3 originalSight;
 
     Slider healthBar;
-    public enum WarriorAI { scanning, moveToDoor, moveToTarget, fight, die };
+    public enum WarriorAI { scanning, moveToDoor, moveToTarget, fight, die, animating };
     public WarriorAI AI;
 
     Barks barks;
@@ -61,7 +61,8 @@ public class Warrior : MonoBehaviour
         currentInterests = E_WarriorInterests.None;
         walking = null;
         barks = GetComponentInChildren<Barks>();
-        originalSight = viewCone.transform.rotation;
+        originalSight = viewCone.eulerAngles;
+        AI = WarriorAI.animating;
     }
 
     void Start()
@@ -71,13 +72,16 @@ public class Warrior : MonoBehaviour
         StartRoom();
     }
 
-    void StartRoom()
+    public void StartRoom()
     {
+        Debug.Log("SCANNING");
         AI = WarriorAI.scanning;
     }
 
     void Update()
     {
+        if (AI == WarriorAI.animating)
+            return ;
         if (AI == WarriorAI.scanning && enemy != null)
         {
             AI = WarriorAI.fight;
@@ -268,12 +272,12 @@ public class Warrior : MonoBehaviour
 
         barks.ScreamBark(E_Barks.Scanning);
         var timer = scanDuration;
-        viewCone.rotation = originalSight;
-        Debug.Log(viewCone.rotation);
+        viewCone.rotation = Quaternion.Euler(0, 0, originalSight.z);
+        TgAngle = 0f;
+        //Debug.Log(viewCone.eulerAngles);
         while (timer > 0)
         {
             timer -= Time.deltaTime;
-
             RotateToward(tg1);
             yield return new WaitForEndOfFrame();
             if (enemy != null)
@@ -282,7 +286,6 @@ public class Warrior : MonoBehaviour
             }
         }
         timer = scanDuration * 2;
-        Debug.Log(viewCone.rotation);
         while (timer > 0)
         {
             timer -= Time.deltaTime;
@@ -293,7 +296,6 @@ public class Warrior : MonoBehaviour
                 yield break;
             }
         }
-        Debug.Log(viewCone.rotation);
         yield return new WaitForSeconds(pauseAfterscan);
         busy = false;
         //si il a trouvé une target
@@ -308,13 +310,7 @@ public class Warrior : MonoBehaviour
     }
 
     void RotateToward(Vector2 lookAt)
-    {
-        // Vector3 lookAt = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        // float AngleRad = Mathf.Atan2(lookAt.y - transform.position.y, lookAt.x - transform.position.x);
-        // float AngleDeg = (180 / Mathf.PI) * AngleRad;
-        // transform.rotation = Quaternion.Euler(0, 0, AngleDeg);
-
-        
+    {   
         float AngleRad = Mathf.Atan2(lookAt.y - viewCone.position.y, lookAt.x - viewCone.position.x);
         float AngleDeg = (180 / Mathf.PI) * AngleRad;
         TgAngle = Mathf.MoveTowardsAngle(TgAngle, AngleDeg, scanSpeed);

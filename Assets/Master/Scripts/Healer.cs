@@ -19,6 +19,7 @@ public class Healer : MonoBehaviour
     public float manaRegenPerSec;
     public float manaRegenDelay;
     public float healCost;
+    public int healEffect;
     Slider manaBar;
     float currentMana;
     bool isRegenerating;
@@ -31,12 +32,13 @@ public class Healer : MonoBehaviour
         line = GetComponent<LineRenderer>();
         joints.enabled = false;
         line.enabled = false;
-        manaBar = UIRef.instance.manaBar;
         currentMana = manaMax;
     }
 
     void Start()
-    {}
+    {
+        manaBar = UIRef.instance.manaBar;
+    }
 
     private void Update()
     {
@@ -56,7 +58,7 @@ public class Healer : MonoBehaviour
         if (currentMana >= healCost)
         {
             currentMana -= healCost;
-            Warrior.instance.ReceiveHeal(1);
+            Warrior.instance.ReceiveHeal(healEffect);
             StartCoroutine(RegenDelay());
         }
     }
