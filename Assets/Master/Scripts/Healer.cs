@@ -69,8 +69,11 @@ public class Healer : MonoBehaviour
     public void Dead()
     {
         GetComponentInChildren<Animator>().SetBool("Dead", true);
-        dead = true;
-        Invoke("Defeat", 1f);  
+        if(!dead)
+        {
+            dead = true;
+            Invoke("Defeat", 2f);
+        }
     }
 
     void Defeat()

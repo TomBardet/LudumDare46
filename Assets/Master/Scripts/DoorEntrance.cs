@@ -13,19 +13,24 @@ public class DoorEntrance : MonoBehaviour
     public Transform parent;
     public GameObject prefabWarrior;
     public GameObject prefabHealer;
-    void Start()
+    void Awake()
     {
         TimelineEntrance = GetComponent<PlayableDirector>();
     }
 
+    [ContextMenu("PlayEntrance")]
+
     public void PlayEntrance()
     {
+        Debug.Log(TimelineEntrance);
+        TimelineEntrance.Stop();
         TimelineEntrance.Play(Entrance);
         MusicController.instance.PlayAnSFX(MusicController.instance.WarriorStart);
         MusicController.instance.PlayAnSFX(MusicController.instance.DoorBreak);
     }
     public void PlayExit()
     {
+        TimelineEntrance.Stop();
         TimelineEntrance.Play(Exit);
         MusicController.instance.PlayAnSFX(MusicController.instance.WarriorExit);
         MusicController.instance.PlayAnSFX(MusicController.instance.DoorBreak);

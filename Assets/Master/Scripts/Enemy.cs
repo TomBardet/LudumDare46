@@ -9,6 +9,7 @@ public class Enemy : WarriorInteractable
     public int damage;
     public List<Enemy> pack;
     public float chargeSpeed;
+    public float timeBetweenAttacks;
 
     public Transform hpLayout;
     public GameObject heartPrefab;
@@ -70,12 +71,12 @@ public class Enemy : WarriorInteractable
         Attack();
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int dmg)
     {
         if (!aggro)
             foreach (Enemy enemy in pack)
                 enemy.Aggro();
-        hp -= 1;
+        hp -= dmg;
         if (hpLayout.childCount > 0)
             Destroy(hpLayout.GetChild(0).gameObject);
         if (hp <= 0)
@@ -98,7 +99,7 @@ public class Enemy : WarriorInteractable
 
     IEnumerator AttackDelay()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(timeBetweenAttacks);
         StartCoroutine(WalkToTarget(Warrior.instance.transform)); // If Warrior is going for loot and ignore mob, they have to walk again to catch him
     }
 

@@ -33,6 +33,7 @@ public class Warrior : MonoBehaviour
     float hp;
     Rigidbody2D body;
     public Animator animator;
+    bool dead = false;
 
     E_WarriorInterests currentInterests;
     bool busy = false;
@@ -74,7 +75,6 @@ public class Warrior : MonoBehaviour
 
     public void StartRoom()
     {
-        Debug.Log("SCANNING");
         AI = WarriorAI.scanning;
     }
 
@@ -203,13 +203,15 @@ public class Warrior : MonoBehaviour
     {
         hp -= damage;
         healthBar.value = hp / maxHp;
-        if (hp <= 0)
+        if (hp <= 0 && !dead)
         {
             hp = 0;
             StopAllCoroutines();
             animator.SetBool("Dead", true);
             GameManager.Defeat();
             MusicController.instance.PlayAnSFX(MusicController.instance.WarriorDeath);
+            Invoke("Dead", 2f);
+            dead = true;
         }
         if (currentInterests == E_WarriorInterests.None && p_enemy != null)
         {
@@ -220,6 +222,11 @@ public class Warrior : MonoBehaviour
             enemy = p_enemy;
         }
         MusicController.instance.SetLifeParameters(hp, maxHp);
+    }
+
+    void Dead()
+    {
+        GameManager.Defeat();
     }
 
     public void ReceiveHeal(int heal)
@@ -248,8 +255,8 @@ public class Warrior : MonoBehaviour
             while (target.hp > 0)
             {
                 animator.SetBool("Attacking", true);
-                target.TakeDamage();
                 MusicController.instance.PlayAnSFX(MusicController.instance.WarriorHit);
+                target.TakeDamage(1);
                 //Debug.Log("Inflict Dmg");
                 yield return new WaitForSeconds(timeBetweenEachShot);
             }
