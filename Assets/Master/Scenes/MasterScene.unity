@@ -1666,9 +1666,35 @@ MonoBehaviour:
   Dialogue1:
   - I have been a support all my life...
   - Fruit Ninja
+  - Fruit Ninja
+  - Fruit Ninja
+  - test
+  - test
+  - 'Healer : I see some traps'
+  - 'Healer : I don''t see anything'
+  - 'Healer : I see a pressure plate'
+  - 'Healer : Some traps and sandwichs ...'
+  - 'Healer : Many goblins here !'
+  - 'Healer : Hmm... It will be hard'
+  - 'Healer : Goblins  and sandwichs here'
+  - 'Healer : There is a strange chest here...'
+  - 'Healer : The chest room ! Finally !'
   Dialogue2:
   - This is my story.
   - "Pamplemousse masqu\xE9"
+  - "Pamplemousse masqu\xE9"
+  - "Pamplemousse masqu\xE9"
+  - test
+  - test
+  - 'Warrior : TRAPS DON''T GIVE XP !'
+  - 'Warrior : THEN LET''S GO !'
+  - 'Warrior : WHAT IS THAT ?'
+  - 'Warrior : DID YOU SAY SANDWHICH ?'
+  - 'Warrior : MANY XP THEN !'
+  - 'Warrior : I MUST DO EVERYTHING MYSELF'
+  - 'Warrior : BOTH Both ARE ETABLE !'
+  - 'Warrior : A CHEST IS A CHEST !'
+  - 'Warrior : GET AWAY ! '
   TimelineDialogue: {fileID: 19377187}
   dialogue1: {fileID: 2016721122}
   dialogue2: {fileID: 780090260}
@@ -1738,7 +1764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelContainer: {fileID: 722619823}
-  CurentLevel: 0
+  CurentLevel: 5
   LevelsNumber: 16
   LevelList:
   - Elliot01
