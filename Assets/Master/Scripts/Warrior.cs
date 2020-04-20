@@ -43,7 +43,7 @@ public class Warrior : MonoBehaviour
     Vector3 originalSight;
 
     Slider healthBar;
-    public enum WarriorAI { scanning, moveToDoor, moveToTarget, fight, die };
+    public enum WarriorAI { scanning, moveToDoor, moveToTarget, fight, die, animating };
     public WarriorAI AI;
 
     Barks barks;
@@ -62,6 +62,7 @@ public class Warrior : MonoBehaviour
         walking = null;
         barks = GetComponentInChildren<Barks>();
         originalSight = viewCone.eulerAngles;
+        AI = WarriorAI.animating;
     }
 
     void Start()
@@ -71,13 +72,16 @@ public class Warrior : MonoBehaviour
         StartRoom();
     }
 
-    void StartRoom()
+    public void StartRoom()
     {
+        Debug.Log("SCANNING");
         AI = WarriorAI.scanning;
     }
 
     void Update()
     {
+        if (AI == WarriorAI.animating)
+            return ;
         if (AI == WarriorAI.scanning && enemy != null)
         {
             AI = WarriorAI.fight;
