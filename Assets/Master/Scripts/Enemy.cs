@@ -70,12 +70,12 @@ public class Enemy : WarriorInteractable
         Attack();
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int dmg)
     {
         if (!aggro)
             foreach (Enemy enemy in pack)
                 enemy.Aggro();
-        hp -= 1;
+        hp -= dmg;
         if (hpLayout.childCount > 0)
             Destroy(hpLayout.GetChild(0).gameObject);
         if (hp <= 0)
