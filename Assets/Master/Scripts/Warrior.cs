@@ -32,7 +32,7 @@ public class Warrior : MonoBehaviour
 
     float hp;
     Rigidbody2D body;
-    Animator animator;
+    public Animator animator;
 
     E_WarriorInterests currentInterests;
     bool busy = false;
@@ -43,7 +43,7 @@ public class Warrior : MonoBehaviour
     Vector3 originalSight;
 
     Slider healthBar;
-    public enum WarriorAI { scanning, moveToDoor, moveToTarget, fight, die, animating };
+    public enum WarriorAI { scanning, moveToDoor, moveToTarget, fight, die,win, animating };
     public WarriorAI AI;
 
     Barks barks;
@@ -68,19 +68,18 @@ public class Warrior : MonoBehaviour
     void Start()
     {
         healthBar = UIRef.instance.healthBar;
-        exit = GameObject.FindObjectOfType<DoorExit>().transform.position;
-        StartRoom();
+        exit = GameObject.FindObjectOfType<DoorExit>().Tg_Door.position;
+        Invoke("StartRoom", 3f);
     }
 
     public void StartRoom()
     {
-        Debug.Log("SCANNING");
         AI = WarriorAI.scanning;
     }
 
     void Update()
     {
-        if (AI == WarriorAI.animating)
+        if (AI == WarriorAI.animating || animator.GetBool("Dead"))
             return ;
         if (AI == WarriorAI.scanning && enemy != null)
         {
@@ -139,6 +138,11 @@ public class Warrior : MonoBehaviour
                 body.MovePosition((Vector2)transform.position + dir * Walkspeed * Time.deltaTime);
                 viewCone.right = dir;//(Vector3)exit - viewCone.position;
             }
+            else
+            {
+                AI = WarriorAI.win;
+                FindObjectOfType<DoorEntrance>().PlayExit();
+            }
         }
         else
         {
@@ -200,7 +204,7 @@ public class Warrior : MonoBehaviour
             hp = 0;
             StopAllCoroutines();
             animator.SetBool("Dead", true);
-            GameManager.Defeat();
+            Invoke("Dead", 2f);
         }
         if (currentInterests == E_WarriorInterests.None && p_enemy != null)
         {
@@ -210,6 +214,11 @@ public class Warrior : MonoBehaviour
         {
             enemy = p_enemy;
         }
+    }
+
+    void Dead()
+    {
+        GameManager.Defeat();
     }
 
     public void ReceiveHeal(int heal)
