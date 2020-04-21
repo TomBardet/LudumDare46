@@ -33,6 +33,11 @@ public class UIController : MonoBehaviour
         //LC.Entrance.PlayEntrance();
     }
 
+    public void TriggerGoMenu()
+    {
+        UIAnimator.SetTrigger("GoMenu");
+    }
+
     void EntranceAnim()
     {
         LC.Entrance.PlayEntrance();

@@ -24,7 +24,7 @@ public class CameraControler : MonoBehaviour
         //Movement Pour l'instant sur un boolean, plus tard check si le niveau est finit 
         if (IsMoving) {
             nextLevelPosition = NextLevel.transform.position;
-            StartCoroutine(MoveTo(nextLevelPosition));
+           // StartCoroutine(MoveTo(nextLevelPosition));
             IsMoving = false;
             // changer le next level
         }

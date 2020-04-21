@@ -93,10 +93,18 @@ public class GameController : MonoBehaviour
 
     }
 
+    public void OnGoMenu()
+    {
+        UIController.TriggerGoMenu();
+        MenuObj.SetActive(true);
+        GamePhase = GamePhaseType.Menu;
+        LevelController.CurentLevel = 0;
+
+    }
+
     public void OnNextLevel()
     {
         //Transition de level suivit de la phase d'observation ?
-        MusicController.instance.musicLvl.setParameterByName("Player", 0);
         UIController.OnNextLevelPress();
         GamePhase = GamePhaseType.Observation;
         TimeKey = MaxTimeKey;
@@ -128,7 +136,8 @@ public class GameController : MonoBehaviour
     public void EndGame()
     {
         UIController.TriggerEndGame();
-        
+        MusicController.instance.musicLvl.setParameterByName("Player", 0);
+
 
         Invoke("UnloadWait", 3f);
     }

@@ -28,6 +28,10 @@ public class LevelController : MonoBehaviour {
 
     public void IncreaseCurentLevel() {
         if (CurentLevel + 1 < LevelsNumber) CurentLevel++;
+        else
+        {
+            FindObjectOfType<GameController>().OnGoMenu();
+        }
     }
 
     public void ClearLevelContainer(int index) {
@@ -40,7 +44,7 @@ public class LevelController : MonoBehaviour {
     private void MoveLevel() {
         GameObject newLevel = GameObject.Find("LEVEL");
         newLevel.transform.SetParent(LevelContainer.transform);
-        newLevel.transform.position = Vector2.zero;
+        //newLevel.transform.position = Vector2.zero;
         Entrance = newLevel.GetComponentInChildren<DoorEntrance>();
 
         CameraControler camera = Camera.main.GetComponent<CameraControler>();

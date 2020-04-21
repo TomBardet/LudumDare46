@@ -429,7 +429,7 @@ MonoBehaviour:
   - {x: -0.9726199, y: 1.5399997, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -71098
+  m_InstanceId: 67536
 --- !u!1 &2634555434058163167
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,7 +498,7 @@ MonoBehaviour:
   - {x: -0.4043231, y: -0.6225935, z: 0}
   m_ShapePathHash: 110368005
   m_Mesh: {fileID: 0}
-  m_InstanceId: -71094
+  m_InstanceId: 67522
 --- !u!114 &496726894100892998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,7 +524,7 @@ MonoBehaviour:
   - {x: -0.89999926, y: 0.85499966, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -71106
+  m_InstanceId: 67494
 --- !u!114 &3855477465313313249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -550,7 +550,7 @@ MonoBehaviour:
   - {x: -0.7099999, y: 0.5150002, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -71102
+  m_InstanceId: 67516
 --- !u!114 &3787477353674668120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,7 +576,7 @@ MonoBehaviour:
   - {x: -1.56702, y: 1.1499996, z: 0}
   m_ShapePathHash: 0
   m_Mesh: {fileID: 0}
-  m_InstanceId: -71110
+  m_InstanceId: 67514
 --- !u!1 &7518855575280840352
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +677,7 @@ MonoBehaviour:
   viewCone: {fileID: 678927374}
   scanSpeed: 1.5
   scanDuration: 1.5
-  pauseAfterscan: 1
+  pauseAfterscan: 0.5
   Tg_WalkTo: {fileID: 0}
   chargeSpeed: 15
   pauseAfterMoveTo: 2
