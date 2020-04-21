@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1745,7 +1745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelContainer: {fileID: 722619823}
-  CurentLevel: 0
+  CurentLevel: 5
   LevelsNumber: 16
   LevelList:
   - Elliot01
@@ -2007,11 +2007,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: TitleScreen
-      objectReference: {fileID: 0}
-    - target: {fileID: 416275829150987524, guid: 2fe4c9595cfa70a47b98740a95b4c378,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fe4c9595cfa70a47b98740a95b4c378, type: 3}
