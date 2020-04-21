@@ -24,6 +24,7 @@ public class Healer : MonoBehaviour
     float currentMana;
     bool isRegenerating;
     public bool isOnPlank;
+    public ParticleSystem particlesHeal;
     [HideInInspector]public bool dead;
     [HideInInspector]public Barks barks;
 
@@ -69,6 +70,7 @@ public class Healer : MonoBehaviour
         {
             currentMana -= healCost;
             Warrior.instance.ReceiveHeal(healEffect);
+            particlesHeal.Play();
             StopAllCoroutines();
             StartCoroutine(RegenDelay());
             MusicController.instance.PlayAnSFX(MusicController.instance.Heal);
